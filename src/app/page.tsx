@@ -179,7 +179,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-snow">
+      <section className="relative z-10 bg-snow">
         <SectionBanner title="INSIGHTS" index="03" aside="7" />
         <article className="relative aspect-[1440/600] w-full overflow-hidden border-b border-mute bg-ink text-snow">
           <img src={featuredInsight.image} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
@@ -193,15 +193,15 @@ export default function HomePage() {
             </ScrollCenterOpacity>
           </div>
         </article>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-snow h-[365px]">
+        <div className="grid grid-cols-1 bg-snow sm:grid-cols-2 lg:grid-cols-4">
           {insightCards.map((post, i) => (
             <article
               key={`${post.title}-${i}`}
               className="flex flex-col px-5 pb-8 pt-5"
             >
               <p className="font-sans text-[16px] leading-[19.2px] text-mute">{post.published}</p>
-              <div className="aspect-square w-full overflow-hidden flex items-end">
-                <img src={post.image} alt="" className="h-[50%] w-[50%] object-cover" />
+              <div className="mt-4 flex aspect-square w-full items-end overflow-hidden">
+                <img src={post.image} alt="" className="h-1/2 w-1/2 object-cover" />
               </div>
               <h3 className="mt-5 font-koulen text-[19.2px] leading-[21.12px]">{post.title}</h3>
             </article>
