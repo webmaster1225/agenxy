@@ -10,10 +10,10 @@
   --ember: #f57445;
   --blood: #910a0a;
   --line: rgb(168, 165, 165);
-  --header-expanded: clamp(260px, 24vw, 350px);
+  --header-expanded: clamp(342px, 24vw, 342px);
   --header-compact: clamp(56px, 8vw, 72px);
   --header-current: var(--header-expanded);
-  --footer: #2d3134;
+  --footer: #2a2e2f;
 }
 
 main {
@@ -100,10 +100,7 @@ a:hover .rolling span {
 }
 
 .header-grid {
-  grid-template-columns:
-    minmax(120px, 1.15fr)
-    repeat(4, minmax(0, 1fr))
-    clamp(56px, 8vw, 72px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .header-meta,
@@ -158,9 +155,6 @@ a:hover .rolling span {
 }
 
 @media (max-width: 1023px) {
-  :root {
-    --header-current: 64px;
-  }
 
   .site-header,
   .site-header.is-compact {

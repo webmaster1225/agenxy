@@ -10,6 +10,7 @@ import {
   testimonials,
 } from "@/lib/data";
 import { RollingText } from "@/components/RollingText";
+import { ScrollCenterOpacity } from "@/components/ScrollCenterOpacity";
 import { SectionBanner } from "@/components/SectionBanner";
 
 function MediaCard({
@@ -40,13 +41,43 @@ function MediaCard({
   );
 }
 
-function TestimonialRow({ name, image }: { name: string; image: string }) {
+function TestimonialRow({
+  name,
+  person,
+  role,
+  quote,
+  image,
+}: {
+  name: string;
+  person: string;
+  role: string;
+  quote: string;
+  image: string;
+}) {
   return (
-    <div className="flex items-center justify-between border-b border-mute px-5 py-6">
-      <p className="font-display text-[40px] font-normal leading-none">
-        <RollingText text={name} />
-      </p>
-      <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
+    <div className="group border-b border-mute">
+      {/* collapsed row */}
+      <div className="flex items-center justify-between px-5 py-6 group-hover:hidden">
+        <p className="font-display text-[40px] font-normal leading-none">
+          <RollingText text={name} />
+        </p>
+        <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
+      </div>
+      {/* expanded row on hover */}
+      <div className="hidden grid-cols-[1fr_1fr_auto] items-center gap-6 px-5 py-6 group-hover:grid">
+        <p className="font-display text-[40px] font-normal leading-none">
+          <RollingText text={name} />
+        </p>
+        <div>
+          <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">{person}</p>
+          <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-mute">{role}</p>
+          <p className="mt-4 max-w-sm font-display text-[13px] font-medium uppercase leading-[18px] tracking-[0.14px]">{quote}</p>
+        </div>
+        <div className="flex shrink-0 items-center gap-3">
+          <span className="font-koulen text-[34px] leading-none tracking-[-1px] text-mute">&ldquo;&rdquo;</span>
+          <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
+        </div>
+      </div>
     </div>
   );
 }
@@ -55,8 +86,8 @@ export default function HomePage() {
   const testimonialImages = [roster[0].image, roster[1].image, roster[2].image, roster[3].image, roster[0].image, roster[1].image];
 
   return (
-    <>
-      <section>
+    <div className="bg-snow pb-16">
+      <section className="bg-snow">
         <SectionBanner title="WORKS" index="01" aside="26'" wash />
         <div className="grid md:grid-cols-2">
           {featuredWorks.map((work) => (
@@ -105,7 +136,7 @@ export default function HomePage() {
             <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
               {team.map((member) => (
                 <article key={member.name}>
-                  <div className="h-[72px] w-[72px] overflow-hidden rounded-full">
+                  <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
                     <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
                   </div>
                   <h3 className="mt-4 font-koulen text-[24px] leading-[26.4px]">{member.name}</h3>
@@ -119,7 +150,7 @@ export default function HomePage() {
             <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">ARTISTS</h3>
             <div className="mt-10 divide-y divide-mute">
               {roster.map((artist) => (
-                <Link key={artist.name} href="/artists/each-artists" className="group flex items-center justify-between py-5">
+                <div key={artist.name} className="group flex items-center justify-between py-5">
                   <div className="flex items-baseline gap-3">
                     <span className="font-koulen text-[45px] leading-[54px]">
                       <RollingText text={artist.name} />
@@ -127,7 +158,7 @@ export default function HomePage() {
                     <span className="text-[16px] leading-[19.2px] text-mute">{artist.year}</span>
                   </div>
                   <span className="text-[16px] leading-[19.2px] text-mute">{artist.role}</span>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -136,33 +167,40 @@ export default function HomePage() {
         <div className="py-2">
           <h3 className="px-5 py-6 font-koulen text-[24px] leading-[26.4px] text-mute">TESTIMONIALS</h3>
           {testimonials.map((item, i) => (
-            <TestimonialRow key={item} name={item} image={testimonialImages[i] ?? roster[0].image} />
+            <TestimonialRow
+              key={item.name}
+              name={item.name}
+              person={item.person}
+              role={item.role}
+              quote={item.quote}
+              image={testimonialImages[i] ?? roster[0].image}
+            />
           ))}
         </div>
       </section>
 
-      <section>
+      <section className="bg-snow">
         <SectionBanner title="INSIGHTS" index="03" aside="7" />
-        <article className="relative aspect-[1440/351] w-full overflow-hidden border-b border-mute bg-ink text-snow">
+        <article className="relative aspect-[1440/600] w-full overflow-hidden border-b border-mute bg-ink text-snow">
           <img src={featuredInsight.image} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
-          <div className="relative flex h-full flex-col justify-between px-5 py-5">
+          <div className="relative z-10 flex h-full flex-col justify-between px-5 py-5">
             <div className="flex items-start justify-between">
               <p className="font-sans text-[27.2px] leading-[29.92px]">{featuredInsight.date}</p>
-              {featuredInsight.isNew && (
-                <span className="font-koulen text-[12px] leading-[12px] tracking-[-0.36px]">New</span>
-              )}
+              <span className="rounded-[4px] bg-blood px-2 py-1 font-koulen text-[12px] leading-[12px] tracking-[-0.36px]">New</span>
             </div>
-            <h3 className="max-w-[280px] font-koulen text-[32px] leading-[35.2px]">{featuredInsight.title}</h3>
+            <ScrollCenterOpacity className="max-w-[280px]">
+              <h3 className="font-koulen text-[32px] leading-[35.2px]">{featuredInsight.title}</h3>
+            </ScrollCenterOpacity>
           </div>
         </article>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-snow h-[365px]">
           {insightCards.map((post, i) => (
             <article
               key={`${post.title}-${i}`}
-              className="flex flex-col border-b border-r border-mute px-5 pb-8 pt-5 last:border-r-0 lg:border-b-0"
+              className="flex flex-col px-5 pb-8 pt-5"
             >
               <p className="font-sans text-[16px] leading-[19.2px] text-mute">{post.published}</p>
-              <div className="mt-4 aspect-square w-full overflow-hidden flex items-end">
+              <div className="aspect-square w-full overflow-hidden flex items-end">
                 <img src={post.image} alt="" className="h-[50%] w-[50%] object-cover" />
               </div>
               <h3 className="mt-5 font-koulen text-[19.2px] leading-[21.12px]">{post.title}</h3>
@@ -170,6 +208,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

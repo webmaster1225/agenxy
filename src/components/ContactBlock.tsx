@@ -6,11 +6,11 @@ import { RollingText } from "./RollingText";
 
 function ArrowIcon({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <svg className={className} width="28" height="28" viewBox="0 0 16 16" fill="none" aria-hidden="true">
       <path
         d="M3 8h10M9 4l4 4-4 4"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -53,14 +53,6 @@ export function ContactBlock() {
             US
           </p>
         </div>
-
-        <Link
-          href="/contact-us"
-          className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-3 rounded-full bg-snow px-8 py-4 font-display text-[13px] font-bold uppercase tracking-[0.12em] text-ink transition-transform hover:scale-[1.02]"
-        >
-          CONTACT US
-          <ArrowIcon className="text-ember" />
-        </Link>
       </div>
 
       {/* Two-column footer */}
@@ -92,39 +84,41 @@ export function ContactBlock() {
         </div>
 
         {/* Right — subscribe */}
-        <div className="flex min-h-[360px] flex-col px-5 py-10 md:px-5 md:py-12">
-          <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">SUBSCIBE FOR UPDATES</h3>
+        <div className="relative flex min-h-[360px] flex-col justify-between p-5">
+          <div className="flex flex-col gap-6">
+            <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">SUBSCIBE FOR UPDATES</h3>
 
-          <form onSubmit={onSubmit} className="mt-auto flex flex-col pt-16">
-            <div className="grid items-end gap-6 md:grid-cols-[auto_1fr] md:gap-10">
-              <label
-                htmlFor="subscribe-email"
-                className="font-koulen text-[19.2px] uppercase leading-[21.12px] tracking-wide"
-              >
-                Email
-              </label>
-              <div className="relative border-b border-mute pb-3">
-                <input
-                  id="subscribe-email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Enter Email Address"
-                  className="w-full bg-transparent pr-14 text-snow outline-none placeholder:font-serif placeholder:italic placeholder:text-[#888]"
-                />
-                <button
-                  type="submit"
-                  aria-label={sent ? "Subscribed" : "Subscribe"}
-                  className="absolute bottom-2 right-0 flex h-10 w-10 items-center justify-center rounded-full bg-snow text-ember transition-transform hover:scale-105"
+            <form onSubmit={onSubmit} className="flex flex-col pt-16">
+              <div className="grid items-start md:grid-cols-[auto_1fr] gap-[80px]">
+                <label
+                  htmlFor="subscribe-email"
+                  className="font-koulen text-[19.2px] uppercase leading-[21.12px] tracking-wide"
                 >
-                  {sent ? "✓" : <ArrowIcon />}
-                </button>
+                  Email
+                </label>
+                <div className="relative border-b border-mute pb-1">
+                  <input
+                    id="subscribe-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Enter Email Address"
+                    className="w-full bg-transparent pr-14 text-snow outline-none text-[20px] leading-[28.8px] tracking-[-0.72px] placeholder:text-[#888]"
+                  />
+                </div>
               </div>
-            </div>
-            <p className="mt-6 text-right font-sans text-[16px] leading-[20.8px] tracking-[-0.64px] text-[#d5d7de]">
-              By submitting, you agree to our Terms &amp; Service.
-            </p>
-          </form>
+            </form>
+          </div>
+          <p className="text-center font-sans text-[16px] leading-[20.8px] tracking-[-0.64px] text-[#d5d7de]">
+            By submitting, you agree to our Terms &amp; Service.
+          </p>
+          <button
+            type="submit"
+            aria-label={sent ? "Subscribed" : "Subscribe"}
+            className="absolute bottom-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-snow text-ember text-2xl transition-transform hover:scale-105"
+          >
+            {<ArrowIcon />}
+          </button>
         </div>
       </div>
     </section>

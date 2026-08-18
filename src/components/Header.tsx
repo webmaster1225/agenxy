@@ -22,7 +22,7 @@ function Stack({ images, round = false }: { images: string[]; round?: boolean })
           src={src}
           alt=""
           className={`h-7 w-7 object-cover md:h-8 md:w-8 ${round ? "rounded-full" : "rounded-[4.54px]"} ${
-            i ? "-ml-2.5" : ""
+            i ? "ml-1" : ""
           } ring-1 ring-snow`}
         />
       ))}
@@ -35,10 +35,10 @@ function MenuButton({ open, onClick }: { open: boolean; onClick: () => void }) {
     <button
       aria-label={open ? "Close menu" : "Open menu"}
       onClick={onClick}
-      className="flex h-full w-full flex-col items-center justify-center gap-[6px]"
+      className="flex h-full w-full flex-col items-center justify-center gap-2"
     >
-      <span className={`h-[3px] w-6 bg-ink transition ${open ? "translate-y-[4.5px] rotate-45" : ""}`} />
-      <span className={`h-[3px] w-6 bg-ink transition ${open ? "-translate-y-[4.5px] -rotate-45" : ""}`} />
+      <span className={`h-1 w-20 bg-ink transition ${open ? "translate-y-[4.5px] rotate-45" : ""}`} />
+      <span className={`h-1 w-20 bg-ink transition ${open ? "-translate-y-[4.5px] -rotate-45" : ""}`} />
     </button>
   );
 }
@@ -77,12 +77,9 @@ export function Header() {
   return (
     <header className={`site-header border-b border-mute bg-snow ${compact ? "is-compact" : ""}`}>
       <div className="header-grid hidden h-full lg:grid">
-        <div className="header-cell header-brand relative flex min-w-0 flex-col justify-between border-r border-mute px-4 py-4 xl:px-5 xl:py-5">
-          <p className="header-meta truncate font-sans text-[14px] leading-tight text-ink md:text-[16px]">
-            Digital Agency
-          </p>
-          <div className="header-mark absolute left-4 top-[42%] flex h-14 w-14 -translate-y-1/2 items-center justify-center bg-ink xl:left-5 xl:h-[72px] xl:w-[72px]">
-            <span className="font-koulen text-[40px] leading-none tracking-[-2.8px] text-snow xl:text-[56px]">X</span>
+        <div className="header-cell header-brand relative flex w-full min-w-0 flex-col justify-end overflow-hidden border-r border-mute px-4 py-4 xl:px-5 xl:py-5">
+          <div className="header-mark mb-2 flex h-14 w-14 items-center justify-center rounded-[8px] bg-ink xl:h-[75px] xl:w-[49px]">
+            <span className="font-koulen text-[40px] leading-none tracking-[-2.8px] text-snow xl:text-[56px]">X.</span>
           </div>
           <Link
             href="/"
@@ -126,11 +123,13 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="header-cell group relative flex min-w-0 flex-col justify-between border-r border-mute px-4 py-4 xl:px-5 xl:py-5"
+              className="header-cell group relative flex w-full min-w-0 flex-col justify-between overflow-hidden border-r border-mute px-4 py-4 xl:px-5 xl:py-5"
             >
               <div className="header-meta min-w-0">
                 <p className="truncate text-[14px] leading-tight text-mute md:text-[16px]">{meta.kicker}</p>
-                <div className="header-meta-body mt-auto pt-[min(170px,38%)]">
+              </div>
+              <div>
+                <div className="header-meta-body mt-auto pb-12">
                   {meta.contact ? (
                     meta.contact
                   ) : (
@@ -140,15 +139,15 @@ export function Header() {
                     </div>
                   )}
                 </div>
+                <span className="header-nav-label min-w-0 truncate font-display text-[clamp(16px,1.8vw,24px)] font-normal leading-none">
+                  <RollingText text={link.label} />
+                </span>
               </div>
-              <span className="header-nav-label min-w-0 truncate font-display text-[clamp(16px,1.8vw,24px)] font-normal leading-none">
-                <RollingText text={link.label} />
-              </span>
             </Link>
           );
         })}
 
-        <div className="header-menu flex min-w-0 items-stretch justify-center">
+        <div className="header-menu flex min-w-0 items-stretch justify-center overflow-hidden">
           <MenuButton open={open} onClick={toggle} />
         </div>
       </div>
@@ -157,7 +156,9 @@ export function Header() {
         <Link href="/" className="group min-w-0 font-display text-[clamp(24px,8vw,32px)] font-normal leading-none">
           <RollingText text="AGENXY" />
         </Link>
-        <MenuButton open={open} onClick={toggle} />
+        <div className="flex h-full w-16 shrink-0 items-center justify-center">
+          <MenuButton open={open} onClick={toggle} />
+        </div>
       </div>
     </header>
   );

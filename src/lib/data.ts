@@ -36,6 +36,33 @@ export const assets = {
   lumaCeramicsVideo: "https://motion.thepolar.studio/video/lu_11.mp4",
   managementHeroVideo: "https://motion.thepolar.studio/video/works_1.mp4",
   managementDisciplinesVideo: "https://motion.thepolar.studio/video/lu_14.mp4",
+  artistGrain: cdn("rR6HYXBrMmX4cRpXfXUOvpvpB0.png"),
+  artistHero: cdn("cKuTS8u7Z5a04Mq4liKz4JTSxiE.jpg") + "?width=2500&height=1625",
+  artistCityA: cdn("L61MvCY8ttcVvChrDXLqkdiAcFo.jpg") + "?width=1548&height=1200",
+  artistCityB: cdn("eEXduufTWysqV1SPGfx1uvy19o.jpeg") + "?width=603&height=800",
+  artistCityC: cdn("bAWwNVziCexjLuSRptw4jwUUQ.jpeg") + "?width=1024&height=1500",
+  artistCityD: cdn("DA0Q8AgIJP81uFWvLkpKSZo.jpeg") + "?width=2400&height=2000",
+  artistCityE: cdn("h8sixiviY1fFnSOgNyrAj94ALG8.jpeg") + "?width=980&height=1400",
+  artistCityF: cdn("aK56biGr27sgC880rdREJrJgTnU.jpg") + "?width=800&height=1200",
+  artistCityG: cdn("VfoXBzIkYN2pRlBE6oYYaS97Ec.jpg") + "?width=904&height=1200",
+  artistCityH: cdn("uBxP9U1PLV67RuuwTdMdbEkQA.jpg") + "?width=1205&height=1600",
+  artistPerspective: cdn("2WRE967h2vJrkIS9mZJ3CRlpMI.jpeg") + "?width=1800&height=1200",
+  artistRitual: cdn("rgK3PpbanQ4CVwmKdKQJ7HHUFc.jpeg") + "?width=1800&height=1350",
+  artistPatterns: cdn("UjPdPzwyV1QCG0t3f7GTAsQ5h3c.jpg") + "?width=849&height=1200",
+  artistSignals: cdn("j0f0boTZxcbNRQJLpyezNUOKAEU.jpg") + "?width=800&height=1200",
+  artistStudio: cdn("WgSXpdQNIRyyqbHxMdMqlYBg4k.jpeg") + "?width=1207&height=1623",
+  artistRipple: cdn("VP537IhNaTLW7QOkMnGSrpCPh0.jpg") + "?width=1100&height=1300",
+  artistPortrait: cdn("jjJ6XIKZWJ2rtvkJZuo8IqJCQHo.jpg") + "?width=1400&height=1536",
+  artistArtifactA: cdn("mRBiQFDuE4B7QVSEklk21DWcM.jpeg") + "?width=1200&height=1600",
+  artistArtifactB: cdn("gLqCslm3A6i3AkKnPkWHelWtkNo.jpg") + "?width=1600&height=2400",
+  artistArtifactC: cdn("3dhrjEKd33WmxaQ1Mtixa0iI3M4.jpeg") + "?width=2400&height=2400",
+  artistRabbit: cdn("8nraXlqQmF5fUzbvPQXoG2dv944.svg") + "?width=143&height=269",
+  artistSignature: cdn("fU3WmM3L1vdP5RLFKaBh2WUqVs.svg") + "?width=109&height=28",
+  artistUntouchedVideo: "https://framerusercontent.com/assets/UY4nZD0fXfOJHyYfoRxf4thIaQ.mp4",
+  artistExploreVideo: "https://framerusercontent.com/assets/a26Kzz7FS3fTjry2yg6UEMdYo.mp4",
+  artistModusVideo: "https://framerusercontent.com/assets/xyWTkVIYLpmxuCOWTnXmSQtYV8.mp4",
+  confessTop: cdn("TKjFE8fHS5OxcfEVOdm3sI2gEkI.jpeg") + "?width=1800&height=506",
+  confessBottom: cdn("9Hbjl9ztDSwlBJuq6SREqQR8Dg.jpeg") + "?width=1800&height=506",
 };
 
 export const nav = [
@@ -118,19 +145,49 @@ export const roster = [
 ];
 
 export const testimonials = [
-  "YALLA HABEBE",
-  "BERIN",
-  "MADY MINTON",
-  "MAKE THE GIRLS DANCE",
-  "TRIP AND BASS",
-  "Marquee New York",
+  {
+    name: "YALLA HABEBE",
+    person: "Alex Bashorun",
+    role: "CEO",
+    quote: "From concept to launch, Karta delivered elegance and precision. The final design became the centerpiece of our rebrand.",
+  },
+  {
+    name: "BERIN",
+    person: "Mira Solano",
+    role: "Art Director",
+    quote: "Working with the team was effortless. They understood our sound and translated it into a visual language that resonates.",
+  },
+  {
+    name: "MADY MINTON",
+    person: "Jordan Lee",
+    role: "Manager",
+    quote: "Every detail was handled with care. The result exceeded what we imagined was possible.",
+  },
+  {
+    name: "MAKE THE GIRLS DANCE",
+    person: "Sofia Brunet",
+    role: "Creative Lead",
+    quote: "A studio that genuinely listens. The campaign they built for us was bold, cohesive, and completely on-brand.",
+  },
+  {
+    name: "TRIP AND BASS",
+    person: "Noah Becker",
+    role: "Web Designer",
+    quote: "Precision, speed, and great taste. They brought our concept to life with zero compromise.",
+  },
+  {
+    name: "Marquee New York",
+    person: "Claire de Roux",
+    role: "Brand Designer",
+    quote: "From the first meeting to launch day, the experience was flawless. Our audience noticed immediately.",
+  },
 ];
 
 export const featuredInsight = {
   date: "Oct 3rd, 2025",
   isNew: true,
   title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
-  image: assets.wide,
+  image: assets.workC,
 };
 
 export const insightCards = [
