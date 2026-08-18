@@ -56,7 +56,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-footer text-snow">
+    <div className="bg-ink text-snow">
       {/* Hero */}
       <section className="px-10 pb-10 pt-8">
         <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
