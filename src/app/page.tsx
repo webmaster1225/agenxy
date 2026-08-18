@@ -162,8 +162,8 @@ export default function HomePage() {
               className="flex flex-col border-b border-r border-mute px-5 pb-8 pt-5 last:border-r-0 lg:border-b-0"
             >
               <p className="font-sans text-[16px] leading-[19.2px] text-mute">{post.published}</p>
-              <div className="mt-4 aspect-square w-full overflow-hidden">
-                <img src={post.image} alt="" className="h-full w-full object-cover" />
+              <div className="mt-4 aspect-square w-full overflow-hidden flex items-end">
+                <img src={post.image} alt="" className="h-[50%] w-[50%] object-cover" />
               </div>
               <h3 className="mt-5 font-koulen text-[19.2px] leading-[21.12px]">{post.title}</h3>
             </article>
