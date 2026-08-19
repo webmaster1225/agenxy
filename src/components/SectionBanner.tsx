@@ -33,7 +33,7 @@ export function SectionBanner({
       )}
       <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pb-6">
         <div className="flex items-start">
-          <h2 className="font-display lg:text-[18vw] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
+          <h2 className="font-display lg:text-[200px] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
             {title}
           </h2>
           <span className="ml-4 mt-1 font-koulen text-[34px] leading-[34px] tracking-[-0.68px] text-ember">
@@ -44,7 +44,7 @@ export function SectionBanner({
           {note && (
             <p className="hidden pt-2 text-[24px] leading-[33.6px] tracking-[-0.72px] md:block">{note}</p>
           )}
-          <p className="font-display lg:text-[18vw] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
+          <p className="font-display lg:text-[200px] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
             {aside}
           </p>
         </div>
@@ -92,7 +92,7 @@ export function PageHero({
       {kicker && (
         <p className="mb-3 font-display text-[14px] font-medium uppercase tracking-[0.14px] text-mute">{kicker}</p>
       )}
-      <h1 className="font-display text-[18vw] font-semibold uppercase leading-[1.1] tracking-tightest md:text-[104px] md:leading-[114.4px] md:tracking-[-4.16px]">
+      <h1 className="font-display lg:text-[200px] text-8xl font-semibold uppercase leading-[1.1] tracking-tightest md:text-[104px] md:leading-[114.4px] md:tracking-[-4.16px]">
         <RollingText text={title} />
       </h1>
       {note && <p className="mt-2 hidden text-sm text-mute md:block">{note}</p>}

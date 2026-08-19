@@ -111,7 +111,7 @@ export default function HomePage() {
                   </span>
                   <span className="text-[16px] leading-[19.2px] text-mute">{work.year}</span>
                 </div>
-                <span className="text-[16px] leading-[19.2px] text-mute">{work.artist}</span>
+                <span className="text-[16px] leading-[19.2px] text-mute text-right lg:text-left">{work.artist}</span>
               </a>
             ))}
           </div>
