@@ -219,7 +219,7 @@ export default function ContactPage() {
         </form>
       </section>
 
-      <LogoMarquee className="border-y border-[#333]" />
+      <LogoMarquee />
 
       {/* FAQs */}
       <section className="px-5 py-36 md:px-5">

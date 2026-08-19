@@ -25,7 +25,7 @@ function MediaCard({
   isNew?: boolean;
 }) {
   return (
-    <article className="media-card group relative h-[656px] overflow-hidden bg-ink text-snow">
+    <article className="media-card group relative lg:h-[656px] h-[70vw] overflow-hidden bg-ink text-snow">
       {video ? (
         <video src={video} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
       ) : (
@@ -58,23 +58,23 @@ function TestimonialRow({
     <div className="group border-b border-mute">
       {/* collapsed row */}
       <div className="flex items-center justify-between px-5 py-6 group-hover:hidden">
-        <p className="font-display text-[40px] font-normal leading-none">
+        <p className="font-display text-2xl lg:text-[40px] font-normal leading-none">
           <RollingText text={name} />
         </p>
         <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
       </div>
       {/* expanded row on hover */}
-      <div className="hidden grid-cols-[1fr_1fr_auto] items-center gap-6 px-5 py-6 group-hover:grid">
-        <p className="font-display text-[40px] font-normal leading-none">
+      <div className="hidden flex-col lg:grid-cols-[1fr_1fr_auto] items-start lg:items-center gap-6 px-5 py-6 group-hover:flex lg:group-hover:grid">
+        <img src={image} alt="" className="block lg:hidden h-10 w-10 rounded-full object-cover" />
+        <p className="font-display text-2xl lg:text-[40px] font-normal leading-none">
           <RollingText text={name} />
         </p>
-        <div>
-          <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">{person}</p>
-          <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-mute">{role}</p>
-          <p className="mt-4 max-w-sm font-display text-[13px] font-medium uppercase leading-[18px] tracking-[0.14px]">{quote}</p>
+        <div className="font-display text-2xl font-bold uppercase">
+          <p>{person}</p>
+          <p className="text-mute">{role}</p>
+          <p className="mt-4 max-w-sm">{quote}</p>
         </div>
-        <div className="flex shrink-0 items-center gap-3">
-          <span className="font-koulen text-[34px] leading-none tracking-[-1px] text-mute">&ldquo;&rdquo;</span>
+        <div className="hidden lg:flex shrink-0 items-center gap-3">
           <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
         </div>
       </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
     <div className="bg-snow pb-16">
       <section className="bg-snow">
         <SectionBanner title="WORKS" index="01" aside="26'" wash />
-        <div className="grid md:grid-cols-2">
+        <div className="grid lg:grid-cols-2 grid-cols-1 h-fit">
           {featuredWorks.map((work) => (
             <MediaCard key={work.title} {...work} />
           ))}
@@ -165,7 +165,6 @@ export default function HomePage() {
         </div>
 
         <div className="py-2">
-          <h3 className="px-5 py-6 font-koulen text-[24px] leading-[26.4px] text-mute">TESTIMONIALS</h3>
           {testimonials.map((item, i) => (
             <TestimonialRow
               key={item.name}
@@ -181,19 +180,17 @@ export default function HomePage() {
 
       <section className="relative z-10 bg-snow">
         <SectionBanner title="INSIGHTS" index="03" aside="7" />
-        <article className="relative aspect-[1440/600] w-full overflow-hidden border-b border-mute bg-ink text-snow">
+        <article className="relative aspect-[1440/600] w-full h-[100vw] lg:h-auto overflow-hidden border-b border-mute bg-ink text-snow">
           <img src={featuredInsight.image} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
           <div className="relative z-10 flex h-full flex-col justify-between px-5 py-5">
             <div className="flex items-start justify-between">
               <p className="font-sans text-[27.2px] leading-[29.92px]">{featuredInsight.date}</p>
               <span className="rounded-[4px] bg-blood px-2 py-1 font-koulen text-[12px] leading-[12px] tracking-[-0.36px]">New</span>
             </div>
-            <ScrollCenterOpacity className="max-w-[280px]">
-              <h3 className="font-koulen text-[32px] leading-[35.2px]">{featuredInsight.title}</h3>
-            </ScrollCenterOpacity>
+            <h3 className="font-koulen text-[32px] leading-[35.2px]">{featuredInsight.title}</h3>
           </div>
         </article>
-        <div className="grid grid-cols-1 bg-snow sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 bg-snow h-4/5 lg:h-auto sm:grid-cols-2 lg:grid-cols-4">
           {insightCards.map((post, i) => (
             <article
               key={`${post.title}-${i}`}

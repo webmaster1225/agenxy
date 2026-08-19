@@ -31,7 +31,7 @@ export default function ManagementPage() {
             playsInline
           />
           <div className="absolute inset-0 bg-ink/30" />
-          <div className="relative z-10 flex flex-col justify-end px-5 pb-5 pt-[200px] gap-5">
+          <div className="relative z-10 flex flex-col justify-end px-2 lg:px-6 pb-5 pt-[200px] gap-5">
             <div className="flex items-end justify-between border-b border-mute pb-5">
               <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">ABOUT</p>
               <p className="text-right font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">
@@ -46,7 +46,7 @@ export default function ManagementPage() {
         </div>
       </section>
 
-      <section className="bg-snow grid gap-10 px-5 py-[140px] md:grid-cols-3 md:gap-x-5 md:gap-y-0">
+      <section className="bg-snow grid gap-10 px-2 lg:px-6 py-[140px] md:grid-cols-3 md:gap-x-5 md:gap-y-0">
         <div className="md:row-span-2">
           <SectionLabel left="Values" index="S.2" />
         </div>
@@ -65,9 +65,9 @@ export default function ManagementPage() {
         </p>
       </section>
 
-      <section className="px-5 pb-[140px] bg-snow">
+      <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Leadership" index="S.3" />
-        <div className="mt-10 grid grid-cols-2 gap-[5px] md:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-[5px] md:grid-cols-4">
           {leadershipGrid.map(({ index, col, row }) => {
             const person = leadership[index];
             const colClass = ["", "md:col-start-1", "md:col-start-2", "md:col-start-3", "md:col-start-4"][col];
@@ -92,9 +92,9 @@ export default function ManagementPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-[140px] bg-snow">
+      <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Clients" index="S.4" />
-        <div className="mt-10 grid gap-10 md:grid-cols-3 md:items-start">
+        <div className="mt-10 grid lg:gap-10 gap-2 grid-cols-2 md:grid-cols-3 md:items-start">
           <div className="relative aspect-square w-full max-w-[400px] overflow-hidden">
             <img
               src={clients[openClient].image}
@@ -125,17 +125,16 @@ export default function ManagementPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-ink px-5 pb-[140px] text-snow">
+      <section className="relative overflow-hidden bg-ink px-2 lg:px-6 py-16 text-snow h-screen">
         <video
           src={assets.managementDisciplinesVideo}
-          className="absolute inset-0 h-auto w-full object-cover"
+          className="absolute inset-0 lg:h-auto h-full lg:w-full w-auto object-cover"
           autoPlay
           muted
           loop
           playsInline
         />
-        <div className="absolute inset-0 bg-ink/40" />
-        <div className="relative z-10 flex min-h-[760px] flex-col justify-between pt-20 md:min-h-[900px]">
+        <div className="relative z-10 flex h-full flex-col justify-between">
           <div>
             <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">
               07 Disciplines
@@ -148,8 +147,8 @@ export default function ManagementPage() {
             From strategy to design to development <br />
             — discover how we bring ideas to life.
           </p>
-          <div className="max-w-[350px]">
-            <Link href="/" className="group inline-block font-display text-[14px] font-medium uppercase tracking-[0.14px]">
+          <div className="lg:relative lg:bottom-0 lg:translate-y-0 absolute bottom-[50%] translate-y-[50%] left-[50%] translate-x-[-50%] lg:border-none border lg:p-0 px-16 py-2">
+            <Link href="/" className="group inline-block font-display lg:text-[14px] text-2xl font-medium uppercase tracking-[0.14px]">
               <RollingText text="Our service" />
             </Link>
           </div>

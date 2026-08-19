@@ -31,9 +31,9 @@ export function SectionBanner({
           <div className="works-wash absolute inset-0" />
         </>
       )}
-      <div className="relative flex h-full items-end justify-between px-[30px] pb-6">
+      <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pb-6">
         <div className="flex items-start">
-          <h2 className="font-display text-[18vw] font-bold uppercase leading-[1] tracking-display md:text-[200px]">
+          <h2 className="font-display lg:text-[18vw] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
             {title}
           </h2>
           <span className="ml-4 mt-1 font-koulen text-[34px] leading-[34px] tracking-[-0.68px] text-ember">
@@ -44,7 +44,7 @@ export function SectionBanner({
           {note && (
             <p className="hidden pt-2 text-[24px] leading-[33.6px] tracking-[-0.72px] md:block">{note}</p>
           )}
-          <p className="font-display text-[18vw] font-bold uppercase leading-[1] tracking-display md:text-[200px]">
+          <p className="font-display lg:text-[18vw] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
             {aside}
           </p>
         </div>
@@ -64,7 +64,7 @@ export function PageKicker({
 }) {
   return (
     <div
-      className={`flex items-end justify-between px-5 pb-5 pt-[200px] ${
+      className={`flex flex-col lg:flex-row lg:items-end items-start justify-between px-5 pb-5 lg:pt-[200px] pt-8 lg:gap-0 gap-16 ${
         dark ? "bg-ink text-snow" : "bg-snow"
       }`}
     >

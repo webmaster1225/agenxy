@@ -18,19 +18,18 @@ export default function ArtistsPage() {
   );
 
   return (
-    <div className="bg-snow py-[140px]">
-      <div className="px-4 pb-20 pt-20 text-center">
-        <h1 className="font-display text-[clamp(56px,10vw,104px)] font-semibold uppercase leading-[1.1] tracking-[-4.16px]">
+    <div className="bg-snow py-32">
+      <div className="px-4 text-center">
+        <h1 className="font-display text-[clamp(104px,10vw,104px)] font-semibold uppercase leading-[1.1] tracking-[-4.16px]">
           Artists
         </h1>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 pb-8 pt-4">
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 pb-16 pt-4">
         {filters.map((item) => (
           <button
             key={item}
-            onClick={() => setFilter(item)}
-            className={`font-display text-[14px] font-normal uppercase leading-none ${
+            className={`font-display text-[14px] font-normal uppercase leading-none tracking-[-2px] ${
               filter === item ? "underline decoration-ember decoration-2 underline-offset-[6px]" : ""
             }`}
           >
@@ -39,9 +38,9 @@ export default function ArtistsPage() {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-3">
+      <div className="grid md:grid-cols-3 gap-4 px-4">
         {items.map((item) => (
-          <Link key={item.title} href="/artists/each-artists" className="group border-b border-r border-mute">
+          <Link key={item.title} href="/artists/each-artists" className="group">
             <div className="aspect-[459/295] overflow-hidden bg-ink">
               {item.video ? (
                 <video
@@ -56,7 +55,7 @@ export default function ArtistsPage() {
                 <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
               ) : null}
             </div>
-            <div className="flex items-baseline justify-between gap-4 px-4 py-4">
+            <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-display text-[16px] font-medium leading-4">{item.title.toUpperCase()}</h2>
               <p className="font-sans text-[14px] font-medium leading-[19.6px] tracking-[-0.56px]">{item.category}</p>
             </div>
