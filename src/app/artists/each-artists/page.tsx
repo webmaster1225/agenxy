@@ -309,7 +309,7 @@ export default function ArtistDetailPage() {
         </div>
       </section>
 
-      <section className="relative h-[100vh] overflow-hidden bg-night">
+      <section className="relative h-auto overflow-hidden bg-night">
         <div className="grid lg:grid-cols-2 grid-cols-1">
           <div className="h-full w-full relative flex items-center">
             <div className="font-display z-10 flex flex-col gap-1 pl-12">
@@ -350,16 +350,14 @@ export default function ArtistDetailPage() {
             </div>
             <div className="relative h-full w-full">
               <video src={assets.artistUntouchedVideo} className="absolute w-full h-full object-cover" autoPlay muted loop playsInline />
-              <span className="absolute font-display uppercase bottom-0 p-4 text-right text-snow text-4xl font-bold">Pages become places worth lingering in, and issues become experiences people anticipate, keep, and share.</span>
+              <span className="absolute font-display uppercase bottom-0 p-4 text-right text-snow text-4xl font-bold mix-blend-difference">Pages become places worth lingering in, and issues become experiences people anticipate, keep, and share.</span>
             </div>
           </div>
         </div>
       </section>
 
       <section className="relative h-[100vh] overflow-hidden bg-night">
-        <video src={assets.artistExploreVideo} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
-        <div className="absolute inset-0 bg-night/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 lg:px-32 text-center mix-blend-difference">
           <span className="bg-lime font-display text-sm font-semibold leading-tight uppercase text-ink">
             EXPLORATION PHASE
           </span>
@@ -374,6 +372,8 @@ export default function ArtistDetailPage() {
             <span>— FIELD NOTES</span>
           </p>
         </div>
+        <img src={assets.artistPerspective} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <video src={assets.artistExploreVideo} className="absolute inset-0 h-full w-full object-cover mix-blend-multiply" autoPlay muted loop playsInline />
       </section>
 
       <section className="bg-lime text-ink h-[100vh]">
@@ -463,54 +463,69 @@ export default function ArtistDetailPage() {
 
       <section className="bg-[#d9d9d9] text-ink">
         <div className="grid lg:grid-cols-2">
-          <div className="relative min-h-[700px] overflow-hidden bg-ink">
-            <img src={assets.artistPatterns} alt="" className="h-full w-full object-cover grayscale" />
-            <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.18)_0_1px,transparent_1px_7px)] mix-blend-overlay" />
-            <p className="absolute bottom-10 left-6 max-w-sm font-display text-[36px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow">
-              PATTERNS EMERGE.
-              <br />
-              FRICTION CREATES
-              <br />
-              MEANING.
-            </p>
-          </div>
-          <div className="flex min-h-[700px] flex-col justify-between px-8 py-12">
-            <div>
-              <p className="font-display text-[14px] uppercase tracking-[-0.28px] text-[#666]">ILLUSION · LATENCY · PERSPECTIVE · CONTROL</p>
-              <ScrollCenterOpacity minOpacity={0.25}>
-                <h2 className="mt-8 font-display text-[64px] font-bold uppercase leading-[0.9] tracking-[-3.8px] md:text-[92px]">
-                  EMBRACING THE
-                  <br />
-                  UNKNOWN
-                </h2>
-              </ScrollCenterOpacity>
+          <div className="relative bg-ink">
+            <div className="sticky top-0 z-0 h-screen w-full">
+              <img src={assets.artistPatterns} alt="" className="h-full w-full object-cover grayscale" />
+              <div className="absolute top-10 left-6 flex flex-col font-display text-xl leading-none tracking-tight">
+                <p>ILLUSION</p>
+                <p>LATENCY</p>
+                <p>PERSPECTIVE</p>
+                <p>CONTROL</p>
+                <div className="mt-2 h-[50px] w-[50px] animate-[blink_1.2s_ease-in-out_infinite] rounded-full bg-red-600 motion-reduce:animate-none"></div>
+              </div>
             </div>
-            <p className="max-w-md font-display text-[16px] uppercase leading-[22px] tracking-[-0.32px]">
-              I FOLLOW IDEAS INTO PLACES THAT DON’T HAVE NAMES YET. SOME REVEAL STRUCTURE. SOME COLLAPSE INTO NOISE. WORK SHAPED BY
-              MOVEMENT, MEMORY, AND INTERRUPTION.
-            </p>
+            
+            <div className="relative z-10 overflow-hidden h-screen mix-blend-difference">
+              <img
+                src={assets.artistRitual}
+                alt=""
+                className="h-full w-full object-cover grayscale"
+                style={{
+                  mask: "linear-gradient(0deg, #00000000 0%, rgb(0, 0, 0) 21.7817%, rgb(0, 0, 0) 74.2328%, rgba(0, 0, 0, 0) 100%)",
+                  WebkitMask:
+                    "linear-gradient(0deg, #00000000 0%, rgb(0, 0, 0) 21.7817%, rgb(0, 0, 0) 74.2328%, rgba(0, 0, 0, 0) 100%)",
+                }}
+              />
+              <p className="absolute top-0 left-6 max-w-sm font-display text-[36px] lg:text-[90px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow whitespace-nowrap">
+                PATTERNS EMERGE.
+                <br />
+                FRICTION CREATES
+                <br />
+                MEANING.
+              </p>
+              <p className="absolute bottom-10 left-6 max-w-sm font-display text-[16px] lg:text-[48px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow whitespace-nowrap">
+                SIGNALS FORM.
+                <br />
+                SURFACES RESPOND.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="grid lg:grid-cols-2">
-          <div className="relative min-h-[500px] overflow-hidden">
-            <img src={assets.artistSignals} alt="" className="h-full w-full object-cover grayscale" />
-            <p className="absolute bottom-8 left-6 font-display text-[24px] font-bold uppercase leading-[1.05] tracking-[-0.96px] text-snow">
-              SIGNALS FORM.
-              <br />
-              SURFACES RESPOND.
-            </p>
-          </div>
-          <div className="px-8 py-12">
-            <ScrollCenterOpacity minOpacity={0.22}>
-              <h3 className="font-display text-[48px] font-bold uppercase leading-[0.95] tracking-[-2.4px] md:text-[64px]">
+          <div className="flex flex-col justify-between px-8 py-12">
+            <div className="h-screen flex flex-col">
+              <h2 className="font-display font-bold text-[#292929] uppercase tracking-tighter">
+                <span className="text-[60px] leading-none">EMBRACING THE</span>
+                <br />
+                <span className="text-[12vw] underline">UNKNOWN</span>
+              </h2>
+              <p className="font-display text-[16px] uppercase leading-none">
+                I FOLLOW IDEAS INTO PLACES THAT DON’T HAVE NAMES YET. SOME REVEAL STRUCTURE. SOME COLLAPSE INTO NOISE. WORK SHAPED BY
+                MOVEMENT, MEMORY, AND INTERRUPTION.
+              </p>
+            </div>
+            <div className="h-screen font-display flex flex-col gap-8 leading-none tracking-tighter">
+              <p className="uppercase text-sm max-w-sm">
+              Work shaped by movement, memory, and interruption. Studies in light, depth, and distortion. Each piece begins as a question and ends wherever it needs to.
+              </p>
+              <img src={assets.artistSignals} alt="" className="h-fit w-2/5 object-cover grayscale" />
+              <h3 className="text-[48px] font-bold uppercase md:text-[64px]">
                 WHAT HOLDS UP IS WHAT MATTERS.
               </h3>
-            </ScrollCenterOpacity>
-            <p className="mt-6 font-display text-[16px] uppercase leading-[22px] tracking-[-0.32px]">
-              Observation over explanation.
-              <br />
-              Process over certainty.
-            </p>
+              <p className="text-[16px] uppercase">
+                Observation over explanation.
+                <br />
+                Process over certainty.
+              </p>
+            </div>
           </div>
         </div>
       </section>
