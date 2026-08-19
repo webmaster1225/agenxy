@@ -18,7 +18,7 @@ export function SectionBanner({
   return (
     <div
       className={`relative overflow-hidden border-b border-mute ${
-        wash ? "h-[370px]" : "h-[250px]"
+        wash ? "h-[370px]" : "h-auto"
       } ${dark ? "bg-footer text-snow" : ""}`}
     >
       {wash && (
@@ -31,7 +31,7 @@ export function SectionBanner({
           <div className="works-wash absolute inset-0" />
         </>
       )}
-      <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pb-6">
+      <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pt-20 pb-6">
         <div className="flex items-start">
           <h2 className="font-display lg:text-[200px] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
             {title}

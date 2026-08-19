@@ -284,7 +284,7 @@ export default function ArtistDetailPage() {
         </div>
       </section>
 
-      <section className="bg-night px-6 pb-24 pt-40">
+      <section className="bg-night lg:px-32 px-6 pb-24 pt-40">
         <div className="p-16">
           <img
             src={assets.artistCityA}
@@ -628,7 +628,7 @@ export default function ArtistDetailPage() {
         </div>
       </section>
       <section className="relative z-10 bg-snow py-16 text-ink">
-        <div className="grid grid-rows-2 gap-16 px-8 leading-none tracking-tighter">
+        <div className="flex flex-col gap-16 px-8 leading-none tracking-tighter">
           <div className="grid grid-cols-[1fr_2fr_1fr] gap-10 font-bold leading-none">
             <div></div>
             <div className="flex flex-col gap-1">
@@ -648,7 +648,7 @@ export default function ArtistDetailPage() {
 
           <div className="grid grid-cols-[1fr_1fr_2fr] gap-10 font-bold leading-none">
             <div></div>
-            <video src={assets.artistModusVideo} className="h-auto w-full object-cover grayscale" autoPlay muted loop playsInline />
+            <video src={assets.artistModusVideo} className="h-[25vw] w-full object-cover grayscale" autoPlay muted loop playsInline />
             <div className="flex flex-col gap-1">
               <p className="text-[14px] uppercase">RIPPLE TRACE</p>
               <h3 className="text-[clamp(72px,14vw,210px)] uppercase leading-none">AK1.0</h3>
