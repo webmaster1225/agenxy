@@ -31,10 +31,20 @@ function isAlbumEmbed(embedUrl: string) {
   return embedUrl.includes("/embed/album/");
 }
 
+function CloseMark() {
+  return (
+    <span className="relative block h-5 w-5" aria-hidden="true">
+      <span className="absolute left-1/2 top-0 h-full w-[1.5px] -translate-x-1/2 rotate-45 bg-current" />
+      <span className="absolute left-1/2 top-0 h-full w-[1.5px] -translate-x-1/2 -rotate-45 bg-current" />
+    </span>
+  );
+}
+
 export function OtherWorksList({ works }: { works: Work[] }) {
   const [active, setActive] = useState<Work | null>(null);
   const titleId = useId();
   const embedUrl = active ? toSpotifyEmbedUrl(active.href) : null;
+  const album = embedUrl ? isAlbumEmbed(embedUrl) : false;
 
   useEffect(() => {
     if (!active) return;
@@ -74,60 +84,86 @@ export function OtherWorksList({ works }: { works: Work[] }) {
 
       {active && (
         <div
-          className="fixed inset-0 z-[90] flex items-end justify-center bg-ink/55 p-4 sm:items-center"
+          className="listen-veil fixed inset-0 z-[90] flex items-center justify-center p-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
           onClick={() => setActive(null)}
         >
+          <div className="listen-bloom pointer-events-none absolute inset-0" aria-hidden="true" />
+
           <div
-            className="w-full max-w-xl overflow-hidden border border-mute bg-snow text-ink shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            className={`listen-bubble relative w-full text-ink ${album ? "max-w-[420px]" : "max-w-[380px]"}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-mute px-5 py-4">
-              <div>
-                <p className="font-sans text-[14px] leading-[16.8px] text-mute">{active.artist}</p>
-                <h4 id={titleId} className="mt-1 font-koulen text-[28px] leading-[30.8px]">
-                  {active.title}
-                </h4>
-                <p className="mt-1 font-sans text-[14px] leading-[16.8px] text-mute">{active.year}</p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setActive(null)}
-                className="shrink-0 px-1 py-1 font-koulen text-[14px] leading-none text-mute transition-colors hover:text-ink"
-                aria-label="Close player"
-              >
-                CLOSE
-              </button>
-            </div>
+            <div className="listen-bubble-shell relative overflow-hidden rounded-[48px] sm:rounded-[56px]">
+              <div className="listen-bubble-shine pointer-events-none absolute inset-0" aria-hidden="true" />
+              <div className="listen-bubble-rim pointer-events-none absolute inset-[1px] rounded-[47px] sm:rounded-[55px]" aria-hidden="true" />
 
-            <div className="bg-ink p-3 sm:p-4">
-              {embedUrl ? (
-                <iframe
-                  key={embedUrl}
-                  title={`${active.title} on Spotify`}
-                  src={embedUrl}
-                  className="w-full rounded-md border-0"
-                  style={{ height: isAlbumEmbed(embedUrl) ? 352 : 152 }}
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="px-2 py-8 text-center text-snow">
-                  <p className="font-sans text-[16px] leading-[19.2px] text-snow/70">
-                    This release can&apos;t be embedded here.
-                  </p>
-                  <a
-                    href={active.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-block font-koulen text-[18px] leading-none text-ember underline-offset-4 hover:underline"
+              <div className="relative px-6 pb-5 pt-6 sm:px-8 sm:pb-6 sm:pt-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-mute">
+                      Now listening
+                    </p>
+                    <h4
+                      id={titleId}
+                      className="mt-3 font-koulen text-[34px] leading-[0.95] tracking-[-0.02em] sm:text-[40px]"
+                    >
+                      {active.title}
+                    </h4>
+                    <p className="mt-3 font-display text-[15px] font-medium uppercase tracking-[0.04em]">
+                      {active.artist}
+                      <span className="mx-2 text-mute">·</span>
+                      <span className="text-mute">{active.year}</span>
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setActive(null)}
+                    className="listen-close mt-1 flex h-11 w-11 shrink-0 items-center justify-center text-ink/55 transition-colors hover:text-ink"
+                    aria-label="Close player"
                   >
-                    Open externally
-                  </a>
+                    <CloseMark />
+                  </button>
                 </div>
-              )}
+
+                <div className="listen-well mt-6 overflow-hidden rounded-[28px] sm:rounded-[32px]">
+                  {embedUrl ? (
+                    <iframe
+                      key={embedUrl}
+                      title={`${active.title} on Spotify`}
+                      src={embedUrl}
+                      className="block w-full border-0"
+                      style={{ height: album ? 352 : 152 }}
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="px-5 py-10 text-center">
+                      <p className="font-sans text-[15px] leading-[1.4] text-mute">
+                        This release can&apos;t be played here.
+                      </p>
+                      <a
+                        href={active.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-block font-koulen text-[16px] leading-none text-ember"
+                      >
+                        Open externally
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-5 flex items-center justify-between gap-3 px-1">
+                  <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-mute">
+                    Agenxy catalog
+                  </span>
+                  <span className="listen-pulse h-1.5 w-1.5 rounded-full bg-ember" aria-hidden="true" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
