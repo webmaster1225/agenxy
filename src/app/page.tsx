@@ -99,7 +99,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-footer text-snow">
+      <section className="bg-ink text-snow">
         <SectionBanner title="ABOUT" index="02" aside="10" dark note="Team Membrs" />
         <div className="grid border-b border-mute lg:grid-cols-4">
           {stats.map((stat) => (
