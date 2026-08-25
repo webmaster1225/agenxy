@@ -406,14 +406,7 @@ export const labelProjects: Array<{
     year: "2025",
     image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d2e963e5b77cd5dd90aff5a4",
     href: "https://open.spotify.com/album/7lCoh9k02Ed1aPO0sC9K6J",
-  },
-  {
-    name: "Skyfall",
-    category: "Yalla Habebe & Mady Minton",
-    year: "2025",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e024ed78698326a1b632a24fcaf",
-    href: "https://open.spotify.com/album/2b3H2FqKJLQrZi1sSm6nVT",
-  },
+  }
 ];
 
 export const nav = [
