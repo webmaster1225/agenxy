@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { MenuOverlay } from "@/components/MenuOverlay";
 import { MenuProvider } from "@/components/MenuProvider";
+import { ListenProvider } from "@/components/ListenProvider";
 import { ContactBlock } from "@/components/ContactBlock";
 
 const antonio = Antonio({
@@ -35,10 +36,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${antonio.variable} ${inter.variable} ${koulen.variable}`}>
       <body className="bg-paper text-ink antialiased">
         <MenuProvider>
-          <Header />
-          <MenuOverlay />
-          <main>{children}</main>
-          <ContactBlock />
+          <ListenProvider>
+            <Header />
+            <MenuOverlay />
+            <main>{children}</main>
+            <ContactBlock />
+          </ListenProvider>
         </MenuProvider>
       </body>
     </html>

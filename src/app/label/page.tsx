@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { labelProjects } from "@/lib/data";
 import { PageKicker } from "@/components/SectionBanner";
+import { useListen } from "@/components/ListenProvider";
+import { isSpotifyRelease } from "@/lib/spotify";
 
 const filters = ["All", "LABEL", "ARTISTS", "MANAGEMENT", "CONTACTS"] as const;
 
@@ -57,6 +59,7 @@ function LabelProjectMedia({ project }: { project: (typeof labelProjects)[number
 }
 
 export default function LabelPage() {
+  const { open } = useListen();
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
   const [flipped, setFlipped] = useState<boolean[]>(() => labelProjects.map(() => false));
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
@@ -207,7 +210,24 @@ export default function LabelPage() {
             </>
           );
 
-          return project.href ? (
+          return project.href && isSpotifyRelease(project.href) ? (
+            <button
+              key={project.name}
+              type="button"
+              className="label-card relative block h-[524px] w-full overflow-hidden bg-snow text-left"
+              onClick={() =>
+                open({
+                  title: project.name,
+                  artist: project.category,
+                  year: project.year,
+                  href: project.href!,
+                })
+              }
+              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+            >
+              {card}
+            </button>
+          ) : project.href ? (
             <a
               key={project.name}
               href={project.href}
