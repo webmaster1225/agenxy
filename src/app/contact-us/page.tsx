@@ -78,12 +78,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Alex West + contact info */}
+      {/* Yalla Habebe + contact info */}
       <section className="px-10 py-10">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
           <div className="pt-1">
-            <p className="font-display text-[16px] leading-[19.2px]">Alex West</p>
-            <p className="font-display text-[14px] font-medium leading-[16.8px] text-[#5c6063]">Creative Director</p>
+            <p className="font-display text-[16px] leading-[19.2px]">Yalla Habebe</p>
+            <p className="font-display text-[14px] font-medium leading-[16.8px] text-[#5c6063]">Founder</p>
           </div>
           <div>
             <h2 className="max-w-[768px] font-display text-[40px] font-semibold leading-[56px] tracking-[-2.4px]">
@@ -96,10 +96,10 @@ export default function ContactPage() {
                 {"{Mail to}"}
               </p>
               <a
-                href="mailto:contact@dabbler.socials"
+                href="mailto:hello@agenxy.com"
                 className="mt-1 block font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-snow hover:text-[#f55733]"
               >
-                Contact@dabBLer.socials
+                hello@agenxy.com
               </a>
             </div>
             <div className="mt-10 grid gap-8 md:grid-cols-2">

@@ -39,7 +39,7 @@ export function ContactBlock() {
   }
 
   return (
-    <section id="contact" className="bg-footer text-snow">
+    <section id="contact" className="bg-ink text-snow">
       {/* Hero — CONTACT [04] ··· pill ··· US */}
       <div className="relative border-t border-mute px-[30px] pb-8 pt-10">
         <div className="flex min-h-[200px] items-end justify-between">
@@ -70,7 +70,7 @@ export function ContactBlock() {
                 <RollingText text="Hello@agenxy" ember />
               </a>
               <p className="mt-3 flex items-center gap-1 font-koulen text-[19.2px] leading-[21.12px]">
-                1 (415) 570-2791
+                +1 (786) 685-9835
                 <span className="inline-block h-4 w-[2px] animate-pulse bg-ember" aria-hidden="true" />
               </p>
             </div>

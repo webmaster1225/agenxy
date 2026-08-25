@@ -177,12 +177,8 @@ export default function LabelPage() {
           const defaultLarge = index % 2 === 0;
           const showLarge = isDesktop ? (flipped[index] ? !defaultLarge : defaultLarge) : true;
 
-          return (
-            <article
-              key={project.name}
-              className="label-card relative h-[524px] overflow-hidden bg-snow"
-              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
-            >
+          const card = (
+            <>
               <div className="relative z-0 flex h-full flex-col justify-between px-[30px] py-4">
                 <div className="flex flex-1 items-center">
                   <div>
@@ -208,6 +204,27 @@ export default function LabelPage() {
               >
                 <LabelProjectMedia project={project} />
               </div>
+            </>
+          );
+
+          return project.href ? (
+            <a
+              key={project.name}
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className="label-card relative block h-[524px] overflow-hidden bg-snow"
+              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+            >
+              {card}
+            </a>
+          ) : (
+            <article
+              key={project.name}
+              className="label-card relative h-[524px] overflow-hidden bg-snow"
+              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+            >
+              {card}
             </article>
           );
         })}

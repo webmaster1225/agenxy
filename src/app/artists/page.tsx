@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
-import { artistWorks } from "@/lib/data";
+import { artists } from "@/lib/data";
 
-const filters = ["All", "Films/TV", "Commercial", "Stills"] as const;
+const filters = ["All", "Artists"] as const;
 
 function spacedLabel(label: string) {
   return label.split("").join(" ");
@@ -13,7 +12,7 @@ function spacedLabel(label: string) {
 export default function ArtistsPage() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
   const items = useMemo(
-    () => artistWorks.filter((item) => filter === "All" || item.filter === filter),
+    () => artists.filter((item) => filter === "All" || filter === "Artists" || item.filter === filter),
     [filter]
   );
 
@@ -29,6 +28,8 @@ export default function ArtistsPage() {
         {filters.map((item) => (
           <button
             key={item}
+            type="button"
+            onClick={() => setFilter(item)}
             className={`font-display text-[14px] font-normal uppercase leading-none tracking-[-2px] ${
               filter === item ? "underline decoration-ember decoration-2 underline-offset-[6px]" : ""
             }`}
@@ -40,26 +41,25 @@ export default function ArtistsPage() {
 
       <div className="grid md:grid-cols-3 gap-4 px-4">
         {items.map((item) => (
-          <Link key={item.title} href="/artists/each-artists" className="group">
+          <a
+            key={item.title}
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group"
+          >
             <div className="aspect-[459/295] overflow-hidden bg-ink">
-              {item.video ? (
-                <video
-                  src={item.video}
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              ) : item.image ? (
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
-              ) : null}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
             </div>
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-display text-[16px] font-medium leading-4">{item.title.toUpperCase()}</h2>
               <p className="font-sans text-[14px] font-medium leading-[19.6px] tracking-[-0.56px]">{item.category}</p>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

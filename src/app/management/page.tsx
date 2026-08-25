@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { assets, clients, leadership, leadershipGrid, values } from "@/lib/data";
+import { assets, clients, leadershipGrid, team, values } from "@/lib/data";
 import { RollingText } from "@/components/RollingText";
 import { ScrollCenterOpacity, ScrollCenterOpacityGroup } from "@/components/ScrollCenterOpacity";
 
@@ -67,10 +67,10 @@ export default function ManagementPage() {
 
       <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Leadership" index="S.3" />
-        <div className="mt-10 grid grid-cols-1 gap-[5px] md:grid-cols-4">
-          {leadershipGrid.map(({ index, col, row }) => {
-            const person = leadership[index];
-            const colClass = ["", "md:col-start-1", "md:col-start-2", "md:col-start-3", "md:col-start-4"][col];
+        <div className="mt-10 grid grid-cols-2 gap-[5px] md:grid-cols-3">
+          {team.map((person, i) => {
+            const { col, row } = leadershipGrid[i];
+            const colClass = ["", "md:col-start-1", "md:col-start-2", "md:col-start-3", "md:col-start-3"][col];
             const rowClass = ["", "md:row-start-1", "md:row-start-2", "md:row-start-3"][row];
             return (
               <article
@@ -106,7 +106,11 @@ export default function ManagementPage() {
             {clients.map((client, index) => {
               const isOpen = openClient === index;
               return (
-                <div key={client.name} className="border-t border-mute last:border-b" style={{ height: isOpen ? "300px" : "auto" }}>
+                <div
+                  key={client.name}
+                  className="border-t border-mute last:border-b"
+                  style={{ height: isOpen ? "300px" : "auto" }}
+                >
                   <button
                     type="button"
                     onClick={() => setOpenClient(index)}
@@ -115,10 +119,14 @@ export default function ManagementPage() {
                     <span className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">
                       {client.name}
                     </span>
-                    <span className="font-display text-[25px] leading-none" style={{ fontFamily: "none" }}>{isOpen ? "−" : "+"}</span>
+                    <span className="font-display text-[25px] leading-none" style={{ fontFamily: "none" }}>
+                      {isOpen ? "−" : "+"}
+                    </span>
                   </button>
-                  {isOpen && index === 0 && <p className="max-w-[372px] pb-4 font-sans text-[16px] leading-[19.2px]">{client.blurb}</p>}
-                </div>  
+                  {isOpen && (
+                    <p className="max-w-[372px] pb-4 font-sans text-[16px] leading-[19.2px]">{client.blurb}</p>
+                  )}
+                </div>
               );
             })}
           </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { assets } from "@/lib/data";
+import { artists, labelProjects, team } from "@/lib/data";
 import { RollingText } from "./RollingText";
 import { useMenu } from "./MenuProvider";
 
@@ -12,6 +12,10 @@ const navLinks = [
   { href: "/artists", label: "Artists" },
   { href: "/contact-us", label: "Contacts" },
 ] as const;
+
+const workThumbs = labelProjects.map((p) => p.image).filter((src): src is string => Boolean(src));
+const teamThumbs = team.map((m) => m.image);
+const artistThumbs = artists.map((a) => a.image);
 
 function Stack({ images, round = false }: { images: string[]; round?: boolean }) {
   return (
@@ -93,18 +97,18 @@ export function Header() {
           const meta = [
             {
               kicker: "Our Works:",
-              stack: <Stack images={[assets.workA, assets.workB, assets.workC]} />,
-              count: "+56",
+              stack: <Stack images={workThumbs.slice(0, 3)} />,
+              count: `+${workThumbs.length}`,
             },
             {
               kicker: "Our Team:",
-              stack: <Stack images={[assets.avatarA, assets.avatarB]} round />,
-              count: "+35",
+              stack: <Stack images={teamThumbs.slice(0, 2)} round />,
+              count: `+${teamThumbs.length}`,
             },
             {
               kicker: "We Work With:",
-              stack: <Stack images={[assets.artistA, assets.artistB]} />,
-              count: "+5",
+              stack: <Stack images={artistThumbs.slice(0, 2)} />,
+              count: `+${artistThumbs.length}`,
             },
             {
               kicker: "Reach Out To Us:",
@@ -112,8 +116,8 @@ export function Header() {
               count: null,
               contact: (
                 <>
-                  <p className="truncate text-[14px] leading-tight md:text-[16px]">contact@agenxy.com</p>
-                  <p className="text-[12px] leading-tight md:text-[14px]">1 (415) 570-2791</p>
+                  <p className="truncate text-[14px] leading-tight md:text-[16px]">hello@agenxy.com</p>
+                  <p className="text-[12px] leading-tight md:text-[14px]">+1 (786) 685-9835</p>
                 </>
               ),
             },

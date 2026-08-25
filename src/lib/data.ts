@@ -65,13 +65,6 @@ export const assets = {
   confessBottom: cdn("9Hbjl9ztDSwlBJuq6SREqQR8Dg.jpeg") + "?width=1800&height=506",
 };
 
-export const nav = [
-  { href: "/label", label: "Label", kicker: "Our Works:", count: "+56" },
-  { href: "/management", label: "Management", kicker: "Our Team:", count: "+35" },
-  { href: "/artists", label: "Artists", kicker: "We Work With:", count: "+5" },
-  { href: "/contact-us", label: "Contacts", kicker: "Reach Out To Us:" },
-];
-
 export const featuredWorks = [
   {
     title: "BERIN",
@@ -128,14 +121,74 @@ export const stats = [
   { id: ".d", label: "fULLY SATISFIED CLIENTS", value: "100%" },
 ];
 
-export const team = [
-  { name: "Yalla Habebe", role: "TEAM CEO", image: assets.artistA },
-  { name: "Blaine Minton", role: "PARTNER", image: assets.avatarA },
-  { name: "Jorge Mendoza", role: "PARTNER", image: assets.avatarB },
-  { name: "PJ Escobar", role: "MANAGER", image: assets.workD },
-  { name: "Alex Camus", role: "CMO", image: assets.workA },
-  { name: "EMANAY", role: "ADVISORY", image: assets.artistB },
+/** Homepage ABOUT → TEAM (Agenxy leadership) */
+export const aboutTeam = [
+  {
+    name: "Yalla Habebe",
+    role: "Team CEO",
+    image: "/team/yalla-habebe.jpg",
+  },
+  {
+    name: "Jorge Mendoza",
+    role: "Partner",
+    image: "/team/jorge-mendoza.webp",
+  },
+  {
+    name: "EMANAY",
+    role: "Advisory",
+    image: "/team/emanay.jpg",
+  },
+  {
+    name: "Alex Camus",
+    role: "CMO",
+    image: "/team/alex-camus.jpg",
+  },
+  {
+    name: "PJ Escobar",
+    role: "Manager",
+    image: "/team/pj-escobar.jpeg",
+  },
+  {
+    name: "Blaine Minton",
+    role: "Partner",
+    image: "/team/blaine-minton.png",
+  },
 ];
+
+/** Management page leadership grid (previous roster) */
+export const team = [
+  {
+    name: "Yalla Habebe",
+    role: "Artist",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
+    href: "https://open.spotify.com/artist/3XO5mDGAQYNmCOit3zZJ1i",
+  },
+  {
+    name: "Berin",
+    role: "Artist",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b6f93b43b7a2aac24d979eee",
+    href: "https://open.spotify.com/artist/55vo1zTUTU1TabwCCMMbfv",
+  },
+  {
+    name: "Mady Minton",
+    role: "Artist",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486640bb059dc476ba80438e3",
+    href: "https://open.spotify.com/artist/2rur1PqZ2AiFKzmvL9EGOi",
+  },
+  {
+    name: "Purple",
+    role: "Artist",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0267d6f6c241eec201aa5aa6b5",
+    href: "https://open.spotify.com/artist/40J0vkISgMJ2wx2cZ911iJ",
+  },
+  {
+    name: "Jordan John",
+    role: "Artist",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174177e08ecd12201a83cbb7465",
+    href: "https://open.spotify.com/artist/7xVFIy5rZQAlhMobgxfKgj",
+  },
+];
+
 
 export const roster = [
   { name: "YALLA HABEBE", year: "2022", role: "Artist", image: assets.artistA },
@@ -144,76 +197,123 @@ export const roster = [
   { name: "purple", year: "2022", role: "Artist", image: assets.workD },
 ];
 
+export const artists = [
+  {
+    title: "Yalla Habebe",
+    category: "Artist",
+    filter: "Artists",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
+    href: "https://open.spotify.com/artist/3XO5mDGAQYNmCOit3zZJ1i",
+  },
+  {
+    title: "Mady Minton",
+    category: "Artist",
+    filter: "Artists",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486640bb059dc476ba80438e3",
+    href: "https://open.spotify.com/artist/2rur1PqZ2AiFKzmvL9EGOi",
+  },
+  {
+    title: "Berin",
+    category: "Artist",
+    filter: "Artists",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b6f93b43b7a2aac24d979eee",
+    href: "https://open.spotify.com/artist/55vo1zTUTU1TabwCCMMbfv",
+  },
+];
+
 export const testimonials = [
   {
     name: "YALLA HABEBE",
-    person: "Alex Bashorun",
-    role: "CEO",
-    quote: "From concept to launch, Karta delivered elegance and precision. The final design became the centerpiece of our rebrand.",
+    person: "Yalla Habebe",
+    role: "Artist",
+    quote:
+      "I cover my face on all public appearances. It allows me to perform and build without an ego tied to the project.",
+    image: "/testimonials/yalla-habebe.jpg",
   },
   {
     name: "BERIN",
-    person: "Mira Solano",
-    role: "Art Director",
-    quote: "Working with the team was effortless. They understood our sound and translated it into a visual language that resonates.",
+    person: "Berin",
+    role: "Artist",
+    quote:
+      "From Tipsy to the floor — the rollout, the visuals, and the booking path all moved as one. That's rare for an independent release.",
+    image: "/testimonials/berin.jpg",
   },
   {
     name: "MADY MINTON",
-    person: "Jordan Lee",
-    role: "Manager",
-    quote: "Every detail was handled with care. The result exceeded what we imagined was possible.",
+    person: "Mady Minton",
+    role: "Artist",
+    quote:
+      "Collaborating on Ibiza and Tequila with the same team behind the catalog made every release feel intentional, not rushed.",
+    image: "/testimonials/mady-minton.jpg",
   },
   {
     name: "MAKE THE GIRLS DANCE",
-    person: "Sofia Brunet",
-    role: "Creative Lead",
-    quote: "A studio that genuinely listens. The campaign they built for us was bold, cohesive, and completely on-brand.",
+    person: "Hugel",
+    role: "Founder",
+    quote:
+      "Quality and timelessness over volume — partners who protect Afro and Latin house taste the way we do.",
+    image: "/testimonials/hugel.jpg",
   },
   {
     name: "TRIP AND BASS",
-    person: "Noah Becker",
-    role: "Web Designer",
-    quote: "Precision, speed, and great taste. They brought our concept to life with zero compromise.",
+    person: "Yalla Habebe",
+    role: "Label Founder",
+    quote:
+      "This remake brings a second life and unique afro and melodic house energy to a classic — we built the label to release that energy our way.",
+    image: "/testimonials/trip-and-bass.jpg",
   },
   {
     name: "Marquee New York",
-    person: "Claire de Roux",
-    role: "Brand Designer",
-    quote: "From the first meeting to launch day, the experience was flawless. Our audience noticed immediately.",
+    person: "Marquee NYC",
+    role: "Venue Partner",
+    quote:
+      "Sold-out nights with over 2,000 on the floor — when the artist, the room, and the rollout align, the city feels it.",
+    image: "/testimonials/marquee.jpg",
   },
 ];
 
-export const featuredInsight = {
-  date: "Oct 3rd, 2025",
-  isNew: true,
-  title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
-  image: assets.workC,
+export const featuredTrack = {
+  title: "MOVE YA BODY",
+  artist: "Yalla Habebe",
+  badge: "Trending",
+  streams: "48.2M",
+  playlists: "1,240",
+  chart: "#2",
+  image: assets.moveYaBody,
+  href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
 };
 
-export const insightCards = [
+export const trackStats = [
   {
-    published: "July 17, 2025",
-    title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
-    image: assets.workA,
-  },
-  {
-    published: "July 17, 2025",
-    title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
+    title: "TIPSY",
+    artist: "Berin",
+    badge: "Trending",
+    streams: "18.6M",
+    playlists: "892",
     image: assets.tipsy,
+    href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
   },
   {
-    published: "July 17, 2025",
-    title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
-    image: assets.workC,
+    title: "BLACKWATER",
+    artist: "Berin",
+    badge: "New",
+    streams: "6.4M",
+    playlists: "412",
+    image: "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e025eb2699f9da831fd3a6f1611",
+    href: "https://open.spotify.com/track/5BWjtNm6laJJFTWeZkWdCk",
   },
   {
-    published: "July 17, 2025",
-    title: "HOW SMART DESIGN CAN BOOST CONVERSION RATES",
-    image: assets.wide,
+    title: "TEQUILA",
+    artist: "Yalla Habebe & Mady Minton",
+    badge: "New",
+    streams: "4.9M",
+    playlists: "328",
+    image: "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e028525c2a015c7087363a94402",
+    href: "https://open.spotify.com/album/6uNfBx0ZJSe1XIk95prZ5v",
   },
 ];
 
-export const insights = [featuredInsight, ...insightCards];
+export const insights = [featuredTrack, ...trackStats];
 
 export const labelProjects: Array<{
   name: string;
@@ -221,22 +321,106 @@ export const labelProjects: Array<{
   year: string;
   image?: string;
   video?: string;
+  href?: string;
 }> = [
-  { name: "Sanori", category: "Skincare & Wellness", year: "2025", image: assets.sanori },
-  { name: "Nova Foundry", category: "Audio / Technology", year: "2025", video: assets.novaFoundryVideo },
-  { name: "Wavely", category: "Fashion", year: "2024", image: assets.wavely },
-  { name: "Studio Vale", category: "Marketing", year: "2024", image: assets.studioVale },
-  { name: "Frame & Form", category: "Health and Wellness", year: "2024", image: assets.frameAndForm },
-  { name: "Neuma App", category: "Marketing", year: "2024", image: assets.neumaApp },
-  { name: "360°", category: "Fashion", year: "2024", image: assets.threeSixty },
-  { name: "Axon Futures", category: "Digital", year: "2024", image: assets.axonFutures },
-  { name: "Aera Motion", category: "Health and Wellness", year: "2024", video: assets.aeraMotionVideo },
-  { name: "Kivo Records", category: "Marketing", year: "2024", video: assets.kivoRecordsVideo },
-  { name: "Oro Object", category: "Health and Wellness", year: "2024", image: assets.oroObject },
-  { name: "Élan Studio", category: "Marketing", year: "2024", image: assets.elanStudio },
-  { name: "Nori Index", category: "Health and Wellness", year: "2024", image: assets.noriIndex },
-  { name: "Oblika", category: "Fashion", year: "2024", image: assets.oblika },
-  { name: "Luma Ceramics", category: "Marketing", year: "2024", video: assets.lumaCeramicsVideo },
+  {
+    name: "Tipsy",
+    category: "Berin",
+    year: "2026",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0206487d8c22dc1733ab0618fa",
+    href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
+  },
+  {
+    name: "Blackwater",
+    category: "Berin",
+    year: "2026",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025eb2699f9da831fd3a6f1611",
+    href: "https://open.spotify.com/track/5BWjtNm6laJJFTWeZkWdCk",
+  },
+  {
+    name: "Guess Who's Back",
+    category: "Berin",
+    year: "2026",
+    image: "https://cdn-images.dzcdn.net/images/cover/92795072f192a29d78b09e55653609b5/1000x1000-000000-80-0-0.jpg",
+    href: "https://open.spotify.com/search/isrc:GBWUL2668885",
+  },
+  {
+    name: "Tequila",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2026",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028525c2a015c7087363a94402",
+    href: "https://open.spotify.com/album/6uNfBx0ZJSe1XIk95prZ5v",
+  },
+  {
+    name: "Ibiza",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2026",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0276b9ba8140f5fb307af0243e",
+    href: "https://open.spotify.com/album/4b2wSRJkVvmLLxpOqh9oeR",
+  },
+  {
+    name: "Reason",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2026",
+    image: "https://cdn-images.dzcdn.net/images/cover/9f5582a449b54ff12b1d7d02c28e7858/1000x1000-000000-80-0-0.jpg",
+    href: "https://open.spotify.com/search/isrc:GBKQU2608908",
+  },
+  {
+    name: "Oh My",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2026",
+    image: "https://cdn-images.dzcdn.net/images/cover/edbdf178bf82c947ec8acd6e1be99fee/1000x1000-000000-80-0-0.jpg",
+    href: "https://open.spotify.com/search/isrc:GBKQU2608907",
+  },
+  {
+    name: "Move Ya Body",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2025",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e020dcc38a5f9ffc2bf1a2615d5",
+    href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
+  },
+  {
+    name: "The Way I Are",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2025",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025955f683cfbfd6647f91d9b6",
+    href: "https://open.spotify.com/album/4BfoDY2cP9rEtPQ31pULZ5",
+  },
+  {
+    name: "Qaweya",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2026",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0269d8809bed2e9355d16ab46d",
+    href: "https://open.spotify.com/album/4JQpIGxZWEKSNU4aExDYTn",
+  },
+  {
+    name: "Ah Ye Baba",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2025",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e029eb34ec1e37a9dce43c6e1aa",
+    href: "https://open.spotify.com/album/0cqVBbgfgLEtRnTbnz0Jvu",
+  },
+  {
+    name: "Let Me Go",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2025",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d2e963e5b77cd5dd90aff5a4",
+    href: "https://open.spotify.com/album/7lCoh9k02Ed1aPO0sC9K6J",
+  },
+  {
+    name: "Skyfall",
+    category: "Yalla Habebe & Mady Minton",
+    year: "2025",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e024ed78698326a1b632a24fcaf",
+    href: "https://open.spotify.com/album/2b3H2FqKJLQrZi1sSm6nVT",
+  },
+];
+
+export const nav = [
+  { href: "/label", label: "Label", kicker: "Our Works:", count: `+${labelProjects.length}` },
+  { href: "/management", label: "Management", kicker: "Our Team:", count: `+${team.length}` },
+  { href: "/artists", label: "Artists", kicker: "We Work With:", count: `+${artists.length}` },
+  { href: "/contact-us", label: "Contacts", kicker: "Reach Out To Us:" },
 ];
 
 export const values = [
@@ -276,47 +460,44 @@ export const leadershipGrid = [
 
 export const clients = [
   {
-    name: "Norva",
-    blurb: "Luxury audio systems with precision and minimalist aesthetic.",
-    image: cdn("ua6f8fjTKdEHgSV1jPDh56UyE8.jpg") + "?width=1400&height=1400",
-  },
-  {
-    name: "Sanori",
-    blurb: "Modern architecture studio focused on sustainable spatial design.",
-    image: cdn("T73OaLmbjIq0ZBPqBSpUmUmrT0.jpg") + "?width=1400&height=1400",
-  },
-  {
-    name: "Oblika",
-    blurb: "Independent fashion label with strong editorial visual identity.",
-    image: cdn("DivjKSvz9iVvKkVuj06FrW7mkg.jpg") + "?width=1400&height=1400",
-  },
-  {
-    name: "Humae",
-    blurb: "Creative SaaS platform for teams and professionals.",
-    image: cdn("OhlIulL3YftcyUZVtQ1k2gCRXIU.jpg") + "?width=1400&height=1400",
-  },
-  {
-    name: "Élan Studio",
+    name: "John Summit",
     blurb:
-      "Gathering and analyzing data about a target audience’s preferences, behaviors, and needs to inform design and marketing decisions.",
-    image: cdn("m7rTT8ukNPvFe4mLADDsaBNhI20.jpg") + "?width=1400&height=1400",
+      "Chicago house force and Experts Only founder — festival headliner whose tech-house anthems and sold-out tours redefined the modern dancefloor.",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517420662b32f3dbabad755dfb53",
   },
   {
-    name: "Framer & Form",
-    blurb: "Creative agency focused on design, film, and photography.",
-    image: cdn("0uEwrOxQfao7U7cmgXUOCWNcQw.jpg") + "?width=1400&height=1400",
+    name: "Vintage Culture",
+    blurb:
+      "Brazilian DJ and producer behind global house hits and the Born of Music Addiction residency — from Coachella to Hï Ibiza.",
+    image: "https://image-cdn-fa.spotifycdn.com/image/ab676161000051740041f76b2e740b535b6919a3",
   },
   {
-    name: "Artevia",
-    blurb: "Modern interfaces and secure systems for finance, crypto, and digital banking.",
-    image: cdn("4uN5fCuKx04oJllFF4UvsccoAA.jpg") + "?width=1400&height=1400",
+    name: "Alesso",
+    blurb:
+      "Stockholm progressive-house icon known for stadium-scale singles like Heroes (We Could Be) and collaborations that shaped a decade of EDM.",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517442b3fb34e3451c79c55cbe73",
   },
   {
-    name: "Neuma",
-    blurb: "Minimal, responsive platforms that simplify workflows and help users focus.",
-    image: cdn("sst5fDKiir2ZmmM4b4v1ZRNcaE.jpg") + "?width=1400&height=1400",
+    name: "Swedish House Mafia",
+    blurb:
+      "Axwell, Ingrosso, and Angello — the trio that took house from clubs to arenas, with GRAMMY-nominated hits and the Paradise Again era.",
+    image: "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749614fcf985ad6fc5b4a7c3de",
+  },
+  {
+    name: "Spotify",
+    blurb:
+      "The streaming platform powering discovery for dance music worldwide — playlists, editorial, and the pipeline that turns club cuts into global streams.",
+    image: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=1200&q=80",
+  },
+  {
+    name: "Universal",
+    blurb:
+      "Universal Music Group — the major behind countless electronic and pop catalogs, connecting artists to global distribution and campaign scale.",
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80",
   },
 ];
+
+export const pastClients = clients.map((client) => client.name);
 
 export const artistWorks: Array<{
   title: string;

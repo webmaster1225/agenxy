@@ -92,16 +92,16 @@ export function MenuOverlay() {
 
           <div>
             <a
-              href="mailto:contact@agenxy.com"
+              href="mailto:hello@agenxy.com"
               className="block font-display text-lg font-bold uppercase leading-none tracking-tight"
             >
-              CONTACT@AGENXY.COM
+              hello@AGENXY.COM
             </a>
             <a
               href="tel:14155702791"
               className="mt-2 block font-display text-lg font-bold uppercase leading-none tracking-tight"
             >
-              1 (415) 570-2791
+              +1 (786) 685-9835
             </a>
             <address className="mt-5 not-italic font-sans text-sm leading-[1.4] text-ink">
               325 West 38th Street

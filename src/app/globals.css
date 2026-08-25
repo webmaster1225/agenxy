@@ -22,10 +22,6 @@ main {
 }
 
 #contact,
-.bg-footer {
-  background-color: var(--footer);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -215,7 +211,7 @@ a:hover .rolling span {
 }
 
 .logo-marquee-track {
-  animation: logo-marquee 40s linear infinite;
+  animation: logo-marquee 28s linear infinite;
 }
 
 @keyframes logo-marquee {

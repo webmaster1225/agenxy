@@ -19,7 +19,7 @@ export function SectionBanner({
     <div
       className={`relative overflow-hidden border-b border-mute ${
         wash ? "h-[370px]" : "h-auto"
-      } ${dark ? "bg-footer text-snow" : ""}`}
+      } ${dark ? "bg-ink text-snow" : ""}`}
     >
       {wash && (
         <>
