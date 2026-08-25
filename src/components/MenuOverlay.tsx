@@ -14,7 +14,6 @@ const links = [
   { href: "/management", label: "MANAGEMENT" },
   { href: "/artists", label: "ARTISTS" },
   { href: "/contact-us", label: "CONTACTS" },
-  { href: "/contact-us", label: "BOOKINGS" },
 ];
 
 function CloseMark() {
