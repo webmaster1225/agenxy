@@ -10,6 +10,7 @@ import {
   testimonials,
 } from "@/lib/data";
 import { RollingText } from "@/components/RollingText";
+import { OtherWorksList } from "@/components/OtherWorksList";
 import { ScrollCenterOpacity } from "@/components/ScrollCenterOpacity";
 import { SectionBanner } from "@/components/SectionBanner";
 
@@ -94,25 +95,7 @@ export default function HomePage() {
         </div>
         <div className="px-5 py-8">
           <h3 className="font-koulen text-[32px] leading-[35.2px] text-mute">OTHERS</h3>
-          <div className="mt-4 divide-y divide-mute border-y border-mute">
-            {otherWorks.map((work) => (
-              <a
-                key={work.title}
-                href={work.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex items-center justify-between py-4"
-              >
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display text-[40px] font-normal leading-none">
-                    <RollingText text={work.title} />
-                  </span>
-                  <span className="text-[16px] leading-[19.2px] text-mute">{work.year}</span>
-                </div>
-                <span className="text-[16px] leading-[19.2px] text-mute text-right lg:text-left">{work.artist}</span>
-              </a>
-            ))}
-          </div>
+          <OtherWorksList works={otherWorks} />
         </div>
       </section>
 

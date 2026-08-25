@@ -43,7 +43,10 @@ export function MenuOverlay() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex flex-col bg-snow text-ink h-fit">
+    <div
+      className="fixed inset-0 z-[80] flex h-fit min-h-[100dvh] flex-col text-ink"
+      style={{ backgroundColor: "#ffffff" }}
+    >
       <div className="flex h-16 shrink-0 items-center justify-end border-b border-mute px-4 lg:hidden">
         <button aria-label="Close menu" onClick={() => setOpen(false)} className="flex h-full items-center justify-center px-2">
           <CloseMark />
