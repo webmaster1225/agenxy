@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { assets, clients, leadershipGrid, team, values } from "@/lib/data";
+import { assets, clients, team, values } from "@/lib/data";
 import { RollingText } from "@/components/RollingText";
 import { ScrollCenterOpacity, ScrollCenterOpacityGroup } from "@/components/ScrollCenterOpacity";
 
@@ -68,27 +68,22 @@ export default function ManagementPage() {
       <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Leadership" index="S.3" />
         <div className="mt-10 grid grid-cols-2 gap-[5px] md:grid-cols-3">
-          {team.map((person, i) => {
-            const { col, row } = leadershipGrid[i];
-            const colClass = ["", "md:col-start-1", "md:col-start-2", "md:col-start-3", "md:col-start-3"][col];
-            const rowClass = ["", "md:row-start-1", "md:row-start-2", "md:row-start-3"][row];
-            return (
-              <article
-                key={person.name}
-                className={`relative h-[320px] overflow-hidden sm:h-[320px] md:h-[372px] ${colClass} ${rowClass}`}
-              >
-                <img src={person.image} alt={person.name} className="absolute inset-0 h-full w-full object-cover" />
-                <div className="relative flex h-full flex-col justify-between p-[17px]">
-                  <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-snow">
-                    {person.name}
-                  </p>
-                  <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-snow">
-                    {person.role}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+          {team.map((person) => (
+            <article
+              key={person.name}
+              className="relative h-[320px] overflow-hidden sm:h-[320px] md:h-[372px]"
+            >
+              <img src={person.image} alt={person.name} className="absolute inset-0 h-full w-full object-cover" />
+              <div className="relative flex h-full flex-col justify-between p-[17px]">
+                <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-snow">
+                  {person.name}
+                </p>
+                <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px] text-snow">
+                  {person.role}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
