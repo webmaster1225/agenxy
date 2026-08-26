@@ -134,9 +134,9 @@ export const aboutTeam = [
     image: "/team/jorge-mendoza.png",
   },
   {
-    name: "EMANAY",
+    name: "Dillon Shamoun",
     role: "Advisory",
-    image: "/team/emanay.jpg",
+    image: "/team/dillon-shamoun.png",
   },
   {
     name: "Alex Camus",
