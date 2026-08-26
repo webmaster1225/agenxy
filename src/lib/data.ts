@@ -131,7 +131,7 @@ export const aboutTeam = [
   {
     name: "Jorge Mendoza",
     role: "Partner",
-    image: "/team/jorge-mendoza.webp",
+    image: "/team/jorge-mendoza.png",
   },
   {
     name: "EMANAY",
@@ -141,7 +141,7 @@ export const aboutTeam = [
   {
     name: "Alex Camus",
     role: "CMO",
-    image: "/team/alex-camus.jpg",
+    image: "/team/alex-camus.png",
   },
   {
     name: "PJ Escobar",
