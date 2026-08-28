@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { artists } from "@/lib/data";
 
@@ -41,11 +42,9 @@ export default function ArtistsPage() {
 
       <div className="grid md:grid-cols-3 gap-4 px-4">
         {items.map((item) => (
-          <a
+          <Link
             key={item.title}
             href={item.href}
-            target="_blank"
-            rel="noreferrer"
             className="group"
           >
             <div className="aspect-[459/295] overflow-hidden bg-ink">
@@ -59,7 +58,7 @@ export default function ArtistsPage() {
               <h2 className="font-display text-[16px] font-medium leading-4">{item.title.toUpperCase()}</h2>
               <p className="font-sans text-[14px] font-medium leading-[19.6px] tracking-[-0.56px]">{item.category}</p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

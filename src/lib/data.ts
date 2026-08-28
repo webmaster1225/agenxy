@@ -161,7 +161,7 @@ export const team = [
     name: "Yalla Habebe",
     role: "Artist",
     image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
-    href: "https://open.spotify.com/artist/3XO5mDGAQYNmCOit3zZJ1i",
+    href: "/artists/each-artists",
   },
   {
     name: "Berin",
@@ -203,21 +203,21 @@ export const artists = [
     category: "Artist",
     filter: "Artists",
     image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
-    href: "https://open.spotify.com/artist/3XO5mDGAQYNmCOit3zZJ1i",
+    href: "/artists/each-artists",
   },
   {
     title: "Mady Minton",
     category: "Artist",
     filter: "Artists",
     image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486640bb059dc476ba80438e3",
-    href: "https://open.spotify.com/artist/2rur1PqZ2AiFKzmvL9EGOi",
+    href: "/artists/each-artists",
   },
   {
     title: "Berin",
     category: "Artist",
     filter: "Artists",
     image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b6f93b43b7a2aac24d979eee",
-    href: "https://open.spotify.com/artist/55vo1zTUTU1TabwCCMMbfv",
+    href: "/artists/each-artists",
   },
 ];
 
