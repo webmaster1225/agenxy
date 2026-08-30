@@ -164,10 +164,28 @@ a:hover .rolling span {
 }
 
 .works-wash {
-  background: linear-gradient(90deg, rgb(144, 0, 255), rgb(161, 64, 143), rgb(144, 0, 255));
-  background-size: 200% 100%;
-  animation: gradient-shift 8s linear infinite;
-  opacity: 0.4;
+  background: linear-gradient(
+    115deg,
+    rgb(245 116 69 / 0.14),
+    rgb(145 10 10 / 0.1) 42%,
+    rgb(1 1 1 / 0.06) 68%,
+    rgb(245 116 69 / 0.12)
+  );
+  background-size: 220% 220%;
+  animation: gradient-shift 14s ease-in-out infinite;
+  mix-blend-mode: multiply;
+}
+
+.works-wash-glow {
+  background:
+    radial-gradient(ellipse 75% 55% at 88% 18%, rgb(245 116 69 / 0.2), transparent 68%),
+    radial-gradient(ellipse 55% 45% at 8% 88%, rgb(145 10 10 / 0.14), transparent 62%);
+  pointer-events: none;
+}
+
+.works-wash-vignette {
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.08), rgb(1 1 1 / 0.18));
+  pointer-events: none;
 }
 
 @keyframes gradient-shift {

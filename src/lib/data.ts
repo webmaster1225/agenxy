@@ -90,27 +90,27 @@ export const featuredWorks = [
 export const otherWorks = [
   {
     title: "TIPSY",
-    year: "2025",
+    year: "2026",
     artist: "Berin",
     href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
   },
   {
     title: "MOVE YA BODY",
-    year: "2024",
+    year: "2025",
     artist: "Yalla Habebe",
     href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
   },
   {
     title: "REASON",
-    year: "2024",
-    artist: "Berin",
-    href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
+    year: "2026",
+    artist: "Yalla Habebe & Mady Minton",
+    href: "https://open.spotify.com/search/isrc:GBKQU2608908",
   },
   {
     title: "THE WAY I ARE",
-    year: "2023",
+    year: "2025",
     artist: "Yalla Habebe",
-    href: "https://open.spotify.com/track/32OCYo7vNetSrFhn7BX5bo",
+    href: "https://open.spotify.com/album/4BfoDY2cP9rEtPQ31pULZ5",
   },
 ];
 
@@ -134,9 +134,9 @@ export const aboutTeam = [
     image: "/team/jorge-mendoza.png",
   },
   {
-    name: "Dillon Shamoun",
+    name: "Derek Brown",
     role: "Advisory",
-    image: "/team/dillon-shamoun.png",
+    image: "/team/derek-brown.png",
   },
   {
     name: "Alex Camus",
@@ -178,7 +178,7 @@ export const team = [
   {
     name: "Purple",
     role: "Artist",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0267d6f6c241eec201aa5aa6b5",
+    image: "/team/dj-purple.png",
     href: "https://open.spotify.com/artist/40J0vkISgMJ2wx2cZ911iJ",
   },
   {
@@ -275,6 +275,7 @@ export const testimonials = [
 export const featuredTrack = {
   title: "MOVE YA BODY",
   artist: "Yalla Habebe",
+  year: "2025",
   badge: "Trending",
   streams: "48.2M",
   playlists: "1,240",
@@ -287,6 +288,7 @@ export const trackStats = [
   {
     title: "TIPSY",
     artist: "Berin",
+    year: "2026",
     badge: "Trending",
     streams: "18.6M",
     playlists: "892",
@@ -296,6 +298,7 @@ export const trackStats = [
   {
     title: "BLACKWATER",
     artist: "Berin",
+    year: "2026",
     badge: "New",
     streams: "6.4M",
     playlists: "412",
@@ -305,6 +308,7 @@ export const trackStats = [
   {
     title: "TEQUILA",
     artist: "Yalla Habebe & Mady Minton",
+    year: "2026",
     badge: "New",
     streams: "4.9M",
     playlists: "328",
@@ -410,7 +414,7 @@ export const labelProjects: Array<{
 ];
 
 export const nav = [
-  { href: "/label", label: "Label", kicker: "Our Works:", count: `+${labelProjects.length}` },
+  { href: "/label", label: "Songs", kicker: "Our Works:", count: `+${labelProjects.length}` },
   { href: "/management", label: "Management", kicker: "Our Team:", count: `+${team.length}` },
   { href: "/artists", label: "Artists", kicker: "We Work With:", count: `+${artists.length}` },
   { href: "/contact-us", label: "Contacts", kicker: "Reach Out To Us:" },

@@ -10,7 +10,7 @@ const kickers = ["Our Works:", "Our Team:", "We Work With:", "Reach Out To Us:"]
 
 const links = [
   { href: "/", label: "HOME" },
-  { href: "/label", label: "LABEL" },
+  { href: "/label", label: "SONGS" },
   { href: "/management", label: "MANAGEMENT" },
   { href: "/artists", label: "ARTISTS" },
   { href: "/contact-us", label: "CONTACTS" },

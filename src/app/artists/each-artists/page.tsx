@@ -130,7 +130,7 @@ function VimeoMark() {
 
 function RabbitMark() {
   return (
-    <div className="relative h-[220px] w-[220px]">
+    <div className="relative mx-auto h-[160px] w-[160px] sm:h-[200px] sm:w-[200px] lg:h-[220px] lg:w-[220px]">
       <svg
         viewBox="0 0 200 200"
         className="absolute inset-0 h-full w-full origin-center animate-[spin_20s_linear_infinite] overflow-visible motion-reduce:animate-none"
@@ -150,7 +150,7 @@ function RabbitMark() {
         </text>
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
-        <img src={assets.artistRabbit} alt="" className="h-[118px] w-auto" />
+        <img src={assets.artistRabbit} alt="" className="h-[88px] w-auto sm:h-[118px]" />
       </div>
     </div>
   );
@@ -207,74 +207,88 @@ function HeroImage() {
 
 export default function ArtistDetailPage() {
   return (
-    <div className="bg-night text-snow">
-      <section className="relative flex justify-center items-center h-screen overflow-hidden px-6">
+    <div className="overflow-x-hidden bg-night text-snow">
+      <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0">
         <HeroImage />
-        <p className="pointer-events-none absolute left-6 top-[180px] font-display text-[16vw] font-bold uppercase leading-[0.8] tracking-[-0.08em] text-white/5">
+        <p className="pointer-events-none absolute left-4 top-24 font-display text-[28vw] font-bold uppercase leading-[0.8] tracking-[-0.08em] text-white/5 sm:left-6 sm:top-[180px] sm:text-[16vw]">
           explore
         </p>
-        <div className="absolute h-[85vh] w-[60vw]">
-          <div className="relative flex flex-col justify-between items-stretch h-full w-full">
+        <div className="pointer-events-none absolute inset-x-4 top-1/2 h-[42vh] -translate-y-1/2 sm:inset-x-auto sm:left-1/2 sm:h-[85vh] sm:w-[60vw] sm:-translate-x-1/2 sm:-translate-y-1/2">
+          <div className="relative h-full w-full flex-col items-stretch justify-between hidden sm:flex">
             <div className="grid grid-cols-3">
-              <p className="pointer-events-none font-display text-[16vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime">
+              <p className="font-display text-[22vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime sm:text-[16vw]">
                 AG
               </p>
             </div>
             <div className="grid grid-cols-3">
-              <div></div>
-              <p className="pointer-events-none font-display text-[16vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime">
+              <div />
+              <p className="font-display text-[22vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime sm:text-[16vw]">
                 EN
               </p>
             </div>
             <div className="grid grid-cols-3">
-              <div></div>
-              <div></div>
-              <p className="pointer-events-none font-display text-[12vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime">
+              <div />
+              <div />
+              <p className="font-display text-[18vw] font-bold leading-[0.8] tracking-[-0.08em] text-lime sm:text-[12vw]">
                 XY
               </p>
             </div>
           </div>
         </div>
-        <div className="absolute top-[10vh] right-[10vw] z-10">
-          <p className="font-display text-[62px] font-bold uppercase leading-[62px] tracking-[-4.35px] text-lime">I BREAK THINGS</p>
-          <p className="font-display text-[72px] font-bold uppercase leading-[72px] tracking-[-5.04px]">TO SEE WHAT</p>
-          <p className="font-display text-[50px] font-bold uppercase leading-[50px] tracking-[-3.52px]">THEY ARE MADE OF</p>
-          <div className="mt-4 flex items-start gap-2">
-            <span className="mt-1 h-[42px] w-[2px] bg-lime" />
+        <div className="absolute inset-x-4 sm:top-20 top-10 z-10 sm:inset-x-auto sm:right-[6vw] sm:top-[10vh] lg:right-[10vw]">
+          <p className="font-display text-[clamp(62px,8vw,62px)] font-bold uppercase leading-[0.95] tracking-[-0.06em] text-lime">
+            I BREAK THINGS
+          </p>
+          <p className="font-display text-[clamp(72px,9vw,72px)] font-bold uppercase leading-[0.95] tracking-[-0.06em]">
+            TO SEE WHAT
+          </p>
+          <p className="font-display text-[clamp(50px,7vw,50px)] font-bold uppercase leading-[0.95] tracking-[-0.05em]">
+            THEY ARE MADE OF
+          </p>
+          <div className="mt-3 flex items-start gap-2 sm:mt-4">
+            <span className="mt-1 h-8 w-[2px] bg-lime sm:h-[42px]" />
             <div>
-              <p className="font-display text-[24px] font-semibold uppercase leading-[28.8px] tracking-[-1.44px] text-lime">
+              <p className="font-display text-[18px] font-semibold uppercase leading-tight tracking-[-0.08em] text-lime sm:text-[24px]">
                 ADAM KNOXVILLE
               </p>
-              <p className="mt-1 font-display text-[12px] font-semibold uppercase leading-[13.2px] tracking-tight text-[#ccc]">
+              <p className="mt-1 font-display text-[10px] font-semibold uppercase leading-[13.2px] tracking-tight text-[#ccc] sm:text-[12px]">
                 VISUAL ARTIST/CREATOR
               </p>
             </div>
           </div>
         </div>
-        <div className="absolute flex justify-between bottom-[30vh] left-0 right-0 z-10 px-10">
-          <div className="grid grid-cols-3 w-[90vw]">
+        <div className="absolute inset-x-4 bottom-36 z-10 gap-4 sm:bottom-[30vh] sm:left-0 sm:right-0 sm:px-6 lg:px-10">
+          <div className="flex grid gap-x-4 grid-cols-3 lg:w-[90vw] w-[65vw]">
             {phases.map((phase) => (
-              <div key={phase.n} className="py-5 last:border-r-0">
+              <div key={phase.n} className="py-5">
                 <p className="font-display text-[12px] font-semibold uppercase tracking-tight">{phase.n}</p>
-                <div className="my-1 h-32 border-l border-solid border-[#2c2c2c]" />
+                <div className="my-1 border-l border-solid border-[#2c2c2c] h-32" />
                 <p className="mt-1 font-display text-[12px] uppercase tracking-[-0.48px] text-[#ccc]">
                   PHASE/<span className="text-lime">{phase.label}</span>
                 </p>
               </div>
             ))}
+            <div className="hidden py-5 sm:hidden">
+              <p className="font-display text-[12px] font-semibold uppercase tracking-tight">004</p>
+              <div className="my-1 h-32 border-l border-solid border-[#2c2c2c]" />
+              <p className="mt-1 font-display text-[12px] uppercase tracking-[-0.48px] text-[#ccc]">
+                PHASE/<span className="text-lime">RELEASE</span>
+              </p>
+            </div>
           </div>
-          <div className="py-5 w-auto">
+          <div className="py-5 sm:block sm:absolute sm:right-10 sm:top-0 sm:w-auto">
             <p className="font-display text-[12px] font-semibold uppercase tracking-tight">004</p>
             <div className="my-1 h-32 border-l border-solid border-[#2c2c2c]" />
             <p className="mt-1 font-display text-[12px] uppercase tracking-[-0.48px] text-[#ccc]">
               PHASE/<span className="text-lime">RELEASE</span>
             </p>
           </div>
-          
         </div>
-        <div className="absolute flex flex-row gap-10 bottom-[5vh] left-10 z-10">
-          <p className="font-display text-[12px] uppercase tracking-tight text-[#ccc]">IDX/AK <br/> <span className="text-lime font-bold">2026</span></p>
-          <div className="font-display border-l-4 border-solid border-[#2c2c2c] pl-1 text-xl uppercase">
+        <div className="absolute inset-x-4 bottom-2 z-10 flex flex-col gap-4 sm:bottom-[5vh] sm:left-10 sm:right-auto sm:flex-row sm:gap-10">
+          <p className="font-display text-[11px] uppercase tracking-tight text-[#ccc] sm:text-[12px]">
+            IDX/AK <br /> <span className="font-bold text-lime">2026</span>
+          </p>
+          <div className="border-l-4 border-solid border-[#2c2c2c] pl-2 font-display text-sm uppercase sm:pl-1 sm:text-xl">
             <p>VISUAL EXPERIMENTS</p>
             <p>FORM & FUNCTION</p>
             <p>SOUND & MOTION</p>
@@ -284,56 +298,66 @@ export default function ArtistDetailPage() {
         </div>
       </section>
 
-      <section className="bg-night lg:px-32 px-6 pb-24 pt-40">
-        <div className="p-16">
+      <section className="bg-night px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 lg:px-32 lg:pt-40">
+        <div className="p-4 sm:p-8 lg:p-16">
           <img
             src={assets.artistCityA}
             alt=""
-            className="float-left mr-4 mb-2 w-1/2 object-cover"
+            className="mb-4 w-full object-cover sm:float-left sm:mr-4 sm:mb-2 sm:w-1/2"
           />
-          <p className="font-display font-bold uppercase text-[#D9D9D9] text-[60px]">
+          <p className="font-display text-[clamp(22px,6vw,60px)] font-bold uppercase leading-[1.05] text-[#D9D9D9]">
             ART IS A CONTROLLED INTERRUPTION A PRACTICE OF CATCHING THE MOMENT BEFORE IT DISAPPEARS.
             I WORK ACROSS IMAGE, OBJECT, MOTION, AND SOUND TO TRACE THE SHAPE OF WHAT DOESN’T SIT STILL.
           </p>
         </div>
       </section>
 
-      <section className="bg-night px-6 pb-24">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-16 lg:grid-cols-3">
-          {cities.map((city, i) => (
-            <div key={city.place} className="flex flex-col gap-1">
-              <img src={city.image} alt={city.place} className={`h-full object-cover grayscale ${i % 2 === 0 ? "float-left w-2/3" : "float-right w-3/4"}`} />
+      <section className="bg-night px-4 pb-16 sm:px-6 sm:pb-24">
+        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-3">
+          {cities.map((city) => (
+            <div key={city.place} className="flex flex-col gap-2">
+              <img
+                src={city.image}
+                alt={city.place}
+                className="h-auto w-full object-cover grayscale"
+              />
               <h3 className="mt-1 font-display text-sm font-semibold uppercase tracking-[-0.54px]">{city.place}</h3>
+              <p className="font-display text-[11px] uppercase leading-snug tracking-tight text-[#8d8d8d] sm:hidden">
+                {city.caption}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="relative h-auto overflow-hidden bg-night">
-        <div className="grid lg:grid-cols-2 grid-cols-1">
-          <div className="h-full w-full relative flex items-center">
-            <div className="font-display z-10 flex flex-col gap-1 pl-12">
-              <div className="flex flex-row gap-2 text-sm uppercase text-night">
+      <section className="relative overflow-hidden bg-night">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative flex min-h-[55vh] w-full items-end sm:min-h-[65vh] lg:min-h-[80vh] lg:items-center">
+            <div className="relative z-10 flex flex-col gap-1 px-4 py-10 sm:pl-8 lg:pl-12">
+              <div className="flex flex-row gap-2 text-xs uppercase text-night sm:text-sm">
                 <span>INDX</span>
-                <div className=""></div>
                 <span>//CONCEPTUAL</span>
               </div>
-              <div className="bg-ink text-xl leading-none rounded-sm w-fit">
+              <div className="w-fit rounded-sm bg-ink text-base leading-none sm:text-xl">
                 <p>REVISION — NEUE 7.6</p>
               </div>
-              <p className="font-bold uppercase text-snow text-[60px]">
+              <p className="text-[clamp(32px,10vw,60px)] font-bold uppercase leading-[0.95] text-snow">
                 NOTHING STAYS
                 <br />
                 UNTOUCHED
               </p>
             </div>
-            <img src={assets.artistCityH} alt="" className="absolute w-full h-full object-cover" />
+            <img src={assets.artistCityH} alt="" className="absolute inset-0 h-full w-full object-cover" />
           </div>
-          <div className="grid grid-rows-2">
-            <div className="flex h-full flex-col gap-1 bg-[#d1d1d1] p-6 text-ink">
-              <p className="uppercase font-display text-[90px] font-bold text-night leading-none">perspective</p>
-              <p className="font-display text-[90px] font-bold text-snow leading-none uppercase">not the truth</p>
-              <div className="mt-6 grid grid-cols-2 gap-8">
+          <div className="grid grid-rows-[auto_auto] lg:grid-rows-2">
+            <div className="flex flex-col gap-2 bg-[#d1d1d1] p-4 text-ink sm:gap-1 sm:p-6">
+              <p className="font-display text-[clamp(40px,12vw,90px)] font-bold uppercase leading-none text-night">
+                perspective
+              </p>
+              <p className="font-display text-[clamp(40px,12vw,90px)] font-bold uppercase leading-none text-snow">
+                not the truth
+              </p>
+              <div className="mt-4 grid gap-6 sm:mt-6 grid-cols-2 sm:gap-8">
                 {catNotes.map((note) => (
                   <article key={note.id} className="flex flex-col">
                     <div className="flex items-center justify-between">
@@ -341,33 +365,35 @@ export default function ArtistDetailPage() {
                       <BarcodeMark />
                     </div>
                     <span className="mb-3 mt-2 block h-[3px] w-full bg-ink" />
-                    <p className="font-display text-[13px] font-semibold uppercase leading-[1.25] tracking-[-0.26px]">
+                    <p className="font-display text-[12px] font-semibold uppercase leading-[1.25] tracking-[-0.26px] sm:text-[13px]">
                       {note.copy}
                     </p>
                   </article>
                 ))}
               </div>
             </div>
-            <div className="relative h-full w-full">
-              <video src={assets.artistUntouchedVideo} className="absolute w-full h-full object-cover" autoPlay muted loop playsInline />
-              <span className="absolute font-display uppercase bottom-0 p-4 text-right text-snow text-4xl font-bold mix-blend-difference">Pages become places worth lingering in, and issues become experiences people anticipate, keep, and share.</span>
+            <div className="relative min-h-[50vh] w-full sm:min-h-[55vh] lg:min-h-0">
+              <video src={assets.artistUntouchedVideo} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
+              <span className="sm:absolute bottom-0 left-0 right-0 p-4 text-left font-display text-base font-bold uppercase leading-tight text-snow mix-blend-difference sm:p-6 sm:text-right sm:text-2xl lg:text-4xl">
+                Pages become places worth lingering in, and issues become experiences people anticipate, keep, and share.
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative h-[100vh] overflow-hidden bg-night">
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 lg:px-32 text-center mix-blend-difference">
-          <span className="bg-lime font-display text-sm font-semibold leading-tight uppercase text-ink">
+      <section className="relative min-h-[70vh] overflow-hidden bg-night sm:min-h-[85vh] lg:h-[100vh]">
+        <div className="relative z-10 flex h-full min-h-[70vh] flex-col items-center justify-center px-4 py-16 text-center mix-blend-difference sm:min-h-[85vh] sm:px-6 lg:min-h-0 lg:px-32 lg:py-0">
+          <span className="bg-lime font-display text-xs font-semibold uppercase leading-tight text-ink sm:text-sm">
             EXPLORATION PHASE
           </span>
-          <p className="font-display text-[20vh] leading-none font-bold uppercase">
-            SOME PIECES SETTLE. SOME DON’T. 
+          <p className="mt-4 font-display text-[clamp(28px,9vw,20vh)] font-bold uppercase leading-[0.95] sm:mt-0">
+            SOME PIECES SETTLE. SOME DON’T.
           </p>
-          <p className="font-display text-4xl text-[#D9D9D9] leading-none font-bold uppercase w-2/5 mt-16">
+          <p className="mt-8 w-full max-w-xl font-display text-xl font-bold uppercase leading-none text-[#D9D9D9] sm:mt-12 sm:text-2xl lg:mt-16 lg:w-2/5 lg:text-4xl">
             BOTH REVEAL SOMETHING THE FINISHED VERSION CAN’T.
           </p>
-          <p className="mt-6 text-[12px] uppercase tracking-tight text-[#cfcfcf]">
+          <p className="mt-6 text-[11px] uppercase tracking-tight text-[#cfcfcf] sm:text-[12px]">
             <span className="text-snow">SOURCE </span>
             <span>— FIELD NOTES</span>
           </p>
@@ -376,65 +402,75 @@ export default function ArtistDetailPage() {
         <video src={assets.artistExploreVideo} className="absolute inset-0 h-full w-full object-cover mix-blend-multiply" autoPlay muted loop playsInline />
       </section>
 
-      <section className="bg-lime text-ink h-[100vh]">
-        <div className="grid items-start lg:grid-cols-[1fr_auto_1.1fr] h-full">
-          <div className="px-6 py-16 flex flex-col justify-between h-full">
+      <section className="bg-lime text-ink lg:min-h-[100vh]">
+        <div className="grid h-full items-start lg:grid-cols-[1fr_auto_1.1fr]">
+          <div className="flex h-full flex-col justify-between px-4 py-10 sm:px-6 sm:py-16">
             <div>
-              <h2 className="font-display text-[64px] font-bold uppercase leading-[0.9] tracking-[-3.8px] md:text-[88px]">MODERN RITUALS</h2>
-              <p className="mt-3 font-display text-md uppercase font-bold">STUDY — 04.13 <br/> SELECTED WORK</p>
-              <div className="mt-10 border-l-4 border-ink pl-3">
-                <p className="max-w-md font-display text-4xl font-bold uppercase leading-[1.05] tracking-[-1.2px]">
+              <h2 className="font-display text-[clamp(40px,12vw,88px)] font-bold uppercase leading-[0.9] tracking-[-3.8px]">
+                MODERN RITUALS
+              </h2>
+              <p className="mt-3 font-display text-sm font-bold uppercase sm:text-md">
+                STUDY — 04.13 <br /> SELECTED WORK
+              </p>
+              <div className="mt-6 border-l-4 border-ink pl-3 sm:mt-10">
+                <p className="max-w-md font-display text-2xl font-bold uppercase leading-[1.05] tracking-[-1.2px] sm:text-4xl">
                   LINES BECOME SIGNALS.
                   <br />
                   SURFACES BECOME STORIES.
                 </p>
-                <p className="mt-5 max-w-md font-display text-[14px] uppercase leading-[20px] tracking-[-0.28px]">
+                <p className="mt-4 max-w-md font-display text-[13px] uppercase leading-[20px] tracking-[-0.28px] sm:mt-5 sm:text-[14px]">
                   STRUCTURE ARGUES WITH IMPULSE UNTIL BOTH LEARN TO STAND STILL. GRIDS SET THE PACE. MARGINS HOLD THE QUIET.
                 </p>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-3 sm:mt-0 sm:gap-4">
               {[
                 { label: "ARTIFACT—I", src: assets.artistArtifactA },
                 { label: "ARTIFACT—II", src: assets.artistArtifactB },
                 { label: "ARTIFACT—III", src: assets.artistArtifactC },
               ].map((item) => (
                 <figure key={item.label}>
-                  <img src={item.src} alt="" className="h-[122px] w-[87px] object-cover grayscale" />
-                  <figcaption className="mt-2 font-display text-[11px] uppercase tracking-[-0.22px]">{item.label}</figcaption>
+                  <img src={item.src} alt="" className="h-[100px] w-[72px] object-cover grayscale sm:h-[122px] sm:w-[87px]" />
+                  <figcaption className="mt-2 font-display text-[10px] uppercase tracking-[-0.22px] sm:text-[11px]">
+                    {item.label}
+                  </figcaption>
                 </figure>
               ))}
             </div>
           </div>
           <div className="hidden h-full w-24 bg-[repeating-linear-gradient(to_bottom,black_0_1px,transparent_1px_8px)] lg:block" />
-          <div className="relative h-full">
+          <div className="relative min-h-[45vh] lg:h-full">
             <img src={assets.confessTop} alt="" className="h-1/2 w-full object-cover grayscale" />
             <img src={assets.confessBottom} alt="" className="h-1/2 w-full object-cover grayscale" />
           </div>
         </div>
       </section>
 
-      <section className="bg-night px-6 py-20 h-[100vh]">
-        <p className="font-display text-center text-[50vh] font-bold uppercase leading-none tracking-tighter text-lime">VERTICAL</p>
-        <p className="font-display text-[10vh] font-semibold uppercase leading-[1.05] tracking-tighter text-[#8d8d8d]">
-          THE ARCHIVE OF EVERYTHING <br/> I CAN’T KEEP IN ONE PLACE.
+      <section className="bg-night px-4 py-12 sm:px-6 sm:py-20 lg:min-h-[100vh]">
+        <p className="font-display text-[clamp(72px,28vw,50vh)] font-bold uppercase leading-none tracking-tighter text-lime">
+          VERTICAL
         </p>
-        <p className="mt-4 font-display text-[12px] uppercase tracking-tight text-[#8d8d8d]">VERTICAL STORAGE — 2015-2026 · ANALOG ARCHIVES</p>
+        <p className="font-display text-[clamp(22px,6vw,10vh)] font-semibold uppercase leading-[1.05] tracking-tighter text-[#8d8d8d]">
+          THE ARCHIVE OF EVERYTHING <br /> I CAN’T KEEP IN ONE PLACE.
+        </p>
+        <p className="mt-4 font-display text-[11px] uppercase tracking-tight text-[#8d8d8d] sm:text-[12px]">
+          VERTICAL STORAGE — 2015-2026 · ANALOG ARCHIVES
+        </p>
       </section>
-      <section className="bg-night px-6 py-20">
-        <ScrollCenterOpacityGroup className="mt-16 divide-y divide-[#2c2c2c] border-y border-[#2c2c2c]">
+      <section className="bg-night px-4 py-12 sm:px-6 sm:py-20">
+        <ScrollCenterOpacityGroup className="mt-8 divide-y divide-[#2c2c2c] border-y border-[#2c2c2c] sm:mt-16">
           {mods.map((mod) => (
             <article
               key={mod.id}
-              className="grid items-start gap-6 py-10 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.15fr)] md:gap-12"
+              className="grid items-start gap-4 py-8 sm:gap-6 sm:py-10 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.15fr)] md:gap-12"
             >
-              <div className="flex min-h-[160px] flex-col">
+              <div className="flex min-h-0 flex-col sm:min-h-[160px]">
                 <p className="font-display text-[12px] uppercase tracking-tight text-[#8d8d8d]">{mod.id}</p>
-                  <h3 className="mt-2 text-4xl font-bold uppercase leading-none tracking-[-1.8px] text-[#d1d1d1]">
-                    {mod.title}
-                  </h3>
+                <h3 className="mt-2 text-2xl font-bold uppercase leading-none tracking-[-1.8px] text-[#d1d1d1] sm:text-4xl">
+                  {mod.title}
+                </h3>
                 <Meter active={mod.active} />
-                <p className="mt-auto pt-8 text-[12px] uppercase tracking-tight text-snow">
+                <p className="mt-6 text-[12px] uppercase tracking-tight text-snow sm:mt-auto sm:pt-8">
                   // {mod.n}
                 </p>
               </div>
@@ -444,8 +480,8 @@ export default function ArtistDetailPage() {
               >
                 →
               </span>
-              <div className="border-l border-[#3a3a3a] pl-5 md:pl-8">
-                <p className="max-w-[540px] font-display text-3xl font-bold uppercase leading-[1.2] tracking-[-0.28px] text-[#cfcfcf]">
+              <div className="border-l border-[#3a3a3a] pl-4 sm:pl-5 md:pl-8">
+                <p className="max-w-[540px] font-display text-xl font-bold uppercase leading-[1.2] tracking-[-0.28px] text-[#cfcfcf] sm:text-2xl md:text-3xl">
                   {mod.copy.map((part, i) => (
                     <span key={i} className={part.accent ? "text-lime" : undefined}>
                       {part.text}
@@ -464,18 +500,18 @@ export default function ArtistDetailPage() {
       <section className="bg-[#d9d9d9] text-ink">
         <div className="grid lg:grid-cols-2">
           <div className="relative bg-ink">
-            <div className="sticky top-0 z-0 h-screen w-full">
+            <div className="sticky top-0 z-0 h-[55vh] w-full sm:h-[65vh] lg:h-screen">
               <img src={assets.artistPatterns} alt="" className="h-full w-full object-cover grayscale" />
-              <div className="absolute top-10 left-6 flex flex-col font-display text-xl leading-none tracking-tight">
+              <div className="absolute left-4 top-6 flex flex-col font-display text-base leading-none tracking-tight sm:left-6 sm:top-10 sm:text-xl">
                 <p>ILLUSION</p>
                 <p>LATENCY</p>
                 <p>PERSPECTIVE</p>
                 <p>CONTROL</p>
-                <div className="mt-2 h-[50px] w-[50px] animate-[blink_1.2s_ease-in-out_infinite] rounded-full bg-red-600 motion-reduce:animate-none"></div>
+                <div className="mt-2 h-10 w-10 animate-[blink_1.2s_ease-in-out_infinite] rounded-full bg-red-600 motion-reduce:animate-none sm:h-[50px] sm:w-[50px]" />
               </div>
             </div>
-            
-            <div className="relative z-10 overflow-hidden h-screen mix-blend-difference">
+
+            <div className="relative z-10 h-[55vh] overflow-hidden mix-blend-difference sm:h-[65vh] lg:h-screen">
               <img
                 src={assets.artistRitual}
                 alt=""
@@ -486,41 +522,40 @@ export default function ArtistDetailPage() {
                     "linear-gradient(0deg, #00000000 0%, rgb(0, 0, 0) 21.7817%, rgb(0, 0, 0) 74.2328%, rgba(0, 0, 0, 0) 100%)",
                 }}
               />
-              <p className="absolute top-0 left-6 max-w-sm font-display text-[36px] lg:text-[90px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow whitespace-nowrap">
+              <p className="absolute left-4 top-4 max-w-[85vw] font-display text-[clamp(24px,7vw,90px)] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow sm:left-6 sm:top-0 sm:max-w-sm lg:whitespace-nowrap">
                 PATTERNS EMERGE.
                 <br />
                 FRICTION CREATES
                 <br />
                 MEANING.
               </p>
-              <p className="absolute bottom-10 left-6 max-w-sm font-display text-[16px] lg:text-[48px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow whitespace-nowrap">
+              <p className="absolute bottom-6 left-4 max-w-[85vw] font-display text-[clamp(14px,4vw,48px)] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-snow sm:bottom-10 sm:left-6 sm:max-w-sm lg:whitespace-nowrap">
                 SIGNALS FORM.
                 <br />
                 SURFACES RESPOND.
               </p>
             </div>
           </div>
-          <div className="flex flex-col justify-between px-8 py-12">
-            <div className="h-screen flex flex-col">
-              <h2 className="font-display font-bold text-[#292929] uppercase tracking-tighter">
-                <span className="text-[60px] leading-none">EMBRACING THE</span>
+          <div className="flex flex-col justify-between px-4 py-8 sm:px-8 sm:py-12">
+            <div className="flex min-h-0 flex-col sm:min-h-[50vh] lg:h-screen">
+              <h2 className="font-display font-bold uppercase tracking-tighter text-[#292929]">
+                <span className="text-[clamp(28px,8vw,60px)] leading-none">EMBRACING THE</span>
                 <br />
-                <span className="text-[12vw] underline">UNKNOWN</span>
+                <span className="text-[clamp(40px,12vw,12vw)] underline">UNKNOWN</span>
               </h2>
-              <p className="font-display text-[16px] uppercase leading-none">
-                I FOLLOW IDEAS INTO PLACES THAT DON’T HAVE NAMES YET. SOME REVEAL STRUCTURE. SOME COLLAPSE INTO NOISE. WORK SHAPED BY
-                MOVEMENT, MEMORY, AND INTERRUPTION.
+              <p className="mt-4 font-display text-[14px] uppercase leading-snug sm:mt-6 sm:text-[16px] sm:leading-none">
+                I FOLLOW IDEAS INTO PLACES THAT DON’T HAVE NAMES YET. SOME REVEAL STRUCTURE. SOME COLLAPSE INTO NOISE. WORK
+                SHAPED BY MOVEMENT, MEMORY, AND INTERRUPTION.
               </p>
             </div>
-            <div className="h-screen font-display flex flex-col gap-8 leading-none tracking-tighter">
-              <p className="uppercase text-sm max-w-sm">
-              Work shaped by movement, memory, and interruption. Studies in light, depth, and distortion. Each piece begins as a question and ends wherever it needs to.
+            <div className="mt-10 flex min-h-0 flex-col gap-6 font-display leading-none tracking-tighter sm:mt-0 sm:gap-8 lg:h-screen">
+              <p className="max-w-sm text-sm uppercase">
+                Work shaped by movement, memory, and interruption. Studies in light, depth, and distortion. Each piece begins as a
+                question and ends wherever it needs to.
               </p>
-              <img src={assets.artistSignals} alt="" className="h-fit w-2/5 object-cover grayscale" />
-              <h3 className="text-[48px] font-bold uppercase md:text-[64px]">
-                WHAT HOLDS UP IS WHAT MATTERS.
-              </h3>
-              <p className="text-[16px] uppercase">
+              <img src={assets.artistSignals} alt="" className="h-auto w-3/5 object-cover grayscale sm:w-2/5" />
+              <h3 className="text-[clamp(28px,8vw,64px)] font-bold uppercase">WHAT HOLDS UP IS WHAT MATTERS.</h3>
+              <p className="text-[14px] uppercase sm:text-[16px]">
                 Observation over explanation.
                 <br />
                 Process over certainty.
@@ -530,28 +565,30 @@ export default function ArtistDetailPage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-between bg-[#ececec] px-6 py-16 text-ink md:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
-          <p className="max-w-[360px] font-display text-[14px] uppercase leading-[1.35] tracking-tight">
-            I FOLLOW IDEAS INTO PLACES THAT SHIFT AS I STEP INTO THEM. PATHS APPEAR, VANISH, REAPPEAR SOMEWHERE ELSE. SOME LEAD TO CLARITY. SOME LEAD TO NOISE.
+      <section className="flex flex-col justify-between bg-[#ececec] px-4 py-12 text-ink sm:px-6 sm:py-16 md:px-10">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-12">
+          <p className="max-w-[360px] font-display text-[13px] uppercase leading-[1.35] tracking-tight sm:text-[14px]">
+            I FOLLOW IDEAS INTO PLACES THAT SHIFT AS I STEP INTO THEM. PATHS APPEAR, VANISH, REAPPEAR SOMEWHERE ELSE. SOME LEAD TO
+            CLARITY. SOME LEAD TO NOISE.
             <span className="mt-2 block font-bold">BOTH KEEP THE RABBIT MOVING.</span>
           </p>
           <div className="justify-self-center">
             <RabbitMark />
           </div>
-          <p className="max-w-[360px] justify-self-end text-right font-display text-[14px] uppercase leading-[1.35] tracking-tight">
-            I CHASE THE THINGS THAT CHANGE DIRECTION WITHOUT WARNING. A LINE BENDS. A THOUGHT SPLITS. A SHAPE BECOMES SOMETHING IT WASN’T MEANT TO BE. I STAY WITH IT UNTIL IT REVEALS A REASON TO FOLLOW.
+          <p className="max-w-[360px] font-display text-[13px] uppercase leading-[1.35] tracking-tight sm:text-[14px] lg:justify-self-end lg:text-right">
+            I CHASE THE THINGS THAT CHANGE DIRECTION WITHOUT WARNING. A LINE BENDS. A THOUGHT SPLITS. A SHAPE BECOMES SOMETHING IT
+            WASN’T MEANT TO BE. I STAY WITH IT UNTIL IT REVEALS A REASON TO FOLLOW.
             <span className="mt-2 block font-bold">THE RABBIT IS NEVER STILL.</span>
           </p>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <p className="mt-10 text-center font-display text-[170px] font-bold uppercase leading-none tracking-tighter">
+          <p className="mt-8 text-center font-display text-[clamp(72px,24vw,170px)] font-bold uppercase leading-none tracking-tighter sm:mt-10">
             VERTICAL
           </p>
-          <div className="flex items-center gap-4">
-            <span className="font-display text-[28px] font-bold tracking-[-0.84px]">AK</span>
-            <div className="h-[4px] w-[35vw] bg-ink"></div>
-            <span className="font-display text-[11px] uppercase tracking-[-0.22px]">ADAM KNOXVILLE</span>
+          <div className="flex w-full max-w-md items-center gap-3 sm:gap-4">
+            <span className="font-display text-[22px] font-bold tracking-[-0.84px] sm:text-[28px]">AK</span>
+            <div className="h-[4px] flex-1 bg-ink sm:w-[35vw] sm:flex-none" />
+            <span className="font-display text-[10px] uppercase tracking-[-0.22px] sm:text-[11px]">ADAM KNOXVILLE</span>
           </div>
         </div>
       </section>
@@ -588,15 +625,16 @@ export default function ArtistDetailPage() {
         </ScrollCenterOpacityGroup>
       </section>
 
-      <section className="bg-lime px-[10vw] py-10 text-ink gap-10 grid grid-cols-1 lg:grid-cols-2">
-        <div className="grid items-center pl-16">
-          <p className="text-[32px] font-bold uppercase leading-none tracking-tighter md:text-[40px]">
-            “WHETHER ON PAPER OR PIXELS, THE GOAL IS CONSTANT — DESIGN THAT DISAPPEARS AS THE STORY APPEARS, LETTING THE WORK SPEAK
-            WITHOUT SHOUTING FOR ATTENTION” — AK
-          </p>
-        </div>
-        <div className="h-auto w-full">
-          <img src={assets.artistStudio} alt="" className="h-[40vw] w-full object-cover grayscale" />
+      <section className="bg-lime px-4 py-8 text-ink sm:px-6 lg:px-[10vw] lg:py-10">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="grid items-center lg:pl-16">
+            <p className="text-[clamp(20px,5vw,40px)] font-bold uppercase leading-tight tracking-tighter">
+              “WHETHER ON PAPER OR PIXELS, THE GOAL IS CONSTANT — DESIGN THAT DISAPPEARS AS THE STORY APPEARS, LETTING THE WORK
+              SPEAK WITHOUT SHOUTING FOR ATTENTION” — AK
+            </p>
+          </div>
+          <div className="h-auto w-full">
+            <img src={assets.artistStudio} alt="" className="h-[50vw] w-full object-cover grayscale sm:h-[40vw] lg:h-[40vw]" />
           <div className="mt-2 flex flex-col gap-1">
             <h3 className="text-sm font-bold uppercase tracking-tight border-b-[3px] border-black pb-1">STUDIO CHAT WITH DANIEL MOORE</h3>
             <p className="text-[10px] uppercase leading-none tracking-tighter font-bold">
@@ -609,6 +647,7 @@ export default function ArtistDetailPage() {
               15 minutes, 13 seconds · Digital Media
             </p>
           </div>
+          </div>
         </div>
       </section>
 
@@ -617,14 +656,14 @@ export default function ArtistDetailPage() {
           <div className="relative min-h-[50vh] overflow-hidden lg:min-h-screen">
             <img src={assets.artistRipple} alt="" className="absolute inset-0 h-full w-full object-cover grayscale" />
           </div>
-          <div className="flex flex-col justify-between bg-[#F2F2F2] px-8 py-12">
+          <div className="flex flex-col justify-between bg-[#F2F2F2] px-4 py-8 sm:px-8 sm:py-12">
             <div>
-              <h2 className="text-[50px] tracking-tighter leading-none font-bold uppercase border-b-[4px] border-black pb-1">
+              <h2 className="border-b-[4px] border-black pb-1 text-[clamp(32px,9vw,50px)] font-bold uppercase leading-none tracking-tighter">
                 MODUS VIVENDI
               </h2>
-              <p className="max-w-[35vw] text-[16px] font-semibold uppercase tracking-tighter leading-none">
-                A DELICATE BALANCE OF STILLNESS AND MOVEMENT, PRESENCE AND ABSENCE. IT CAPTURES BODIES IN TRANSFORMATION, SUSPENDED IN
-                QUIET RESISTANCE.
+              <p className="mt-4 max-w-full text-[14px] font-semibold uppercase leading-snug tracking-tighter sm:max-w-md sm:text-[16px] sm:leading-none lg:max-w-[35vw]">
+                A DELICATE BALANCE OF STILLNESS AND MOVEMENT, PRESENCE AND ABSENCE. IT CAPTURES BODIES IN TRANSFORMATION, SUSPENDED
+                IN QUIET RESISTANCE.
               </p>
             </div>
             <div>
@@ -642,32 +681,41 @@ export default function ArtistDetailPage() {
           </div>
         </div>
       </section>
-      <section className="relative z-10 bg-snow py-16 text-ink">
-        <div className="flex flex-col gap-16 px-8 leading-none tracking-tighter">
-          <div className="grid grid-cols-[1fr_2fr_1fr] gap-10 font-bold leading-none">
-            <div></div>
-            <div className="flex flex-col gap-1">
-              <p className="text-[14px] uppercase">
+      <section className="relative z-10 bg-snow py-10 text-ink sm:py-16">
+        <div className="flex flex-col gap-12 px-4 leading-none tracking-tighter sm:gap-16 sm:px-8">
+          <div className="grid grid-cols-1 gap-6 font-bold leading-none lg:grid-cols-[1fr_2fr_1fr] lg:gap-10">
+            <div className="hidden lg:block" />
+            <div className="flex flex-col gap-2 sm:gap-1">
+              <p className="text-[12px] uppercase sm:text-[14px]">
                 CONCEPT <span className="text-lime">/</span> MOTION ART
               </p>
-              <h3 className="whitespace-nowrap text-[56px] font-bold uppercase tracking-tighter">
-                CONTEMPORARY <span className="text-lime">/</span><br/><span className="text-[#7a7a7a]">MOTION</span> CONCEPT
+              <h3 className="text-[clamp(32px,9vw,56px)] font-bold uppercase tracking-tighter">
+                CONTEMPORARY <span className="text-lime">/</span>
+                <br />
+                <span className="text-[#7a7a7a]">MOTION</span> CONCEPT
               </h3>
-              <p className="max-w-[30vw] text-[16px] font-bold uppercase text-[#555] indent-5">
+              <p className="max-w-full text-[14px] font-bold uppercase text-[#555] sm:max-w-lg sm:text-[16px] sm:indent-5 lg:max-w-[30vw]">
                 A study in rhythm, distortion, and controlled imbalance. Surfaces react to movement. Movement reshapes the frame. The
                 piece shifts between clarity and noise, revealing patterns you only see when they break.
               </p>
-              <p className="text-[30px] leading-[2] font-bold uppercase">2024 ———— 2025</p>
+              <p className="text-xl font-bold uppercase leading-relaxed sm:text-[30px] sm:leading-[2]">2024 ———— 2025</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-[1fr_1fr_2fr] gap-10 font-bold leading-none">
-            <div></div>
-            <video src={assets.artistModusVideo} className="h-[25vw] w-full object-cover grayscale" autoPlay muted loop playsInline />
-            <div className="flex flex-col gap-1">
-              <p className="text-[14px] uppercase">RIPPLE TRACE</p>
-              <h3 className="text-[clamp(72px,14vw,210px)] uppercase leading-none">AK1.0</h3>
-              <p className="text-[12px] uppercase">
+          <div className="grid grid-cols-1 gap-6 font-bold leading-none sm:gap-8 lg:grid-cols-[1fr_1fr_2fr] lg:gap-10">
+            <div className="hidden lg:block" />
+            <video
+              src={assets.artistModusVideo}
+              className="h-[45vw] w-full object-cover grayscale sm:h-[35vw] lg:h-[25vw]"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="flex flex-col gap-2 sm:gap-1">
+              <p className="text-[12px] uppercase sm:text-[14px]">RIPPLE TRACE</p>
+              <h3 className="text-[clamp(56px,14vw,210px)] uppercase leading-none">AK1.0</h3>
+              <p className="text-[11px] uppercase sm:text-[12px]">
                 VISUAL IDENTITY
                 <br />
                 MOTION MAPPING
@@ -680,30 +728,30 @@ export default function ArtistDetailPage() {
           </div>
         </div>
       </section>
-      <section className="relative z-0 min-h-screen bg-night px-4 py-16 md:px-6 lg:px-16 lg:py-20">
-        <div className="grid items-start gap-16 grid-cols-1 lg:grid-cols-3">
-          <div className="flex flex-col justify-between h-full">
+      <section className="relative z-0 min-h-0 bg-night px-4 py-12 md:px-6 lg:min-h-screen lg:px-16 lg:py-20">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-16">
+          <div className="flex h-full flex-col justify-between">
             <div className="flex flex-col gap-1">
-              <p className="text-[200px] font-bold uppercase leading-[0.85] tracking-[-10px] text-[#9a9a9a] indent-[-10px]">
+              <p className="text-[clamp(80px,24vw,200px)] font-bold uppercase leading-[0.85] tracking-[-6px] text-[#9a9a9a] sm:tracking-[-10px]">
                 I’AM
               </p>
-              <p className="mt-1 text-[36px] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-lime md:text-[48px] whitespace-nowrap">
+              <p className="mt-1 text-[clamp(24px,7vw,48px)] font-bold uppercase leading-[0.95] tracking-[-1.8px] text-lime">
                 ADAM KNOXVILLE
               </p>
               <span className="block h-[4px] w-full max-w-[280px] bg-[#8d8d8d]" />
-              <p className="text-[16px] uppercase tracking-tight text-snow">
+              <p className="text-[14px] uppercase tracking-tight text-snow sm:text-[16px]">
                 DEVELOPING WORK ACROSS DIGITAL AND PHYSICAL FORMATS.
               </p>
-              <img src={assets.artistSignature} alt="Adam Knoxville" className="mt-6 h-9 w-auto invert" />
+              <img src={assets.artistSignature} alt="Adam Knoxville" className="mt-6 h-8 w-auto invert sm:h-9" />
               <p className="text-[12px] uppercase tracking-tight text-[#8d8d8d]">Independent Visual Artist</p>
             </div>
-            <blockquote className="mt-4 max-w-sm text-[28px] font-bold leading-none tracking-[-0.32px] text-[#8d8d8d]">
+            <blockquote className="mt-8 max-w-sm text-[22px] font-bold leading-tight tracking-[-0.32px] text-[#8d8d8d] sm:mt-4 sm:text-[28px] sm:leading-none">
               “Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.”
               <footer className="mt-4 text-[12px] text-[#8d8d8d]">— Antoine de Saint-Exupéry</footer>
             </blockquote>
           </div>
 
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex h-full flex-col justify-between gap-8">
             <img
               src={assets.artistPortrait}
               alt="Adam Knoxville"
@@ -729,19 +777,10 @@ export default function ArtistDetailPage() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-between gap-20">
-            <p className="text-[40px] font-semibold uppercase leading-none tracking-tight lg:pt-8 text-[#8d8d8d]">
-              I’M A UK-BASED VISUAL ARTIST.
-              <br />
-              MY PRACTICE IS DRIVEN BY
-              <br />
-              EXPERIMENTS, SYSTEMS, AND
-              <br />
-              ITERATION. SOME WORK
-              <br />
-              RESOLVES QUICKLY, OTHERS
-              <br />
-              EVOLVE OVER TIME.
+          <div className="flex flex-col justify-between gap-10 lg:gap-20">
+            <p className="text-[clamp(24px,5vw,40px)] font-semibold uppercase leading-tight tracking-tight text-[#8d8d8d] lg:pt-8">
+              I’M A UK-BASED VISUAL ARTIST. MY PRACTICE IS DRIVEN BY EXPERIMENTS, SYSTEMS, AND ITERATION. SOME WORK RESOLVES
+              QUICKLY, OTHERS EVOLVE OVER TIME.
             </p>
             <div>
               <p className="text-[12px] uppercase tracking-tight text-[#8d8d8d]">THINGS I DO</p>

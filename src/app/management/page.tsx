@@ -67,11 +67,11 @@ export default function ManagementPage() {
 
       <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Leadership" index="S.3" />
-        <div className="mt-10 grid grid-cols-2 gap-[5px] md:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-[5px] md:grid-cols-3">
           {team.map((person) => (
             <article
               key={person.name}
-              className="relative h-[320px] overflow-hidden sm:h-[320px] md:h-[372px]"
+              className="relative aspect-square w-full overflow-hidden"
             >
               <img src={person.image} alt={person.name} className="absolute inset-0 h-full w-full object-cover" />
               <div className="relative flex h-full flex-col justify-between p-[17px]">
@@ -88,7 +88,7 @@ export default function ManagementPage() {
       </section>
 
       <section className="px-2 lg:px-6 pb-[140px] bg-snow">
-        <SectionLabel left="Clients" index="S.4" />
+        <SectionLabel left="Past Clients" index="S.4" />
         <div className="mt-10 grid lg:gap-10 gap-2 grid-cols-2 md:grid-cols-3 md:items-start">
           <div className="relative aspect-square w-full max-w-[400px] overflow-hidden">
             <img

@@ -23,7 +23,7 @@ function MediaCard({
   isNew?: boolean;
 }) {
   return (
-    <article className="media-card group relative lg:h-[656px] h-[70vw] overflow-hidden bg-ink text-snow">
+    <article className="media-card group relative aspect-square w-full overflow-hidden bg-ink text-snow">
       {video ? (
         <video src={video} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
       ) : (
@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-ink text-snow">
-        <SectionBanner title="ABOUT" index="02" aside="10" dark note="Team Membrs" />
+        <SectionBanner title="ABOUT" index="02" aside="10" dark note="Team Members" />
         <div className="grid border-b border-mute lg:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.id} className="border-b border-mute px-8 py-10 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">

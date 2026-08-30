@@ -9,6 +9,7 @@ export function InsightsTracks() {
       <ListenTrigger
         title={featuredTrack.title}
         artist={featuredTrack.artist}
+        year={featuredTrack.year}
         href={featuredTrack.href}
         className="group relative block aspect-[1440/600] h-[100vw] w-full overflow-hidden border-b border-mute bg-ink text-left text-snow lg:h-auto"
       >
@@ -56,6 +57,7 @@ export function InsightsTracks() {
             key={track.title}
             title={track.title}
             artist={track.artist}
+            year={track.year}
             href={track.href}
             className="group flex flex-col border-b border-mute px-5 pb-8 pt-5 text-left transition-colors hover:bg-paper sm:odd:border-r lg:border-r lg:[&:nth-child(3n)]:border-r-0"
           >

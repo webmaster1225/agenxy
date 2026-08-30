@@ -28,7 +28,9 @@ export function SectionBanner({
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="works-wash absolute inset-0" />
+          <div className="works-wash absolute inset-0" aria-hidden="true" />
+          <div className="works-wash-glow absolute inset-0" aria-hidden="true" />
+          <div className="works-wash-vignette absolute inset-0" aria-hidden="true" />
         </>
       )}
       <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pt-20 pb-6">

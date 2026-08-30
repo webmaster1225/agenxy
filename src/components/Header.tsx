@@ -7,7 +7,7 @@ import { RollingText } from "./RollingText";
 import { useMenu } from "./MenuProvider";
 
 const navLinks = [
-  { href: "/label", label: "Label" },
+  { href: "/label", label: "Songs" },
   { href: "/management", label: "Management" },
   { href: "/artists", label: "Artists" },
   { href: "/contact-us", label: "Contacts" },

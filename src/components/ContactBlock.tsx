@@ -65,11 +65,11 @@ export function ContactBlock() {
             <div>
               <a
                 href="mailto:Hello@agenxy"
-                className="group block font-koulen text-[34px] uppercase leading-[40.8px] tracking-[-1.02px]"
+                className="group block font-koulen text-[clamp(20px,8vw,34px)] uppercase leading-[40.8px] tracking-[-1.02px]"
               >
                 <RollingText text="Hello@agenxy" ember />
               </a>
-              <p className="mt-3 flex items-center gap-1 font-koulen text-[19.2px] leading-[21.12px]">
+              <p className="mt-3 flex items-center gap-1 font-koulen text-[clamp(16px,8vw,19.2px)]]">
                 +1 (786) 685-9835
                 <span className="inline-block h-4 w-[2px] animate-pulse bg-ember" aria-hidden="true" />
               </p>
