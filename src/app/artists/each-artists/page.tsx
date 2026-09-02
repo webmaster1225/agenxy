@@ -257,7 +257,7 @@ export default function ArtistDetailPage() {
             </div>
           </div>
         </div>
-        <div className="absolute inset-x-4 bottom-36 z-10 gap-4 sm:bottom-[30vh] sm:left-0 sm:right-0 sm:px-6 lg:px-10">
+        <div className="absolute flex inset-x-4 bottom-36 z-10 gap-4 sm:bottom-[30vh] sm:left-0 sm:right-0 sm:px-6 lg:px-10">
           <div className="flex grid gap-x-4 grid-cols-3 lg:w-[90vw] w-[65vw]">
             {phases.map((phase) => (
               <div key={phase.n} className="py-5">
@@ -372,7 +372,7 @@ export default function ArtistDetailPage() {
                 ))}
               </div>
             </div>
-            <div className="relative min-h-[50vh] w-full sm:min-h-[55vh] lg:min-h-0">
+            <div className="relative min-h-[50vh] w-full sm:min-h-[55vh] lg:min-h-0 flex justify-center items-center">
               <video src={assets.artistUntouchedVideo} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
               <span className="sm:absolute bottom-0 left-0 right-0 p-4 text-left font-display text-base font-bold uppercase leading-tight text-snow mix-blend-difference sm:p-6 sm:text-right sm:text-2xl lg:text-4xl">
                 Pages become places worth lingering in, and issues become experiences people anticipate, keep, and share.
@@ -403,7 +403,7 @@ export default function ArtistDetailPage() {
       </section>
 
       <section className="bg-lime text-ink lg:min-h-[100vh]">
-        <div className="grid h-full items-start lg:grid-cols-[1fr_auto_1.1fr]">
+        <div className="grid h-[100vh] items-start lg:grid-cols-[1fr_auto_1.1fr]">
           <div className="flex h-full flex-col justify-between px-4 py-10 sm:px-6 sm:py-16">
             <div>
               <h2 className="font-display text-[clamp(40px,12vw,88px)] font-bold uppercase leading-[0.9] tracking-[-3.8px]">
