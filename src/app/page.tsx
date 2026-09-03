@@ -69,7 +69,7 @@ function TestimonialRow({
         </p>
         <div className="font-display text-2xl font-bold uppercase">
           <p>{person}</p>
-          <p className="text-mute">{role}</p>
+          <p className="text-ink/55">{role}</p>
           <p className="mt-4 max-w-sm">{quote}</p>
         </div>
         <div className="hidden lg:flex shrink-0 items-center gap-3">
@@ -110,7 +110,7 @@ export default function HomePage() {
           <div className="grid border-b border-mute lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.id} className="border-b border-mute px-8 py-10 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
-                <p className="font-koulen text-[16px] leading-[19.2px] text-mute">{stat.id}</p>
+                <p className="font-koulen text-[16px] leading-[19.2px] text-ink/55">{stat.id}</p>
                 <h3 className="mt-[250px] font-koulen text-[24px] leading-[26.4px]">{stat.label}</h3>
                 <p className="mt-6 font-koulen text-[65px] leading-[65px] tracking-[-1.95px]">{stat.value}</p>
               </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
 
           <div className="grid border-b border-mute lg:grid-cols-2">
             <div className="border-b border-mute px-5 py-8 lg:border-b-0 lg:border-r">
-              <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">TEAM</h3>
+              <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink/55">TEAM</h3>
               <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
                 {aboutTeam.map((member) => (
                   <article key={member.name}>
@@ -127,14 +127,14 @@ export default function HomePage() {
                       <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
                     </div>
                     <h3 className="mt-4 font-koulen text-[24px] leading-[26.4px]">{member.name}</h3>
-                    <p className="mt-1 font-koulen text-[24px] leading-[26.4px] text-mute">{member.role}</p>
+                    <p className="mt-1 font-koulen text-[24px] leading-[26.4px] text-ink/55">{member.role}</p>
                   </article>
                 ))}
               </div>
             </div>
 
             <div className="px-5 py-8">
-              <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">ARTISTS</h3>
+              <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink/55">ARTISTS</h3>
               <div className="mt-10 divide-y divide-mute">
                 {roster.map((artist) => (
                   <div key={artist.name} className="group flex items-center justify-between py-5">
@@ -142,9 +142,9 @@ export default function HomePage() {
                       <span className="font-koulen text-[45px] leading-[54px]">
                         <RollingText text={artist.name} />
                       </span>
-                      <span className="text-[16px] leading-[19.2px] text-mute">{artist.year}</span>
+                      <span className="text-[16px] leading-[19.2px] text-ink/55">{artist.year}</span>
                     </div>
-                    <span className="text-[16px] leading-[19.2px] text-mute">{artist.role}</span>
+                    <span className="text-[16px] leading-[19.2px] text-ink/55">{artist.role}</span>
                   </div>
                 ))}
               </div>
