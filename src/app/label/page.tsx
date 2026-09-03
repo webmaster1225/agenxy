@@ -87,7 +87,7 @@ export default function LabelPage() {
       <PageKicker left="SONGS" right="AGENXY® 2026 All Rights Reserved." />
       {/* Desktop/tablet filter pills */}
      
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2 lg:px-6 bg-snow">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 px-2 lg:px-6 bg-snow">
         {labelProjects.map((project, index) => {
           const defaultLarge = index % 2 === 0;
           const showLarge = isDesktop ? (flipped[index] ? !defaultLarge : defaultLarge) : true;
