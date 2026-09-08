@@ -23,7 +23,7 @@ function MediaCard({
   isNew?: boolean;
 }) {
   return (
-    <article className="media-card group relative aspect-square w-full overflow-hidden bg-ink text-snow">
+    <article className="group relative aspect-square w-full overflow-hidden bg-ink text-snow">
       {video ? (
         <video src={video} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
       ) : (

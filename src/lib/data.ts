@@ -7,13 +7,13 @@ export const assets = {
   workB: cdn("lmaGXg6sjWKcW8IOWBU33YGgQ.png"),
   workC: cdn("lNihbmftOjDvkAOR9Nodd7mhX4.png"),
   workD: cdn("173E057JvEWst9enaVmnRiFjQ.png"),
-  tipsy: cdn("RxtPXsmahwnW6kGXPQEnOyzw7JA.png"),
-  moveYaBody: cdn("ikKrpcGBvvVG1Or0UkAGAzX3xA.png"),
+  tipsy: '/label/tipsy.png',
+  moveYaBody: '/label/move-ya-body.png',
   wide: cdn("SRjB74625vaAWeUrGGEyAg5wYg.jpg"),
-  artistA: cdn("u8iy29T534bwRvGJ1RsHXBtzuc.jpg"),
-  artistB: cdn("Ej4aQ6paCEbjBsJlw1YWTVkot8s.png"),
-  avatarA: cdn("lqXkWvK7c5WC81SYuRHX0QYBidM.png"),
-  avatarB: cdn("Ya02jbzOk9oPuwSeXoDjDbP7V0U.png"),
+  artistA: '/testimonials/yalla-habebe.png',
+  artistB: '/testimonials/berin.png',
+  avatarA: '/testimonials/mady-minton.png',
+  avatarB: '/team/purple1.png',
   berinVideo: "https://framerusercontent.com/assets/WrExxkDHbsjVVnQ6jax34hUMzk.mp4",
   yallaVideo: "https://framerusercontent.com/assets/j9yZdgBtosNwdE76Ui2imNJxaJ8.mp4",
   ofEarthVideo: "https://framerusercontent.com/assets/dRHWzVptVvpgdXINm46ZLtoiwoY.mp4",
@@ -126,7 +126,7 @@ export const aboutTeam = [
   {
     name: "Yalla Habebe",
     role: "Team CEO",
-    image: "/team/yalla-habebe.jpg",
+    image: "/team/yalla-habebe.png",
   },
   {
     name: "Jorge Mendoza",
@@ -160,25 +160,25 @@ export const team = [
   {
     name: "Yalla Habebe",
     role: "Artist",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
+    image: '/testimonials/yalla-habebe.png',
     href: "/artists/each-artists",
   },
   {
     name: "Berin",
     role: "Artist",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b6f93b43b7a2aac24d979eee",
+    image: '/testimonials/berin.png',
     href: "https://open.spotify.com/artist/55vo1zTUTU1TabwCCMMbfv",
   },
   {
     name: "Mady Minton",
     role: "Artist",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486640bb059dc476ba80438e3",
+    image: '/testimonials/mady-minton.png',
     href: "https://open.spotify.com/artist/2rur1PqZ2AiFKzmvL9EGOi",
   },
   {
     name: "Purple",
     role: "Artist",
-    image: "/team/dj-purple.png",
+    image: "/team/purple1.png",
     href: "https://open.spotify.com/artist/40J0vkISgMJ2wx2cZ911iJ",
   },
   {
@@ -192,9 +192,9 @@ export const team = [
 
 export const roster = [
   { name: "YALLA HABEBE", year: "2022", role: "Artist", image: assets.artistA },
-  { name: "Berin", year: "2022", role: "Artist", image: assets.tipsy },
+  { name: "Berin", year: "2022", role: "Artist", image: assets.artistB },
   { name: "mady minton", year: "2022", role: "Artist", image: assets.avatarA },
-  { name: "purple", year: "2022", role: "Artist", image: assets.workD },
+  { name: "purple", year: "2022", role: "Artist", image: assets.avatarB },
 ];
 
 export const artists = [
@@ -202,21 +202,21 @@ export const artists = [
     title: "Yalla Habebe",
     category: "Artist",
     filter: "Artists",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b1dca3ac65d8a680b7813deb",
+    image: '/testimonials/yalla-habebe.png',
     href: "/artists/each-artists",
   },
   {
     title: "Mady Minton",
     category: "Artist",
     filter: "Artists",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486640bb059dc476ba80438e3",
+    image: '/testimonials/mady-minton.png',
     href: "/artists/each-artists",
   },
   {
     title: "Berin",
     category: "Artist",
     filter: "Artists",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174b6f93b43b7a2aac24d979eee",
+    image: '/testimonials/berin.png',
     href: "/artists/each-artists",
   },
 ];
@@ -228,7 +228,7 @@ export const testimonials = [
     role: "Artist",
     quote:
       "I cover my face on all public appearances. It allows me to perform and build without an ego tied to the project.",
-    image: "/testimonials/yalla-habebe.jpg",
+    image: "/testimonials/yalla-habebe.png",
   },
   {
     name: "BERIN",
@@ -236,7 +236,7 @@ export const testimonials = [
     role: "Artist",
     quote:
       "From Tipsy to the floor — the rollout, the visuals, and the booking path all moved as one. That's rare for an independent release.",
-    image: "/testimonials/berin.jpg",
+    image: "/testimonials/berin.png",
   },
   {
     name: "MADY MINTON",
@@ -244,7 +244,7 @@ export const testimonials = [
     role: "Artist",
     quote:
       "Collaborating on Ibiza and Tequila with the same team behind the catalog made every release feel intentional, not rushed.",
-    image: "/testimonials/mady-minton.jpg",
+    image: "/testimonials/mady-minton.png",
   },
   {
     name: "MAKE THE GIRLS DANCE",
@@ -302,7 +302,7 @@ export const trackStats = [
     badge: "New",
     streams: "6.4M",
     playlists: "412",
-    image: "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e025eb2699f9da831fd3a6f1611",
+    image: '/label/blackwater.png',
     href: "https://open.spotify.com/track/5BWjtNm6laJJFTWeZkWdCk",
   },
   {
@@ -312,7 +312,7 @@ export const trackStats = [
     badge: "New",
     streams: "4.9M",
     playlists: "328",
-    image: "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e028525c2a015c7087363a94402",
+    image: "/label/tequila.png",
     href: "https://open.spotify.com/album/6uNfBx0ZJSe1XIk95prZ5v",
   },
 ];
@@ -331,84 +331,84 @@ export const labelProjects: Array<{
     name: "Tipsy",
     category: "Berin",
     year: "2026",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0206487d8c22dc1733ab0618fa",
+    image: "/label/tipsy.png",
     href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
   },
   {
     name: "Blackwater",
     category: "Berin",
     year: "2026",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025eb2699f9da831fd3a6f1611",
+    image: "/label/blackwater.png",
     href: "https://open.spotify.com/track/5BWjtNm6laJJFTWeZkWdCk",
   },
   {
-    name: "Guess Who's Back",
-    category: "Berin",
+    name: "Sunset Gathering",
+    category: "Yalla Habebe",
     year: "2026",
-    image: "https://cdn-images.dzcdn.net/images/cover/92795072f192a29d78b09e55653609b5/1000x1000-000000-80-0-0.jpg",
+    image: "/label/sunset-gathering.png",
     href: "https://open.spotify.com/search/isrc:GBWUL2668885",
   },
   {
     name: "Tequila",
     category: "Yalla Habebe & Mady Minton",
     year: "2026",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028525c2a015c7087363a94402",
+    image: "/label/tequila.png",
     href: "https://open.spotify.com/album/6uNfBx0ZJSe1XIk95prZ5v",
   },
   {
     name: "Ibiza",
     category: "Yalla Habebe & Mady Minton",
     year: "2026",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0276b9ba8140f5fb307af0243e",
+    image: "/label/ibiza.png",
     href: "https://open.spotify.com/album/4b2wSRJkVvmLLxpOqh9oeR",
   },
   {
     name: "Reason",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Mady Minton",
     year: "2026",
-    image: "https://cdn-images.dzcdn.net/images/cover/9f5582a449b54ff12b1d7d02c28e7858/1000x1000-000000-80-0-0.jpg",
+    image: "/label/reason.png",
     href: "https://open.spotify.com/search/isrc:GBKQU2608908",
   },
   {
     name: "Oh My",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Mady Minton",
     year: "2026",
-    image: "https://cdn-images.dzcdn.net/images/cover/edbdf178bf82c947ec8acd6e1be99fee/1000x1000-000000-80-0-0.jpg",
+    image: "/label/oh-my.png",
     href: "https://open.spotify.com/search/isrc:GBKQU2608907",
   },
   {
     name: "Move Ya Body",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Yalla Habebe",
     year: "2025",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e020dcc38a5f9ffc2bf1a2615d5",
+    image: "/label/move-ya-body.png",
     href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
   },
   {
     name: "The Way I Are",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Yalla Habebe",
     year: "2025",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025955f683cfbfd6647f91d9b6",
+    image: "/label/the-way-i-are.png",
     href: "https://open.spotify.com/album/4BfoDY2cP9rEtPQ31pULZ5",
   },
   {
     name: "Qaweya",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Yalla Habebe",
     year: "2026",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0269d8809bed2e9355d16ab46d",
+    image: "/label/qaweya.png",
     href: "https://open.spotify.com/album/4JQpIGxZWEKSNU4aExDYTn",
   },
   {
     name: "Ah Ye Baba",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Yalla Habebe",
     year: "2025",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e029eb34ec1e37a9dce43c6e1aa",
+    image: "/label/ah-ye-baba.png",
     href: "https://open.spotify.com/album/0cqVBbgfgLEtRnTbnz0Jvu",
   },
   {
     name: "Let Me Go",
-    category: "Yalla Habebe & Mady Minton",
+    category: "Yalla Habebe",
     year: "2025",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d2e963e5b77cd5dd90aff5a4",
+    image: "/label/let-me-go.png",
     href: "https://open.spotify.com/album/7lCoh9k02Ed1aPO0sC9K6J",
   }
 ];
@@ -460,37 +460,37 @@ export const clients = [
     name: "John Summit",
     blurb:
       "Chicago house force and Experts Only founder — festival headliner whose tech-house anthems and sold-out tours redefined the modern dancefloor.",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517420662b32f3dbabad755dfb53",
+    image: "/clients/john-summit.png",
   },
   {
     name: "Vintage Culture",
     blurb:
       "Brazilian DJ and producer behind global house hits and the Born of Music Addiction residency — from Coachella to Hï Ibiza.",
-    image: "https://image-cdn-fa.spotifycdn.com/image/ab676161000051740041f76b2e740b535b6919a3",
+    image: "/clients/vintage-culture.png",
   },
   {
     name: "Alesso",
     blurb:
       "Stockholm progressive-house icon known for stadium-scale singles like Heroes (We Could Be) and collaborations that shaped a decade of EDM.",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517442b3fb34e3451c79c55cbe73",
+    image: "/clients/alesso.png",
   },
   {
     name: "Swedish House Mafia",
     blurb:
       "Axwell, Ingrosso, and Angello — the trio that took house from clubs to arenas, with GRAMMY-nominated hits and the Paradise Again era.",
-    image: "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749614fcf985ad6fc5b4a7c3de",
+    image: "/clients/swedish-house-mafia.png",
   },
   {
     name: "Spotify",
     blurb:
       "The streaming platform powering discovery for dance music worldwide — playlists, editorial, and the pipeline that turns club cuts into global streams.",
-    image: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=1200&q=80",
+    image: "/clients/spotify.webp",
   },
   {
     name: "Universal",
     blurb:
       "Universal Music Group — the major behind countless electronic and pop catalogs, connecting artists to global distribution and campaign scale.",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80",
+    image: "/clients/universal-music-group.png",
   },
 ];
 

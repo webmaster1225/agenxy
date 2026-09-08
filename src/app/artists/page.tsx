@@ -47,7 +47,7 @@ export default function ArtistsPage() {
             href={item.href}
             className="group"
           >
-            <div className="aspect-[459/295] overflow-hidden bg-ink">
+            <div className="aspect-square overflow-hidden bg-ink">
               <img
                 src={item.image}
                 alt={item.title}
