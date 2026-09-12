@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
-    "capture-ref": "node scripts/capture-ref.mjs"
+    "capture-ref": "node scripts/capture-ref.mjs",
+    "refresh-stats": "node scripts/refresh-stats.mjs"
   },
   "dependencies": {
     "next": "^15.1.7",

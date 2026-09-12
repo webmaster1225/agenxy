@@ -71,19 +71,31 @@ export const featuredWorks = [
     isNew: true,
     video: assets.berinVideo,
     image: assets.workA,
+    artist: "Berin",
+    year: "2026",
+    href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
   },
   {
     title: "TIPSY-BERIN",
     image: assets.tipsy,
+    artist: "Berin",
+    year: "2026",
+    href: "https://open.spotify.com/track/1bEGTX9PSTuDMCUZbiq3Lt",
   },
   {
     title: "YALLA HABEBE",
     video: assets.yallaVideo,
     image: assets.artistA,
+    artist: "Yalla Habebe",
+    year: "2025",
+    href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
   },
   {
     title: "MOVE YA BODY",
     image: assets.moveYaBody,
+    artist: "Yalla Habebe",
+    year: "2025",
+    href: "https://open.spotify.com/album/22nKzML2I5RuQhr452gdEB",
   },
 ];
 
@@ -104,7 +116,7 @@ export const otherWorks = [
     title: "REASON",
     year: "2026",
     artist: "Yalla Habebe & Mady Minton",
-    href: "https://open.spotify.com/search/isrc:GBKQU2608908",
+    href: "https://open.spotify.com/track/5rkdaN5qIgRMjpPdcb0s2s",
   },
   {
     title: "THE WAY I ARE",
@@ -191,10 +203,10 @@ export const team = [
 
 
 export const roster = [
-  { name: "YALLA HABEBE", year: "2022", role: "Artist", image: assets.artistA },
-  { name: "Berin", year: "2022", role: "Artist", image: assets.artistB },
-  { name: "mady minton", year: "2022", role: "Artist", image: assets.avatarA },
-  { name: "purple", year: "2022", role: "Artist", image: assets.avatarB },
+  { name: "YALLA HABEBE", year: "2025", role: "Artist", image: assets.artistA },
+  { name: "Berin", year: "2025", role: "Artist", image: assets.artistB },
+  { name: "mady minton", year: "2025", role: "Artist", image: assets.avatarA },
+  { name: "purple", year: "2025", role: "Artist", image: assets.avatarB },
 ];
 
 export const artists = [
@@ -414,7 +426,7 @@ export const labelProjects: Array<{
 ];
 
 export const nav = [
-  { href: "/label", label: "Songs", kicker: "Our Works:", count: `+${labelProjects.length}` },
+  { href: "/label", label: "Discovery", kicker: "Our Works:", count: `+${labelProjects.length}` },
   { href: "/management", label: "Management", kicker: "Our Team:", count: `+${team.length}` },
   { href: "/artists", label: "Artists", kicker: "We Work With:", count: `+${artists.length}` },
   { href: "/contact-us", label: "Contacts", kicker: "Reach Out To Us:" },
@@ -525,8 +537,8 @@ export const artistWorks: Array<{
 
 export const faqs = [
   {
-    q: "What is DBLR?",
-    a: "DBLR is a creative studio partner for brands that need design, development, and campaign work in one place.",
+    q: "What is AGENXY?",
+    a: "AGENXY is a creative studio partner for brands that need design, development, and campaign work in one place.",
   },
   {
     q: "What services do you offer",

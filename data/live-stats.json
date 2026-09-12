@@ -1,0 +1,32 @@
+{
+  "updatedAt": "2026-09-12T11:09:07.820Z",
+  "source": "cache-touch",
+  "site": {
+    "yearEstablished": 2022,
+    "projectsLaunched": 87,
+    "streamsLastYear": 90000000,
+    "satisfiedClientsPercent": 100
+  },
+  "tracks": {
+    "move-ya-body": {
+      "streams": 48200000,
+      "playlists": 1240,
+      "chart": 2
+    },
+    "tipsy": {
+      "streams": 18600000,
+      "playlists": 892,
+      "chart": null
+    },
+    "blackwater": {
+      "streams": 6400000,
+      "playlists": 412,
+      "chart": null
+    },
+    "tequila": {
+      "streams": 4900000,
+      "playlists": 328,
+      "chart": null
+    }
+  }
+}

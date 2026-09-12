@@ -69,8 +69,9 @@ export default function ManagementPage() {
         <SectionLabel left="Leadership" index="S.3" />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-[5px] md:grid-cols-3">
           {team.map((person) => (
-            <article
+            <Link
               key={person.name}
+              href="/artists/each-artists"
               className="relative aspect-square w-full overflow-hidden"
             >
               <img src={person.image} alt={person.name} className="absolute inset-0 h-full w-full object-cover" />
@@ -82,7 +83,7 @@ export default function ManagementPage() {
                   {person.role}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

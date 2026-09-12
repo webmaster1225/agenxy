@@ -7,7 +7,7 @@ import { PageKicker } from "@/components/SectionBanner";
 import { useListen } from "@/components/ListenProvider";
 import { isSpotifyRelease } from "@/lib/spotify";
 
-const filters = ["All", "SONGS", "ARTISTS", "MANAGEMENT", "CONTACTS"] as const;
+const filters = ["All", "DISCOVERY", "ARTISTS", "MANAGEMENT", "CONTACTS"] as const;
 
 function FilterIcon() {
   return (
@@ -74,22 +74,23 @@ export default function LabelPage() {
     return () => mediaQuery.removeEventListener("change", sync);
   }, []);
 
-  const toggleMedia = (index: number) => {
+  const setHoverMedia = (index: number, hovering: boolean) => {
     setFlipped((prev) => {
+      if (prev[index] === hovering) return prev;
       const next = [...prev];
-      next[index] = !next[index];
+      next[index] = hovering;
       return next;
     });
   };
 
   return (
     <>
-      <PageKicker left="SONGS" right="AGENXY® 2026 All Rights Reserved." />
+      <PageKicker left="DISCOVERY" right="AGENXY® 2026 All Rights Reserved." />
       {/* Desktop/tablet filter pills */}
      
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 px-2 lg:px-6 bg-snow">
         {labelProjects.map((project, index) => {
-          const defaultLarge = index % 2 === 0;
+          const defaultLarge = true;
           const showLarge = isDesktop ? (flipped[index] ? !defaultLarge : defaultLarge) : true;
 
           const card = (
@@ -135,7 +136,8 @@ export default function LabelPage() {
                   href: project.href!,
                 })
               }
-              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+              onMouseEnter={isDesktop ? () => setHoverMedia(index, true) : undefined}
+              onMouseLeave={isDesktop ? () => setHoverMedia(index, false) : undefined}
             >
               {card}
             </button>
@@ -146,7 +148,8 @@ export default function LabelPage() {
               target="_blank"
               rel="noreferrer"
               className="label-card relative block aspect-square w-full overflow-hidden bg-snow"
-              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+              onMouseEnter={isDesktop ? () => setHoverMedia(index, true) : undefined}
+              onMouseLeave={isDesktop ? () => setHoverMedia(index, false) : undefined}
             >
               {card}
             </a>
@@ -154,7 +157,8 @@ export default function LabelPage() {
             <article
               key={project.name}
               className="label-card relative aspect-square w-full overflow-hidden bg-snow"
-              onMouseEnter={isDesktop ? () => toggleMedia(index) : undefined}
+              onMouseEnter={isDesktop ? () => setHoverMedia(index, true) : undefined}
+              onMouseLeave={isDesktop ? () => setHoverMedia(index, false) : undefined}
             >
               {card}
             </article>

@@ -3,41 +3,14 @@ import {
   otherWorks,
   aboutTeam,
   roster,
-  stats,
   testimonials,
 } from "@/lib/data";
+import { getLiveInsights, getLiveSiteStats } from "@/lib/live-stats";
 import { RollingText } from "@/components/RollingText";
 import { OtherWorksList } from "@/components/OtherWorksList";
+import { FeaturedMediaCard } from "@/components/FeaturedMediaCard";
 import { InsightsTracks } from "@/components/InsightsTracks";
 import { SectionBanner } from "@/components/SectionBanner";
-
-function MediaCard({
-  title,
-  image,
-  video,
-  isNew,
-}: {
-  title: string;
-  image: string;
-  video?: string;
-  isNew?: boolean;
-}) {
-  return (
-    <article className="group relative aspect-square w-full overflow-hidden bg-ink text-snow">
-      {video ? (
-        <video src={video} className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline />
-      ) : (
-        <img src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
-      )}
-      {isNew && (
-        <span className="absolute left-5 top-5 font-koulen text-[12px] leading-[12px] tracking-[-0.36px] text-snow">
-          New
-        </span>
-      )}
-      <h3 className="absolute bottom-6 left-[102px] font-koulen text-[32px] leading-[35.2px]">{title}</h3>
-    </article>
-  );
-}
 
 function TestimonialRow({
   name,
@@ -62,18 +35,25 @@ function TestimonialRow({
         <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
       </div>
       {/* expanded row on hover */}
-      <div className="hidden flex-col lg:grid-cols-[1fr_1fr_auto] items-start lg:items-center gap-6 px-5 py-6 group-hover:flex lg:group-hover:grid">
+      <div className="hidden flex-col lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.6fr)_auto] items-start lg:items-center gap-8 px-5 py-8 group-hover:flex lg:group-hover:grid">
         <img src={image} alt="" className="block lg:hidden h-10 w-10 rounded-full object-cover" />
         <p className="font-display text-2xl lg:text-[40px] font-normal leading-none">
           <RollingText text={name} />
         </p>
-        <div className="font-display text-2xl font-bold uppercase">
-          <p>{person}</p>
-          <p className="text-ink/75">{role}</p>
-          <p className="mt-4 max-w-sm">{quote}</p>
+        <div className="w-full min-w-0 max-w-none">
+          <p className="font-koulen text-[14px] uppercase tracking-[0.18em] text-ink/55">Testimonial</p>
+          <p className="mt-3 font-display text-3xl font-bold uppercase leading-none lg:text-[44px]">
+            {person}
+          </p>
+          <p className="mt-1 font-display text-3xl font-bold uppercase leading-none text-ink/75 lg:text-[44px]">
+            {role}
+          </p>
+          <p className="mt-6 w-full max-w-4xl font-display text-xl font-normal leading-[1.35] text-ink/90 lg:text-[28px] lg:leading-[1.3]">
+            &ldquo;{quote}&rdquo;
+          </p>
         </div>
         <div className="hidden lg:flex shrink-0 items-center gap-3">
-          <img src={image} alt="" className="h-10 w-10 rounded-full object-cover" />
+          <img src={image} alt="" className="h-24 w-24 rounded-full object-cover" />
         </div>
       </div>
     </div>
@@ -81,13 +61,16 @@ function TestimonialRow({
 }
 
 export default function HomePage() {
+  const siteStats = getLiveSiteStats();
+  const insights = getLiveInsights();
+
   return (
     <div className="bg-snow pb-16">
       <section className="bg-snow">
         <SectionBanner title="WORKS" index="01" aside="26'" wash />
         <div className="grid lg:grid-cols-2 grid-cols-1 h-fit">
           {featuredWorks.map((work) => (
-            <MediaCard key={work.title} {...work} />
+            <FeaturedMediaCard key={work.title} {...work} />
           ))}
         </div>
         <div className="px-5 py-8">
@@ -108,7 +91,7 @@ export default function HomePage() {
         <div className="relative">
           <SectionBanner title="ABOUT" index="02" aside="10" note="Team Members" />
           <div className="grid border-b border-mute lg:grid-cols-4">
-            {stats.map((stat) => (
+            {siteStats.map((stat) => (
               <div key={stat.id} className="border-b border-mute px-8 py-10 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
                 <p className="font-koulen text-[16px] leading-[19.2px] text-ink/75">{stat.id}</p>
                 <h3 className="mt-[250px] font-koulen text-[24px] leading-[26.4px]">{stat.label}</h3>
@@ -123,7 +106,7 @@ export default function HomePage() {
               <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
                 {aboutTeam.map((member) => (
                   <article key={member.name}>
-                    <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
+                    <div className="h-[80px] w-[80px] overflow-hidden rounded-full">
                       <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
                     </div>
                     <h3 className="mt-4 font-koulen text-[24px] leading-[26.4px]">{member.name}</h3>
@@ -151,24 +134,36 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="py-2">
-            {testimonials.map((item) => (
-              <TestimonialRow
-                key={item.name}
-                name={item.name}
-                person={item.person}
-                role={item.role}
-                quote={item.quote}
-                image={item.image}
-              />
-            ))}
+          <div className="border-t border-mute px-5 pb-2 pt-8">
+            <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink/75">TESTIMONIALS</h3>
+            <p className="mt-3 max-w-2xl font-display text-[16px] leading-[22px] text-ink/75">
+              What artists, labels, and partners say about working with Agenxy — from Yalla Habebe and
+              Berin to Trip and Bass and beyond.
+            </p>
+            <div className="mt-8">
+              {testimonials.map((item) => (
+                <TestimonialRow
+                  key={item.name}
+                  name={item.name}
+                  person={item.person}
+                  role={item.role}
+                  quote={item.quote}
+                  image={item.image}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="relative z-10 bg-snow">
         <SectionBanner title="INSIGHTS" index="03" aside="7" note="Trending" />
-        <InsightsTracks />
+        <InsightsTracks
+          featured={insights.featured}
+          tracks={insights.tracks}
+          updatedAt={insights.updatedAt}
+          source={insights.source}
+        />
       </section>
     </div>
   );

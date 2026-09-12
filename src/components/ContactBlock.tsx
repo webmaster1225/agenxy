@@ -64,10 +64,10 @@ export function ContactBlock() {
           <div className="mt-auto flex items-end justify-between gap-6 pt-16">
             <div>
               <a
-                href="mailto:Hello@agenxy"
+                href="mailto:Hello@agenxy.com"
                 className="group block font-koulen text-[clamp(20px,8vw,34px)] uppercase leading-[40.8px] tracking-[-1.02px]"
               >
-                <RollingText text="Hello@agenxy" ember />
+                <RollingText text="Hello@agenxy.com" ember />
               </a>
               <p className="mt-3 flex items-center gap-1 font-koulen text-[clamp(16px,8vw,19.2px)]]">
                 +1 (786) 685-9835
@@ -75,11 +75,11 @@ export function ContactBlock() {
               </p>
             </div>
 
-            <div className="flex shrink-0 items-center gap-2 pb-1">
+            {/* <div className="flex shrink-0 items-center gap-2 pb-1">
               <SocialIcon label="f" href="https://facebook.com" />
               <SocialIcon label="Bē" href="https://behance.net" />
               <SocialIcon label="X" href="https://x.com" />
-            </div>
+            </div> */}
           </div>
         </div>
 
