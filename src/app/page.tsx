@@ -103,7 +103,7 @@ export default function HomePage() {
           <div className="grid border-b border-mute lg:grid-cols-2">
             <div className="border-b border-mute px-5 py-8 lg:border-b-0 lg:border-r">
               <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink/75">TEAM</h3>
-              <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10">
                 {aboutTeam.map((member) => (
                   <article key={member.name} className="flex flex-col items-center justify-center">
                     <div className="h-[80px] w-[80px] overflow-hidden rounded-full">
