@@ -36,7 +36,7 @@ function TestimonialRow({
       </div>
       {/* expanded row on hover */}
       <div className="hidden flex-col lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.6fr)_auto] items-start lg:items-center gap-8 px-5 py-8 group-hover:flex lg:group-hover:grid">
-        <img src={image} alt="" className="block lg:hidden h-10 w-10 rounded-full object-cover" />
+        <img src={image} alt="" className="block lg:hidden h-24 w-24 rounded-full object-cover" />
         <p className="font-display text-2xl lg:text-[40px] font-normal leading-none">
           <RollingText text={name} />
         </p>
