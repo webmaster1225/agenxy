@@ -105,7 +105,7 @@ export default function HomePage() {
               <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink/75">TEAM</h3>
               <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
                 {aboutTeam.map((member) => (
-                  <article key={member.name}>
+                  <article key={member.name} className="flex flex-col items-center justify-center">
                     <div className="h-[80px] w-[80px] overflow-hidden rounded-full">
                       <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
                     </div>
