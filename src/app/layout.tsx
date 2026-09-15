@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   title: "AGENXY — Artist Management, Label & Booking",
   description:
     "We are Agenxy — a groundbreaking artist management, label, and booking agency cultivating a new wave of musicians and the future of dance music.",
+  icons: {
+    icon: [{ url: "/agenxy-logo.png", type: "image/png" }],
+    apple: [{ url: "/agenxy-logo.png", type: "image/png" }],
+    shortcut: "/agenxy-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
