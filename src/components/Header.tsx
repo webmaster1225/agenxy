@@ -83,7 +83,7 @@ export function Header() {
     <header className={`site-header border-b border-mute bg-snow ${compact ? "is-compact" : ""}`}>
       <div className="header-grid hidden h-full lg:grid">
         <div className="header-cell header-brand relative flex w-full min-w-0 flex-col justify-end overflow-hidden border-r border-mute px-4 py-4 xl:px-5 xl:py-5">
-          <Image src="/agenxy-logo.png" alt="AGENXY" className="rounded-xl" width={100} height={100} />
+          <Image src="/agenxy-logo.png" alt="AGENXY" className="header-mark rounded-xl" width={100} height={100} />
           <Link
             href="/"
             className="header-logo group relative z-10 min-w-0 font-display text-[clamp(28px,3.2vw,40px)] font-normal leading-none"

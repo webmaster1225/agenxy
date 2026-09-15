@@ -208,7 +208,7 @@ a:hover .rolling span {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(101.37deg, #cdbffad4 0%, #cdbffacb 35.42%, #fce8da 104.27%);
+  background: linear-gradient(101.37deg, #cdbffad4 0%, #cdbffacb 35.42%, #ffbaa1d4 104.27%);
   background-size: 200% 200%;
   -webkit-animation: gradient 5s ease infinite;
   animation: gradient 5s ease infinite;
