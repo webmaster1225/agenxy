@@ -39,7 +39,7 @@ export function ContactBlock() {
   }
 
   return (
-    <section id="contact" className="bg-ink text-snow">
+    <section id="contact" className="contact-block text-ink">
       {/* Hero — CONTACT [04] ··· pill ··· US */}
       <div className="relative border-t border-mute px-[30px] pb-8 pt-10">
         <div className="flex min-h-[200px] items-end justify-between">
@@ -59,7 +59,7 @@ export function ContactBlock() {
       <div className="grid border-t border-mute md:grid-cols-2">
         {/* Left — ways to contact */}
         <div className="flex min-h-[360px] flex-col border-b border-mute px-5 py-10 md:border-b-0 md:border-r md:px-5 md:py-12">
-          <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">WAYS TO CONTACT</h3>
+          <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink">WAYS TO CONTACT</h3>
 
           <div className="mt-auto flex items-end justify-between gap-6 pt-16">
             <div>
@@ -86,7 +86,7 @@ export function ContactBlock() {
         {/* Right — subscribe */}
         <div className="relative flex min-h-[360px] flex-col justify-between p-5">
           <div className="flex flex-col gap-6">
-            <h3 className="font-koulen text-[24px] leading-[26.4px] text-mute">SUBSCIBE FOR UPDATES</h3>
+            <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink">SUBSCRIBE FOR UPDATES</h3>
 
             <form onSubmit={onSubmit} className="flex flex-col pt-16">
               <div className="grid items-start md:grid-cols-[auto_1fr] gap-[80px]">
@@ -103,19 +103,19 @@ export function ContactBlock() {
                     type="email"
                     required
                     placeholder="Enter Email Address"
-                    className="w-full bg-transparent pr-14 text-snow outline-none text-[20px] leading-[28.8px] tracking-[-0.72px] placeholder:text-[#888]"
+                    className="w-full bg-transparent pr-14 text-ink outline-none text-[20px] leading-[28.8px] tracking-[-0.72px] placeholder:text-[#888]"
                   />
                 </div>
               </div>
             </form>
           </div>
-          <p className="text-center font-sans text-[16px] leading-[20.8px] tracking-[-0.64px] text-[#d5d7de]">
+          <p className="text-center font-sans text-[16px] leading-[20.8px] tracking-[-0.64px] text-mute">
             By submitting, you agree to our Terms &amp; Service.
           </p>
           <button
             type="submit"
             aria-label={sent ? "Subscribed" : "Subscribe"}
-            className="absolute bottom-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-snow text-ember text-2xl transition-transform hover:scale-105"
+            className="absolute bottom-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-ember text-2xl transition-transform hover:scale-105"
           >
             {<ArrowIcon />}
           </button>

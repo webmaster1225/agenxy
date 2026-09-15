@@ -197,6 +197,46 @@ a:hover .rolling span {
   }
 }
 
+.contact-block {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.contact-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(101.37deg, #cdbffad4 0%, #cdbffacb 35.42%, #fce8da 104.27%);
+  background-size: 200% 200%;
+  -webkit-animation: gradient 5s ease infinite;
+  animation: gradient 5s ease infinite;
+  pointer-events: none;
+}
+
+.contact-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/bg-pattern.jpg") top center / 100% auto repeat-x;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .media-card video,
 .media-card img {
   transform: scale(1.08);

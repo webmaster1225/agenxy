@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import Image from "next/image";
 import { RollingText } from "./RollingText";
 import { useMenu } from "./MenuProvider";
 
@@ -84,9 +85,7 @@ export function MenuOverlay() {
         </nav>
         <div className="flex flex-col justify-between gap-12">
           <Link href="/" onClick={() => setOpen(false)} className="w-fit lg:block hidden">
-            <div className="header-mark mb-2 flex h-14 w-14 items-center justify-center rounded-[8px] bg-ink xl:h-[75px] xl:w-[49px]">
-              <span className="font-koulen text-[40px] leading-none tracking-[-2.8px] text-snow xl:text-[56px]">X.</span>
-            </div>
+            <Image src="/agenxy-logo.png" alt="AGENXY" className="rounded-xl" width={100} height={100} />
             <p className="font-display text-2xl font-bold uppercase leading-none tracking-tight">
               AGENXY
             </p>
