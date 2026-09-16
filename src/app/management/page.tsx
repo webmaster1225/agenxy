@@ -130,14 +130,16 @@ export default function ManagementPage() {
       </section>
 
       <section className="relative overflow-hidden bg-ink px-2 lg:px-6 py-16 text-snow h-[80vh]">
-        <video
-          src={assets.managementDisciplinesVideo}
-          className="absolute inset-0 h-full w-auto object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+        <div className="absolute inset-0 h-full w-full object-cover flex items-center justify-center">
+          <video
+            src={assets.managementDisciplinesVideo}
+            className="h-full w-auto object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </div>
         <div className="relative z-10 flex h-full flex-col justify-between">
           <div>
             <p className="font-display text-[14px] font-medium uppercase leading-[19.6px] tracking-[0.14px]">
