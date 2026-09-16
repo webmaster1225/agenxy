@@ -58,7 +58,7 @@ export function ContactBlock() {
       {/* Two-column footer */}
       <div className="grid border-t border-mute md:grid-cols-2">
         {/* Left — ways to contact */}
-        <div className="flex min-h-[360px] flex-col border-b border-mute px-5 py-10 md:border-b-0 md:border-r md:px-5 md:py-12">
+        <div className="flex min-h-[360px] flex-col border-b border-mute p-5 md:border-b-0 md:border-r">
           <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink">WAYS TO CONTACT</h3>
 
           <div className="mt-auto flex items-end justify-between gap-6 pt-16">

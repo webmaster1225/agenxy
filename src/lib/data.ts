@@ -35,7 +35,7 @@ export const assets = {
   oblika: "https://framerusercontent.com/images/KbfUGse8Jwqt60zKWXVEVHfHYo4.jpg?width=1400&height=1600",
   lumaCeramicsVideo: "https://motion.thepolar.studio/video/lu_11.mp4",
   managementHeroVideo: "https://motion.thepolar.studio/video/works_1.mp4",
-  managementDisciplinesVideo: "https://motion.thepolar.studio/video/lu_14.mp4",
+  managementDisciplinesVideo: "/scene.mp4",
   artistGrain: cdn("rR6HYXBrMmX4cRpXfXUOvpvpB0.png"),
   artistHero: cdn("cKuTS8u7Z5a04Mq4liKz4JTSxiE.jpg") + "?width=2500&height=1625",
   artistCityA: cdn("L61MvCY8ttcVvChrDXLqkdiAcFo.jpg") + "?width=1548&height=1200",
