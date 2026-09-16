@@ -129,10 +129,10 @@ export default function ManagementPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-ink px-2 lg:px-6 py-16 text-snow h-screen">
+      <section className="relative overflow-hidden bg-ink px-2 lg:px-6 py-16 text-snow h-[80vh]">
         <video
           src={assets.managementDisciplinesVideo}
-          className="absolute inset-0 lg:h-auto h-full lg:w-full w-auto object-cover"
+          className="absolute inset-0 h-full w-auto object-cover"
           autoPlay
           muted
           loop
