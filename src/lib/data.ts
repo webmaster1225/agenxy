@@ -173,19 +173,19 @@ export const team = [
     name: "Yalla Habebe",
     role: "Artist",
     image: '/testimonials/yalla-habebe.png',
-    href: "/artists/each-artists",
+    href: "/artists/yalla-habebe",
   },
   {
     name: "Berin",
     role: "Artist",
     image: '/testimonials/berin.png',
-    href: "https://open.spotify.com/artist/55vo1zTUTU1TabwCCMMbfv",
+    href: "/artists/berin",
   },
   {
     name: "Mady Minton",
     role: "Artist",
     image: '/testimonials/mady-minton.png',
-    href: "https://open.spotify.com/artist/2rur1PqZ2AiFKzmvL9EGOi",
+    href: "/artists/mady-minton",
   },
   {
     name: "Purple",
@@ -215,21 +215,21 @@ export const artists = [
     category: "Artist",
     filter: "Artists",
     image: '/testimonials/yalla-habebe.png',
-    href: "/artists/each-artists",
+    href: "/artists/yalla-habebe",
   },
   {
     title: "Mady Minton",
     category: "Artist",
     filter: "Artists",
     image: '/testimonials/mady-minton.png',
-    href: "/artists/each-artists",
+    href: "/artists/mady-minton",
   },
   {
     title: "Berin",
     category: "Artist",
     filter: "Artists",
     image: '/testimonials/berin.png',
-    href: "/artists/each-artists",
+    href: "/artists/berin",
   },
 ];
 

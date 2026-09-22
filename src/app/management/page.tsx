@@ -71,7 +71,8 @@ export default function ManagementPage() {
           {team.map((person) => (
             <Link
               key={person.name}
-              href="/artists/each-artists"
+              href={person.href}
+              {...(person.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
               className="relative aspect-square w-full overflow-hidden"
             >
               <img src={person.image} alt={person.name} className="absolute inset-0 h-full w-full object-cover" />
