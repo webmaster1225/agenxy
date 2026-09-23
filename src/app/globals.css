@@ -518,3 +518,28 @@ a:hover .rolling span {
   background: #81ff28;
   padding: 0.3rem 0.8rem;
 }
+
+/* Artist EPK hero parallax: 120px of drift over the first ~667px of scroll (0.18×), driven by the
+   scroll position itself so it can't lag a frame behind. EpkHeroImage has a JS fallback. */
+@keyframes epk-hero-parallax {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 120px, 0);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .epk-hero-parallax {
+    animation: epk-hero-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 667px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .epk-hero-parallax {
+    animation: none;
+  }
+}

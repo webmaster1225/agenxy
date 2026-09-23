@@ -175,11 +175,23 @@ function InstagramPostTile({ post, handle }: { post: InstagramPost; handle: stri
   );
 }
 
-function PhaseLink({ n, label, href, className = "" }: { n: string; label: string; href: string; className?: string }) {
+function PhaseLink({
+  n,
+  label,
+  href,
+  className = "",
+  lineClassName = "h-32",
+}: {
+  n: string;
+  label: string;
+  href: string;
+  className?: string;
+  lineClassName?: string;
+}) {
   return (
     <a href={href} className={`py-5 ${className}`}>
       <p className="font-display text-[12px] font-semibold uppercase tracking-tight">{n}</p>
-      <div className="my-1 h-32 border-l border-solid border-[#2c2c2c]" />
+      <div className={`my-1 border-l border-solid border-[#2c2c2c] ${lineClassName}`} />
       <p className="mt-1 font-display text-[12px] uppercase tracking-[-0.48px] text-[#ccc]">
         <span className="text-lime">{label}</span>
       </p>
@@ -237,6 +249,11 @@ export default async function ArtistEpkPage({ params }: Params) {
   const instagram = await getInstagramProfile(signature.instagram);
   const instagramUrl = `https://www.instagram.com/${signature.instagram}/`;
   const [firstWord, secondWord] = hero.words;
+  // The 001–004 phase lines start 48px lower from tablet up. Where the headline sits right
+  // below them (bottom copy), the lines get 48px shorter instead so their labels stay clear of it.
+  const copyAtBottom = hero.copyPosition === "bottom";
+  const phaseRowClass = copyAtBottom ? "sm:bottom-[30vh]" : "sm:bottom-[calc(30vh-48px)]";
+  const phaseLineClass = copyAtBottom ? "h-32 sm:h-20" : "h-32";
   const heroWordClass = `pointer-events-none absolute top-24 font-display ${
     secondWord ? "text-[14vw]" : "text-[28vw]"
   } font-bold uppercase leading-[0.8] tracking-[-0.08em] text-lime opacity-[.15] sm:top-[180px] sm:text-[16vw] sm:opacity-100`;
@@ -248,7 +265,7 @@ export default async function ArtistEpkPage({ params }: Params) {
       <section
         id="hero"
         style={{ scrollMarginTop: 88 }}
-        className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
+        className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
       >
         <p className={`${heroWordClass} left-4 sm:left-6`} aria-hidden="true">
           {firstWord}
@@ -292,13 +309,19 @@ export default async function ArtistEpkPage({ params }: Params) {
             </div>
           </div>
         </div>
-        <div className="absolute inset-x-4 bottom-36 z-10 flex gap-4 sm:bottom-[30vh] sm:left-0 sm:right-0 sm:px-6 lg:px-10">
+        <div className={`absolute inset-x-4 bottom-36 z-10 flex gap-4 sm:left-0 sm:right-0 sm:px-6 lg:px-10 ${phaseRowClass}`}>
           <div className="grid w-[65vw] grid-cols-3 gap-x-4 lg:w-[90vw]">
             {heroNav.map((item) => (
-              <PhaseLink key={item.n} {...item} />
+              <PhaseLink key={item.n} {...item} lineClassName={phaseLineClass} />
             ))}
           </div>
-          <PhaseLink n="004" label="CONTACT US" href="#contact" className="sm:absolute sm:right-10 sm:top-0 sm:block sm:w-auto" />
+          <PhaseLink
+            n="004"
+            label="CONTACT US"
+            href="#contact"
+            className="sm:absolute sm:right-10 sm:top-0 sm:block sm:w-auto"
+            lineClassName={phaseLineClass}
+          />
         </div>
         <div className="absolute inset-x-4 bottom-2 z-10 flex flex-col gap-4 sm:bottom-[5vh] sm:left-10 sm:right-auto sm:flex-row sm:gap-10">
           <p className="font-display text-[11px] uppercase tracking-tight text-[#ccc] sm:text-[12px]">
