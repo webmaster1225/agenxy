@@ -22,6 +22,8 @@ export type EpkSocial = { icon: EpkSocialIcon; label: string; href: string };
 
 export type EpkTrack = {
   title: string;
+  /** Short note from the handoff (label, charts, collaborators). Not rendered at the moment — it was a
+   * phone-only line, and phones now use the same 3-column grid as desktop. */
   caption: string;
   cover: string;
   alt: string;

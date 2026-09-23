@@ -137,8 +137,9 @@ function TrackCard({ track }: { track: EpkTrack }) {
       ) : (
         cover
       )}
-      <h3 className="mt-1 font-display text-sm font-semibold uppercase tracking-[-0.54px]">{track.title}</h3>
-      <p className="font-display text-[11px] uppercase leading-snug tracking-tight text-[#8d8d8d] sm:hidden">{track.caption}</p>
+      <h3 className="mt-1 font-display text-[11px] font-semibold uppercase leading-tight tracking-[-0.3px] sm:text-sm sm:leading-5 sm:tracking-[-0.54px]">
+        {track.title}
+      </h3>
     </div>
   );
 }
@@ -336,18 +337,20 @@ export default async function ArtistEpkPage({ params }: Params) {
       </section>
 
       <section id="intro" style={{ scrollMarginTop: 88 }} className="bg-night px-4 pb-4 sm:px-6 sm:pb-6 sm:pt-8 lg:px-32">
-        <div className="p-4 sm:p-8 lg:flex lg:gap-16 lg:p-16">
+        {/* Below lg: photo | statement side by side with the tracks under both (the text column
+            becomes `contents`), so phones get the desktop split instead of one long column. */}
+        <div className="grid grid-cols-[2fr_3fr] items-center gap-x-4 gap-y-8 p-4 sm:gap-x-8 sm:p-8 lg:flex lg:items-stretch lg:gap-16 lg:p-16">
           <div className="lg:w-1/2">
             <img src={intro.image} alt={intro.alt} className="h-auto w-full lg:sticky lg:top-24" />
           </div>
-          <div className="mt-6 lg:mt-0 lg:flex lg:w-1/2 lg:flex-col">
-            <p className="font-display text-[clamp(22px,6vw,60px)] font-bold uppercase leading-[1.05] text-[#D9D9D9]">
+          <div className="contents lg:flex lg:w-1/2 lg:flex-col">
+            <p className="font-display text-[clamp(16px,4.4vw,32px)] font-bold uppercase leading-[1.05] text-[#D9D9D9] lg:text-[clamp(22px,6vw,60px)]">
               {intro.statement}
             </p>
             <div
               id="tracks"
               style={{ scrollMarginTop: 88 }}
-              className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-3"
+              className="col-span-2 grid grid-cols-3 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-10 lg:mt-8 lg:gap-x-8 lg:gap-y-16"
             >
               {intro.tracks.map((track) => (
                 <TrackCard key={track.title} track={track} />
@@ -358,21 +361,22 @@ export default async function ArtistEpkPage({ params }: Params) {
       </section>
 
       <section className="relative overflow-hidden bg-night">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative flex min-h-[55vh] w-full items-end sm:min-h-[65vh] lg:min-h-[80vh]">
-            <div className="relative z-10 flex flex-col gap-1 px-4 py-10 sm:pl-8 lg:pl-12">
+        {/* Two columns at every size (portrait | text + video), scaled down below lg. */}
+        <div className="grid grid-cols-2">
+          <div className="relative flex w-full items-end lg:min-h-[80vh]">
+            <div className="relative z-10 flex flex-col gap-1 px-3 py-4 sm:px-4 sm:py-10 sm:pl-8 lg:pl-12">
               <div
-                className={`flex flex-row gap-2 text-xs uppercase text-[#ccc] sm:text-sm ${
+                className={`flex flex-row gap-1.5 text-[10px] uppercase text-[#ccc] sm:gap-2 sm:text-sm ${
                   atmosphere.genreBacked ? "w-fit bg-ink" : ""
                 }`}
               >
                 <span>INDX</span>
                 <span>//{atmosphere.genre}</span>
               </div>
-              <div className="w-fit rounded-sm bg-ink text-base leading-none sm:text-xl">
+              <div className="w-fit rounded-sm bg-ink text-[11px] leading-none sm:text-xl">
                 <p>{atmosphere.badge}</p>
               </div>
-              <p className="text-[clamp(32px,10vw,60px)] font-bold uppercase leading-[0.95] text-snow">
+              <p className="text-[clamp(18px,5.4vw,40px)] font-bold uppercase leading-[0.95] text-snow lg:text-[clamp(32px,10vw,60px)]">
                 NOTHING LEAVES
                 <br />
                 THE ROOM COLD
@@ -385,12 +389,16 @@ export default async function ArtistEpkPage({ params }: Params) {
               style={atmosphere.imagePosition ? { objectPosition: atmosphere.imagePosition } : undefined}
             />
           </div>
-          <div className="grid grid-rows-[auto_auto] lg:grid-rows-[auto_1fr]">
-            <div className="flex flex-col gap-2 bg-[#d1d1d1] p-4 text-ink sm:gap-1 sm:p-6">
-              <p className="font-display text-[clamp(40px,12vw,90px)] font-bold uppercase leading-none text-night">atmosphere</p>
-              <p className="font-display text-[clamp(40px,12vw,90px)] font-bold uppercase leading-none text-snow">not volume</p>
+          <div className="grid grid-rows-[auto_1fr]">
+            <div className="flex flex-col gap-1 bg-[#d1d1d1] p-3 text-ink sm:p-6">
+              <p className="font-display text-[clamp(24px,7vw,48px)] font-bold uppercase leading-none text-night lg:text-[clamp(40px,12vw,90px)]">
+                atmosphere
+              </p>
+              <p className="font-display text-[clamp(24px,7vw,48px)] font-bold uppercase leading-none text-snow lg:text-[clamp(40px,12vw,90px)]">
+                not volume
+              </p>
               {atmosphere.notes && (
-                <div className="mt-4 grid grid-cols-2 gap-6 sm:mt-6 sm:gap-8">
+                <div className="mt-3 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-8">
                   {atmosphere.notes.map((copy, i) => (
                     <article key={i} className="flex flex-col">
                       <div className="flex items-center justify-between">
@@ -398,7 +406,7 @@ export default async function ArtistEpkPage({ params }: Params) {
                         <BarcodeMark />
                       </div>
                       <span className="mb-3 mt-2 block h-[3px] w-full bg-ink" />
-                      <p className="font-display text-[12px] font-semibold uppercase leading-[1.25] tracking-[-0.26px] sm:text-[13px]">
+                      <p className="font-display text-[11px] font-semibold uppercase leading-[1.25] tracking-[-0.26px] sm:text-[12px] lg:text-[13px]">
                         {copy}
                       </p>
                     </article>
@@ -406,7 +414,7 @@ export default async function ArtistEpkPage({ params }: Params) {
                 </div>
               )}
             </div>
-            <div className="relative flex min-h-[50vh] w-full items-center justify-center sm:min-h-[55vh] lg:min-h-0">
+            <div className="relative flex min-h-[220px] w-full items-center justify-center sm:min-h-[320px] lg:min-h-0">
               {atmosphere.videos.length > 1 ? (
                 <div className="absolute inset-0 grid grid-cols-2">
                   {atmosphere.videos.map((src) => (
@@ -430,7 +438,7 @@ export default async function ArtistEpkPage({ params }: Params) {
                 className="absolute inset-0"
                 style={{ background: "linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 60%)" }}
               />
-              <span className="bottom-0 left-0 right-0 p-4 text-left font-display text-base font-bold uppercase leading-tight text-snow mix-blend-difference sm:absolute sm:p-6 sm:text-right sm:text-2xl lg:text-4xl">
+              <span className="absolute bottom-0 left-0 right-0 p-3 text-left font-display text-[10px] font-bold uppercase leading-tight text-snow mix-blend-difference sm:p-6 sm:text-right sm:text-lg lg:text-4xl">
                 Sets become rooms worth staying in, and nights become experiences people anticipate, remember, and come back for.
               </span>
             </div>
