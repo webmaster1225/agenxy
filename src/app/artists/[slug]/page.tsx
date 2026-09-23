@@ -444,7 +444,7 @@ export default async function ArtistEpkPage({ params }: Params) {
             {rooms.badge}
           </span>
           <p className="mt-4 font-display text-[clamp(28px,9vw,20vh)] font-bold uppercase leading-[0.95] sm:mt-0">
-            SOME ROOMS OPEN. SOME RESIST.
+            SOME ROOMS OPEN. <br /> SOME RESIST.
           </p>
           <p className="mt-8 w-full max-w-xl font-display text-xl font-bold uppercase leading-none text-[#D9D9D9] sm:mt-12 sm:text-2xl lg:mt-16 lg:w-2/5 lg:text-4xl">
             BOTH TELL YOU EXACTLY WHAT THE NIGHT NEEDS NEXT.

@@ -90,12 +90,14 @@ export default function HomePage() {
         <div className="works-wash-vignette absolute inset-0" aria-hidden="true" />
         <div className="relative">
           <SectionBanner title="ABOUT" index="02" aside="10" note="Team Members" />
-          <div className="grid border-b border-mute lg:grid-cols-4">
+          <div className="grid border-b border-mute grid-cols-2 lg:grid-cols-4">
             {siteStats.map((stat) => (
-              <div key={stat.id} className="border-b border-mute px-8 py-10 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
+              <div key={stat.id} className="h-[250px] lg:h-[400px] border-r max-lg:[&:nth-child(-n+2)]:border-b border-mute p-4 lg:p-10 lg:border-r lg:last:border-r-0 flex flex-col justify-between">
                 <p className="font-koulen text-[16px] leading-[19.2px] text-ink/75">{stat.id}</p>
-                <h3 className="mt-[250px] font-koulen text-[24px] leading-[26.4px]">{stat.label}</h3>
-                <p className="mt-6 font-koulen text-[65px] leading-[65px] tracking-[-1.95px]">{stat.value}</p>
+                <div>
+                  <h3 className="font-koulen text-[24px] leading-[26.4px]">{stat.label}</h3>
+                  <p className="mt-6 font-koulen text-[65px] leading-[65px] tracking-[-1.95px]">{stat.value}</p>
+                </div>
               </div>
             ))}
           </div>

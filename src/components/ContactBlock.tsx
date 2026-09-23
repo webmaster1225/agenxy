@@ -84,7 +84,7 @@ export function ContactBlock() {
         </div>
 
         {/* Right — subscribe */}
-        <div className="relative flex min-h-[360px] flex-col justify-between p-5">
+        <div className="relative flex min-h-[400px] flex-col justify-between p-5">
           <div className="flex flex-col gap-6">
             <h3 className="font-koulen text-[24px] leading-[26.4px] text-ink">SUBSCRIBE FOR UPDATES</h3>
 
@@ -109,13 +109,13 @@ export function ContactBlock() {
               </div>
             </form>
           </div>
-          <p className="text-center font-sans text-[16px] leading-[20.8px] tracking-[-0.64px] text-mute">
+          <p className="text-center font-sans text-[14px] md:text-[16px] leading-[20.8px] tracking-[-0.64px] text-mute">
             By submitting, you agree to our Terms &amp; Service.
           </p>
           <button
             type="submit"
             aria-label={sent ? "Subscribed" : "Subscribe"}
-            className="absolute bottom-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-ember text-2xl transition-transform hover:scale-105"
+            className="absolute bottom-[60px] right-10 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-ember text-2xl transition-transform hover:scale-105"
           >
             {<ArrowIcon />}
           </button>
