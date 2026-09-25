@@ -18,7 +18,7 @@ export function SectionBanner({
   return (
     <div
       className={`relative overflow-hidden border-b border-mute ${
-        wash ? "section-banner h-[370px]" : "h-auto"
+        wash ? "section-banner h-auto" : "h-auto"
       } ${dark ? "bg-ink text-snow" : ""}`}
     >
       <div className="relative flex-col lg:flex-row flex h-full items-start lg:items-end justify-end lg:justify-between px-[30px] pt-20 pb-6">
