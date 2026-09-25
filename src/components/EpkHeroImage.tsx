@@ -2,7 +2,7 @@ export function EpkHeroImage({ src, brightness = 100 }: { src: string; brightnes
   return (
     <div className="pointer-events-none absolute inset-0">
       <div
-        className="relative flex h-full w-full items-center justify-center overflow-hidden"
+        className="absolute bottom-0 flex h-[60%] w-full items-center justify-center overflow-hidden"
         style={{ minWidth: 5, minHeight: 5 }}
       >
         <div role="presentation" className="relative h-full w-full overflow-hidden">

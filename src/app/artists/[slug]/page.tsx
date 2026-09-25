@@ -286,7 +286,7 @@ export default async function ArtistEpkPage({ params }: Params) {
           }
         >
           <h1>
-            <span className="block font-display text-[clamp(62px,8vw,62px)] font-bold uppercase leading-[0.95] tracking-[-0.06em] text-lime">
+            <span className="block font-display text-[clamp(24px,8vw,62px)] font-bold uppercase leading-[0.95] tracking-[-0.06em] text-lime">
               {hero.headline}
             </span>
           </h1>
