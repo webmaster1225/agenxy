@@ -190,7 +190,7 @@ function PhaseLink({
   lineClassName?: string;
 }) {
   return (
-    <a href={href} className={`py-5 ${className}`}>
+    <a href={href} className={`py-2 sm:py-5 ${className}`}>
       <p className="font-display text-[12px] font-semibold uppercase tracking-tight">{n}</p>
       <div className={`my-1 border-l border-solid border-[#2c2c2c] ${lineClassName}`} />
       <p className="mt-1 font-display text-[12px] uppercase tracking-[-0.48px] text-[#ccc]">
@@ -254,10 +254,10 @@ export default async function ArtistEpkPage({ params }: Params) {
   // below them (bottom copy), the lines get 48px shorter instead so their labels stay clear of it.
   const copyAtBottom = hero.copyPosition === "bottom";
   const phaseRowClass = copyAtBottom ? "sm:bottom-[30vh]" : "sm:bottom-[calc(30vh-48px)]";
-  const phaseLineClass = copyAtBottom ? "h-32 sm:h-20" : "h-32";
-  const heroWordClass = `pointer-events-none absolute top-24 overflow-visible font-display ${
+  const phaseLineClass = copyAtBottom ? "h-16 sm:h-20" : "h-16 sm:h-32";
+  const heroWordClass = `hero-word pointer-events-none absolute top-10 overflow-visible font-display ${
     secondWord ? "text-[14vw]" : "text-[28vw]"
-  } font-bold uppercase tracking-[-0.08em] text-artist-gradient opacity-[.15] sm:top-[180px] sm:text-[16vw] sm:opacity-100`;
+  } font-bold uppercase tracking-[-0.08em] text-artist-gradient sm:top-[100px] sm:text-[16vw]`;
 
   // overflow-x-clip rather than -hidden: a hidden overflow would make this div a scroll
   // container and stop the sticky intro image from sticking to the viewport.
@@ -266,7 +266,7 @@ export default async function ArtistEpkPage({ params }: Params) {
       <section
         id="hero"
         style={{ scrollMarginTop: 88 }}
-        className="relative flex min-h-[100svh] items-center justify-center overflow-x-clip px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
+        className="relative flex min-h-[85svh] items-center justify-center overflow-x-clip px-4 pb-24 pt-12 sm:min-h-[100svh] sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
       >
         <p className={`${heroWordClass} left-4 sm:left-6`} aria-hidden="true">
           {firstWord}
@@ -280,9 +280,9 @@ export default async function ArtistEpkPage({ params }: Params) {
         <div
           className={
             hero.copyPosition === "bottom"
-              ? "absolute inset-x-4 bottom-[380px] z-10 text-right sm:inset-x-auto sm:bottom-[5vh] sm:right-[2vw] lg:right-[3vw]"
+              ? "absolute inset-x-4 top-[100px] bottom-auto lg:bottom-0 lg:top-auto z-10 text-right sm:inset-x-auto sm:right-[2vw] lg:right-[3vw]"
               : // Tucked into the corner on laptops so it doesn't sit on the artist's face; roomier from 1536px.
-                "absolute inset-x-4 top-10 z-10 sm:inset-x-auto sm:right-[6vw] sm:top-[10vh] lg:right-[2vw] lg:top-[6vh] 2xl:right-[10vw] 2xl:top-[10vh]"
+                "absolute inset-x-4 top-[150px] z-10 sm:inset-x-auto sm:right-[6vw] sm:top-[10vh] lg:right-[2vw] lg:top-[6vh] 2xl:right-[10vw] 2xl:top-[10vh]"
           }
         >
           <h1>
@@ -552,12 +552,14 @@ export default async function ArtistEpkPage({ params }: Params) {
       </section>
 
       <section id="rider" style={{ scrollMarginTop: 88 }} className="bg-night px-4 pb-4 pt-12 sm:px-6 sm:pb-6 sm:pt-20">
-        <p className="font-display text-[clamp(72px,28vw,50vh)] font-bold uppercase leading-none tracking-tighter text-lime">
-          RIDER
-        </p>
-        <p className="ml-[14vw] font-display text-[clamp(22px,6vw,10vh)] font-semibold uppercase leading-[1.05] tracking-tighter text-lime">
-          REQUIREMENTS
-        </p>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-[0.2em]">
+          <p className="font-display text-[clamp(72px,28vw,50vh)] font-bold uppercase leading-none tracking-tighter text-lime lg:text-[clamp(56px,8vw,140px)]">
+            RIDER
+          </p>
+          <p className="font-display text-[clamp(40px,12vw,12vh)] font-bold uppercase leading-none tracking-tighter text-lime lg:text-[clamp(56px,8vw,140px)]">
+            REQUIREMENTS
+          </p>
+        </div>
       </section>
 
       <section className="bg-night px-4 pb-12 pt-4 sm:px-6 sm:pb-20 sm:pt-6">

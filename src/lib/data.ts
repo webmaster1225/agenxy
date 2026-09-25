@@ -128,7 +128,7 @@ export const otherWorks = [
 
 export const stats = [
   { id: ".A", label: "Year of establishment", value: "2025" },
-  { id: ".b", label: "PROJECT LAUNCHED", value: "87+" },
+  { id: ".b", label: "PROJECTS LAUNCHED", value: "87+" },
   { id: ".c", label: "streams OF LAST YEAR", value: "90M+" },
   { id: ".d", label: "fULLY SATISFIED CLIENTS", value: "100%" },
 ];

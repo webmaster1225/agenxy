@@ -533,28 +533,9 @@ a:hover .rolling span {
   padding: 0.3rem 0.8rem;
 }
 
-/* Artist EPK hero parallax: 120px of drift over the first ~667px of scroll (0.18×), driven by the
-   scroll position itself so it can't lag a frame behind. EpkHeroImage has a JS fallback. */
-@keyframes epk-hero-parallax {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 120px, 0);
-  }
-}
-
-@supports (animation-timeline: scroll()) {
-  .epk-hero-parallax {
-    animation: epk-hero-parallax linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0px 667px;
-  }
-}
-
 /* Viewport-wide blue→red; position is synced in JS so short labels still sample the full wash. */
 .text-artist-gradient {
-  background-image: linear-gradient(90deg, rgb(73, 71, 214), rgb(203, 72, 78));
+  background-image: linear-gradient(90deg, rgb(63 60 255), rgb(255 84 91));
   background-repeat: no-repeat;
   background-size: 100vw 100%;
   background-position: 0 0;
@@ -569,12 +550,19 @@ a:hover .rolling span {
   overflow: visible;
 }
 
-.bg-artist-gradient {
-  background-image: linear-gradient(90deg, rgb(73, 71, 214), rgb(203, 72, 78));
+/* Hero side words: kill the extra vertical padding that reads as empty space on mobile */
+.hero-word.text-artist-gradient {
+  padding-block: 0;
+  line-height: 0.85;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .epk-hero-parallax {
-    animation: none;
+@media (min-width: 640px) {
+  .hero-word.text-artist-gradient {
+    padding-block: 0.12em;
+    line-height: 1.05;
   }
+}
+
+.bg-artist-gradient {
+  background-image: linear-gradient(90deg, rgb(63 60 255), rgb(255 84 91));
 }

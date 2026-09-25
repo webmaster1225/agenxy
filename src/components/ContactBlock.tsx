@@ -112,6 +112,7 @@ export function ContactBlock() {
           <p className="text-center font-sans text-[14px] md:text-[16px] leading-[20.8px] tracking-[-0.64px] text-mute">
             By submitting, you agree to our Terms &amp; Service.
           </p>
+          
           <button
             type="submit"
             aria-label={sent ? "Subscribed" : "Subscribe"}
@@ -120,6 +121,20 @@ export function ContactBlock() {
             {<ArrowIcon />}
           </button>
         </div>
+      </div>
+
+      <div className="border-t border-mute px-5 py-4">
+        <p className="text-center font-sans text-[12px] leading-tight tracking-[-0.32px] text-mute md:text-[13px]">
+          Developed by{" "}
+          <a
+            href="https://edanlabs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink transition-colors hover:text-ember"
+          >
+            Edan Labs
+          </a>
+        </p>
       </div>
     </section>
   );

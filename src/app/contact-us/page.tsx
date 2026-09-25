@@ -90,7 +90,6 @@ export default function ContactPage() {
               &quot; We&apos;re always open to new collaborations and would love to hear about your projects. Please
               reach out through any of the channels below if you&apos;re interested in working together.
             </h2>
-            <p className="mt-6 font-sans text-[16px] leading-[19.2px]">Élan Studio</p>
             <div className="mt-10">
               <p className="font-display text-[16px] font-medium leading-[20.8px] tracking-[0.8px] text-artist-gradient">
                 {"{Mail to}"}
