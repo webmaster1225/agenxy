@@ -255,9 +255,7 @@ export default async function ArtistEpkPage({ params }: Params) {
   const copyAtBottom = hero.copyPosition === "bottom";
   const phaseRowClass = copyAtBottom ? "sm:bottom-[30vh]" : "sm:bottom-[calc(30vh-48px)]";
   const phaseLineClass = copyAtBottom ? "h-16 sm:h-20" : "h-16 sm:h-32";
-  const heroWordClass = `hero-word pointer-events-none absolute top-10 overflow-visible font-display ${
-    secondWord ? "text-[14vw]" : "text-[28vw]"
-  } font-bold uppercase tracking-[-0.08em] text-artist-gradient sm:top-[100px] sm:text-[16vw]`;
+  const heroWordClass = `hero-word pointer-events-none absolute top-10 overflow-visible font-display text-[14vw] font-bold uppercase tracking-[-0.08em] text-artist-gradient sm:top-[100px] sm:text-[16vw]`;
 
   // overflow-x-clip rather than -hidden: a hidden overflow would make this div a scroll
   // container and stop the sticky intro image from sticking to the viewport.
@@ -282,7 +280,7 @@ export default async function ArtistEpkPage({ params }: Params) {
             hero.copyPosition === "bottom"
               ? "absolute inset-x-4 top-[100px] bottom-auto lg:bottom-0 lg:top-auto z-10 text-right sm:inset-x-auto sm:right-[2vw] lg:right-[3vw]"
               : // Tucked into the corner on laptops so it doesn't sit on the artist's face; roomier from 1536px.
-                "absolute inset-x-4 top-[150px] z-10 sm:inset-x-auto sm:right-[6vw] sm:top-[10vh] lg:right-[2vw] lg:top-[6vh] 2xl:right-[10vw] 2xl:top-[10vh]"
+                "absolute inset-x-4 top-[100px] z-10 sm:inset-x-auto sm:right-[6vw] sm:top-[10vh] lg:right-[2vw] lg:top-[6vh] 2xl:right-[10vw] 2xl:top-[10vh]"
           }
         >
           <h1>
