@@ -14,6 +14,55 @@ export type InsightTrackCard = {
   href: string;
 };
 
+function TrackCard({
+  track,
+  className = "",
+}: {
+  track: InsightTrackCard;
+  className?: string;
+}) {
+  return (
+    <ListenTrigger
+      title={track.title}
+      artist={track.artist}
+      year={track.year}
+      href={track.href}
+      className={`group flex flex-col border-b border-mute px-5 pb-8 pt-5 text-left transition-colors hover:bg-paper ${className}`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <p className="min-h-[38.4px] min-w-0 flex-1 font-sans text-[16px] leading-[19.2px] text-mute">
+          {track.artist}
+        </p>
+        <span
+          className={`shrink-0 rounded-[4px] px-2 py-1 font-koulen text-[12px] leading-[12px] tracking-[-0.36px] text-snow ${
+            track.badge === "Trending" ? "bg-ember" : "bg-blood"
+          }`}
+        >
+          {track.badge}
+        </span>
+      </div>
+      <div className="mt-4 aspect-square w-full overflow-hidden bg-ink/5">
+        <img
+          src={track.image}
+          alt={track.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        />
+      </div>
+      <h3 className="mt-5 font-koulen text-[24px] leading-[26.4px]">{track.title}</h3>
+      <div className="mt-4 flex gap-6">
+        <div>
+          <p className="font-sans text-[12px] uppercase tracking-[0.08em] text-mute">Streams</p>
+          <p className="mt-1 font-koulen text-[22px] leading-none">{track.streams}</p>
+        </div>
+        <div>
+          <p className="font-sans text-[12px] uppercase tracking-[0.08em] text-mute">Playlists</p>
+          <p className="mt-1 font-koulen text-[22px] leading-none">{track.playlists}</p>
+        </div>
+      </div>
+    </ListenTrigger>
+  );
+}
+
 export function InsightsTracks({
   featured,
   tracks,
@@ -36,6 +85,8 @@ export function InsightsTracks({
     });
   })();
 
+  const mobileCards = [featured, ...tracks];
+
   return (
     <>
       {updatedLabel ? (
@@ -50,12 +101,24 @@ export function InsightsTracks({
         </div>
       ) : null}
 
+      {/* Mobile — featured uses same card UI in a 2×2 grid */}
+      <div className="grid grid-cols-2 bg-snow lg:hidden">
+        {mobileCards.map((track, index) => (
+          <TrackCard
+            key={track.title}
+            track={track}
+            className={index % 2 === 0 ? "border-r border-mute" : ""}
+          />
+        ))}
+      </div>
+
+      {/* Desktop — featured hero + 3-col track cards */}
       <ListenTrigger
         title={featured.title}
         artist={featured.artist}
         year={featured.year}
         href={featured.href}
-        className="group relative block aspect-[1440/600] h-[100vw] w-full overflow-hidden border-b border-mute bg-ink text-left text-snow lg:h-auto"
+        className="group relative hidden aspect-[1440/600] w-full overflow-hidden border-b border-mute bg-ink text-left text-snow lg:block lg:h-auto"
       >
         <img
           src={featured.image}
@@ -95,45 +158,13 @@ export function InsightsTracks({
         </div>
       </ListenTrigger>
 
-      <div className="grid grid-cols-1 bg-snow sm:grid-cols-2 lg:grid-cols-3">
-        {tracks.map((track) => (
-          <ListenTrigger
+      <div className="hidden bg-snow lg:grid lg:grid-cols-3">
+        {tracks.map((track, index) => (
+          <TrackCard
             key={track.title}
-            title={track.title}
-            artist={track.artist}
-            year={track.year}
-            href={track.href}
-            className="group flex flex-col border-b border-mute px-5 pb-8 pt-5 text-left transition-colors hover:bg-paper sm:odd:border-r lg:border-r lg:[&:nth-child(3n)]:border-r-0"
-          >
-            <div className="flex items-center justify-between gap-3">
-              <p className="font-sans text-[16px] leading-[19.2px] text-mute">{track.artist}</p>
-              <span
-                className={`rounded-[4px] px-2 py-1 font-koulen text-[12px] leading-[12px] tracking-[-0.36px] text-snow ${
-                  track.badge === "Trending" ? "bg-ember" : "bg-blood"
-                }`}
-              >
-                {track.badge}
-              </span>
-            </div>
-            <div className="mt-4 aspect-square w-full overflow-hidden bg-ink/5">
-              <img
-                src={track.image}
-                alt={track.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              />
-            </div>
-            <h3 className="mt-5 font-koulen text-[24px] leading-[26.4px]">{track.title}</h3>
-            <div className="mt-4 flex gap-6">
-              <div>
-                <p className="font-sans text-[12px] uppercase tracking-[0.08em] text-mute">Streams</p>
-                <p className="mt-1 font-koulen text-[22px] leading-none">{track.streams}</p>
-              </div>
-              <div>
-                <p className="font-sans text-[12px] uppercase tracking-[0.08em] text-mute">Playlists</p>
-                <p className="mt-1 font-koulen text-[22px] leading-none">{track.playlists}</p>
-              </div>
-            </div>
-          </ListenTrigger>
+            track={track}
+            className={index % 3 === 2 ? "" : "border-r border-mute"}
+          />
         ))}
       </div>
     </>

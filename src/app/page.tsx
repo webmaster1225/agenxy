@@ -68,7 +68,7 @@ export default function HomePage() {
     <div className="bg-snow pb-16">
       <section className="bg-snow">
         <SectionBanner title="WORKS" index="01" aside="26'" wash />
-        <div className="grid lg:grid-cols-2 grid-cols-1 h-fit">
+        <div className="grid grid-cols-2 h-fit">
           {featuredWorks.map((work) => (
             <FeaturedMediaCard key={work.title} {...work} />
           ))}
@@ -96,7 +96,7 @@ export default function HomePage() {
                 <p className="font-koulen text-[16px] leading-[19.2px] text-ink/75">{stat.id}</p>
                 <div>
                   <h3 className="font-koulen text-[24px] leading-[26.4px]">{stat.label}</h3>
-                  <p className="mt-6 font-koulen text-[65px] leading-[65px] tracking-[-1.95px]">{stat.value}</p>
+                  <p className="mt-6 font-koulen text-[65px] leading-[65px] tracking-[-1.95px]">{stat.value}{stat.id === ".b" || stat.id === ".c" ? "+" : ""}</p>
                 </div>
               </div>
             ))}

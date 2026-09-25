@@ -58,7 +58,7 @@ function seedSnapshot(): LiveStatsSnapshot {
     updatedAt: new Date(0).toISOString(),
     source: "seed",
     site: {
-      yearEstablished: 2022,
+      yearEstablished: 2025,
       projectsLaunched: 87,
       streamsLastYear: 90_000_000,
       satisfiedClientsPercent: 100,

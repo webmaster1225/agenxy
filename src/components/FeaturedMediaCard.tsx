@@ -37,7 +37,7 @@ export function FeaturedMediaCard({
           New
         </span>
       )}
-      <h3 className="absolute bottom-6 left-[102px] font-koulen text-[32px] leading-[35.2px]">{title}</h3>
+      <h3 className="absolute bottom-6 left-[20px] lg:left-[102px] font-koulen text-[14px] lg:text-[32px] leading-[35.2px]">{title}</h3>
     </button>
   );
 }

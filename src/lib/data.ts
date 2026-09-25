@@ -115,7 +115,7 @@ export const otherWorks = [
   {
     title: "REASON",
     year: "2026",
-    artist: "Yalla Habebe & Mady Minton",
+    artist: "Mady Minton",
     href: "https://open.spotify.com/track/5rkdaN5qIgRMjpPdcb0s2s",
   },
   {
@@ -127,9 +127,9 @@ export const otherWorks = [
 ];
 
 export const stats = [
-  { id: ".A", label: "Year of establishment", value: "2022" },
-  { id: ".b", label: "PROJECT LAUNCHED", value: "87" },
-  { id: ".c", label: "streams OF LAST YEAR", value: "90M" },
+  { id: ".A", label: "Year of establishment", value: "2025" },
+  { id: ".b", label: "PROJECT LAUNCHED", value: "87+" },
+  { id: ".c", label: "streams OF LAST YEAR", value: "90M+" },
   { id: ".d", label: "fULLY SATISFIED CLIENTS", value: "100%" },
 ];
 
@@ -538,15 +538,15 @@ export const artistWorks: Array<{
 export const faqs = [
   {
     q: "What is AGENXY?",
-    a: "AGENXY is a creative studio partner for brands that need design, development, and campaign work in one place.",
+    a: "Groundbreaking incubator for artists. A new wave of musicians and cultivating the sound of dance music, and curating moments."
   },
   {
     q: "What services do you offer",
     a: "Artist management, label operations, booking, brand design, digital products, and campaign production.",
   },
   {
-    q: "Do you provide custom development solutions?",
-    a: "Yes. We build custom websites, platforms, and campaign systems tailored to each roster and brand.",
+    q: "Do you provide custom artist development solutions?",
+    a: "Agenxy builds artists from the ground up, handling their management, bookings, production, and marketing.",
   },
   {
     q: "What type of clients do you service?",

@@ -4,12 +4,12 @@
 
 :root {
   --ink: #010101;
-  --mute: #a8a5a5;
+  --mute: #414141;
   --paper: #f7f0f0;
   --snow: #ffffff;
   --ember: #f57445;
   --blood: #910a0a;
-  --line: rgb(168, 165, 165);
+  --line: #818181;
   --header-expanded: clamp(342px, 24vw, 342px);
   --header-compact: clamp(56px, 8vw, 72px);
   --header-current: var(--header-expanded);
@@ -110,6 +110,7 @@ a:hover .rolling span {
 
 .site-header.is-compact .header-meta,
 .site-header.is-compact .header-mark,
+.site-header.is-compact .header-logo,
 .site-header.is-compact .header-meta-body {
   display: none;
   opacity: 0;
@@ -117,6 +118,10 @@ a:hover .rolling span {
   transform: translateY(-8px);
   pointer-events: none;
   overflow: hidden;
+}
+
+.site-header.is-compact .header-logo-compact {
+  display: block;
 }
 
 .header-cell {
@@ -199,11 +204,18 @@ a:hover .rolling span {
 
 .contact-block {
   position: relative;
-  isolation: isolate;
   overflow: hidden;
 }
 
-.contact-block::before {
+.contact-block,
+.site-header,
+.section-banner {
+  isolation: isolate;
+}
+
+.contact-block::before,
+.site-header::before,
+.section-banner::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -215,7 +227,9 @@ a:hover .rolling span {
   pointer-events: none;
 }
 
-.contact-block::after {
+.contact-block::after,
+.site-header::after,
+.section-banner::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -493,7 +507,7 @@ a:hover .rolling span {
 
 .ig-badge {
   position: absolute;
-  top: 6rem;
+  top: 20rem;
   right: 1rem;
   z-index: 20;
   display: flex;
@@ -536,6 +550,27 @@ a:hover .rolling span {
     animation-timeline: scroll(root);
     animation-range: 0px 667px;
   }
+}
+
+/* Viewport-wide blue→red; position is synced in JS so short labels still sample the full wash. */
+.text-artist-gradient {
+  background-image: linear-gradient(90deg, rgb(73, 71, 214), rgb(203, 72, 78));
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Extra box so clipped glyphs / tight leading don’t shear the bottom of letters */
+  padding-inline: 0.08em;
+  padding-block: 0.12em;
+  line-height: 1.05;
+  overflow: visible;
+}
+
+.bg-artist-gradient {
+  background-image: linear-gradient(90deg, rgb(73, 71, 214), rgb(203, 72, 78));
 }
 
 @media (prefers-reduced-motion: reduce) {

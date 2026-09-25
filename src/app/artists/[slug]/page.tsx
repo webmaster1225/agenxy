@@ -255,9 +255,9 @@ export default async function ArtistEpkPage({ params }: Params) {
   const copyAtBottom = hero.copyPosition === "bottom";
   const phaseRowClass = copyAtBottom ? "sm:bottom-[30vh]" : "sm:bottom-[calc(30vh-48px)]";
   const phaseLineClass = copyAtBottom ? "h-32 sm:h-20" : "h-32";
-  const heroWordClass = `pointer-events-none absolute top-24 font-display ${
+  const heroWordClass = `pointer-events-none absolute top-24 overflow-visible font-display ${
     secondWord ? "text-[14vw]" : "text-[28vw]"
-  } font-bold uppercase leading-[0.8] tracking-[-0.08em] text-lime opacity-[.15] sm:top-[180px] sm:text-[16vw] sm:opacity-100`;
+  } font-bold uppercase tracking-[-0.08em] text-artist-gradient opacity-[.15] sm:top-[180px] sm:text-[16vw] sm:opacity-100`;
 
   // overflow-x-clip rather than -hidden: a hidden overflow would make this div a scroll
   // container and stop the sticky intro image from sticking to the viewport.
@@ -266,16 +266,16 @@ export default async function ArtistEpkPage({ params }: Params) {
       <section
         id="hero"
         style={{ scrollMarginTop: 88 }}
-        className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
+        className="relative flex min-h-[100svh] items-center justify-center overflow-x-clip px-4 pb-40 pt-24 sm:px-6 sm:pb-32 sm:pt-28 lg:h-screen lg:pb-0 lg:pt-0"
       >
         <p className={`${heroWordClass} left-4 sm:left-6`} aria-hidden="true">
           {firstWord}
         </p>
-        {secondWord && (
+        {secondWord ? (
           <p className={`${heroWordClass} right-4 text-right sm:right-6`} aria-hidden="true">
             {secondWord}
           </p>
-        )}
+        ) : null}
         <EpkHeroImage src={hero.image} brightness={hero.brightness} />
         <div
           className={

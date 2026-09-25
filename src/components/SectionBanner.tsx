@@ -46,7 +46,7 @@ export function SectionBanner({
           {note && (
             <p className="hidden pt-2 text-[24px] leading-[33.6px] tracking-[-0.72px] md:block">{note}</p>
           )}
-          <p className="font-display lg:text-[200px] text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px]">
+          <p className="font-display text-8xl font-bold uppercase leading-[1] tracking-display md:text-[200px] lg:text-[200px]">
             {aside}
           </p>
         </div>

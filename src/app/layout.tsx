@@ -6,6 +6,7 @@ import { MenuOverlay } from "@/components/MenuOverlay";
 import { MenuProvider } from "@/components/MenuProvider";
 import { ListenProvider } from "@/components/ListenProvider";
 import { ContactBlock } from "@/components/ContactBlock";
+import { ArtistGradientSync } from "@/components/ArtistGradientSync";
 
 const antonio = Antonio({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${antonio.variable} ${inter.variable} ${koulen.variable}`}>
       <body className="bg-paper text-ink antialiased">
+        <ArtistGradientSync />
         <MenuProvider>
           <ListenProvider>
             <Header />

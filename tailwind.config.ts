@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#010101",
-        mute: "#a8a5a5",
+        mute: "#818181",
         paper: "#f7f0f0",
         snow: "#ffffff",
         ember: "#f57445",

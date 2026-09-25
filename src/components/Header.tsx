@@ -80,15 +80,35 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`site-header border-b border-mute bg-snow ${compact ? "is-compact" : ""}`}>
+    <header className={`site-header border-b border-mute ${compact ? "is-compact" : ""}`}>
       <div className="header-grid hidden h-full lg:grid">
         <div className="header-cell header-brand relative flex w-full min-w-0 flex-col justify-end overflow-hidden border-r border-mute px-4 py-4 xl:px-5 xl:py-5">
-          <Image src="/agenxy-logo.png" alt="AGENXY" className="header-mark rounded-xl" width={100} height={100} />
-          <Link
-            href="/"
-            className="header-logo group relative z-10 min-w-0 font-display text-[clamp(28px,3.2vw,40px)] font-normal leading-none"
-          >
-            <RollingText text="AGENXY" />
+          <Image
+            src="/agenxy-logo.png"
+            alt="AGENXY"
+            width={284}
+            height={198}
+            className="header-mark h-auto w-full max-w-[160px]"
+          />
+          <Link href="/" className="header-logo relative z-10 mt-6 block min-w-0">
+            <Image
+              src="/logo-text.png"
+              alt="AGENXY"
+              width={640}
+              height={160}
+              className="h-auto w-full max-w-[220px]"
+              priority
+            />
+          </Link>
+          <Link href="/" className="header-logo-compact relative z-10 hidden min-w-0">
+            <Image
+              src="/agenxy-logo-full.png"
+              alt="AGENXY"
+              width={800}
+              height={200}
+              className="h-8 w-auto max-w-full"
+              priority
+            />
           </Link>
         </div>
 
@@ -156,8 +176,15 @@ export function Header() {
       </div>
 
       <div className="flex h-full items-center justify-between px-4 lg:hidden">
-        <Link href="/" className="group min-w-0 font-display text-[clamp(24px,8vw,32px)] font-normal leading-none">
-          <RollingText text="AGENXY" />
+        <Link href="/" className="group flex min-w-0 items-center">
+          <Image
+            src="/agenxy-logo-full.png"
+            alt="AGENXY"
+            width={800}
+            height={200}
+            className="h-8 w-auto max-w-[200px]"
+            priority
+          />
         </Link>
         <div className="flex h-full w-16 shrink-0 items-center justify-center">
           <MenuButton open={open} onClick={toggle} />

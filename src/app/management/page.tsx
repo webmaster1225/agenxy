@@ -67,7 +67,7 @@ export default function ManagementPage() {
 
       <section className="px-2 lg:px-6 pb-[140px] bg-snow">
         <SectionLabel left="Leadership" index="S.3" />
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-[5px] md:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-[5px] md:grid-cols-3">
           {team.map((person) => (
             <Link
               key={person.name}

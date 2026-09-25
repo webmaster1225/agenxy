@@ -56,10 +56,10 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-ink text-snow">
+    <div className="bg-snow bg-[url('/bg-pattern.jpg')] bg-[length:100%_auto] bg-top bg-repeat-x text-ink">
       {/* Hero */}
       <section className="px-10 pb-10 pt-8">
-        <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
+        <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-artist-gradient">
           Get In Touch
         </p>
         <div className="mt-8 max-w-[680px] lg:ml-[400px]">
@@ -69,10 +69,10 @@ export default function ContactPage() {
             </h2>
             <RotatingHeroWord />
           </div>
-          <h2 className="font-display text-[72px] font-semibold leading-[72px] tracking-[-5.76px] text-[#9ea1a3]">
+          <h2 className="font-display text-[72px] font-semibold leading-[72px] tracking-[-5.76px] text-mute">
             Incredible Work{" "}
           </h2>
-          <h2 className="font-display text-[72px] font-semibold leading-[72px] tracking-[-5.76px] text-[#9ea1a3]">
+          <h2 className="font-display text-[72px] font-semibold leading-[72px] tracking-[-5.76px] text-mute">
             Together
           </h2>
         </div>
@@ -92,19 +92,19 @@ export default function ContactPage() {
             </h2>
             <p className="mt-6 font-sans text-[16px] leading-[19.2px]">Élan Studio</p>
             <div className="mt-10">
-              <p className="font-display text-[16px] font-medium leading-[20.8px] tracking-[0.8px] text-[#f55733]">
+              <p className="font-display text-[16px] font-medium leading-[20.8px] tracking-[0.8px] text-artist-gradient">
                 {"{Mail to}"}
               </p>
               <a
                 href="mailto:hello@agenxy.com"
-                className="mt-1 block font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-snow hover:text-[#f55733]"
+                className="mt-1 block font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-ink hover:text-artist-gradient"
               >
                 hello@agenxy.com
               </a>
             </div>
             <div className="mt-10 grid gap-8 md:grid-cols-2">
               <div>
-                <p className="font-display text-[20px] leading-[26px] tracking-[-1px] text-[#f55733]">Address</p>
+                <p className="font-display text-[20px] leading-[26px] tracking-[-1px] text-artist-gradient">Address</p>
                 <p className="mt-2 font-display text-[18px] leading-[25.3px] tracking-[-0.72px]">
                   3000 NE 2nd Ave
                   <br />
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div>
-                <p className="font-display text-[20px] leading-[26px] tracking-[-1px] text-[#f55733]">Office Hours</p>
+                <p className="font-display text-[20px] leading-[26px] tracking-[-1px] text-artist-gradient">Office Hours</p>
                 <p className="mt-2 font-display text-[18px] leading-[25.3px] tracking-[-0.72px]">9AM to 6PM</p>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
           {/* Row 1 — {01} + Subject / Phone */}
           <div className="grid items-start gap-10 lg:grid-cols-[300px_minmax(0,920px)] lg:justify-between">
             <div>
-              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
+              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-artist-gradient">
                 {steps[0].num}
               </p>
               <p className="mt-5 font-display text-[20px] font-medium leading-[26px] tracking-[0.8px]">
@@ -142,7 +142,7 @@ export default function ContactPage() {
           {/* Row 2 — {02} + Name / Email */}
           <div className="grid items-start gap-10 lg:grid-cols-[300px_minmax(0,920px)] lg:justify-between">
             <div>
-              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
+              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-artist-gradient">
                 {steps[1].num}
               </p>
               <p className="mt-5 font-display text-[20px] leading-[26px] tracking-[0.8px]">{steps[1].title}</p>
@@ -156,7 +156,7 @@ export default function ContactPage() {
           {/* Row 3 — {03} + Budget / Message */}
           <div className="grid items-start gap-10 lg:grid-cols-[300px_minmax(0,920px)] lg:justify-between">
             <div>
-              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
+              <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-artist-gradient">
                 {steps[2].num}
               </p>
               <p className="mt-5 max-w-[300px] font-display text-[20px] leading-[26px] tracking-[0.8px]">
@@ -165,13 +165,13 @@ export default function ContactPage() {
             </div>
             <div className="space-y-[10px]">
               <div>
-                <p className="font-display text-[16px] font-medium leading-[19.2px] text-[#fafafa]">{"{Budgets}*"}</p>
+                <p className="font-display text-[16px] font-medium leading-[19.2px] text-ink">{"{Budgets}*"}</p>
                 <div className="mt-3 flex flex-wrap gap-[10px]">
                   {budgets.map((option) => (
                     <label
                       key={option}
                       className={`flex min-h-[62px] cursor-pointer items-center gap-4 border px-4 py-4 transition-colors ${
-                        budget === option ? "border-[#555] bg-[#111]" : "border-[#333] hover:border-[#444]"
+                        budget === option ? "border-ink bg-ink/5" : "border-mute hover:border-ink/40"
                       }`}
                     >
                       <input
@@ -184,7 +184,7 @@ export default function ContactPage() {
                       />
                       <span
                         className={`h-5 w-5 shrink-0 border ${
-                          budget === option ? "border-snow bg-snow" : "border-[#555] bg-transparent"
+                          budget === option ? "border-ink bg-ink" : "border-mute bg-transparent"
                         }`}
                       />
                       <span className="font-sans text-[20px] font-semibold leading-6">{option}</span>
@@ -194,21 +194,21 @@ export default function ContactPage() {
               </div>
 
               <label className="block">
-                <span className="font-display text-[16px] font-medium leading-[19.2px] text-[#fafafa]">
+                <span className="font-display text-[16px] font-medium leading-[19.2px] text-ink">
                   {"{Message}*"}
                 </span>
-                <div className="relative mt-3 border border-[#333]">
+                <div className="relative mt-3 border border-mute">
                   <textarea
                     name="message"
                     required
                     rows={7}
                     placeholder="Describe Your Projects and Needs"
-                    className="min-h-[180px] w-full resize-y bg-transparent p-4 pb-16 text-snow placeholder:text-[#666] outline-none"
+                    className="min-h-[180px] w-full resize-y bg-transparent p-4 pb-16 text-ink placeholder:text-mute outline-none"
                   />
                   <button
                     type="submit"
                     aria-label={sent ? "Message sent" : "Submit message"}
-                    className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center border border-[#555] text-[24px] leading-none text-snow transition-colors hover:border-snow"
+                    className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center border border-mute text-[24px] leading-none text-ink transition-colors hover:border-ink"
                   >
                     {sent ? "✓" : "+"}
                   </button>
@@ -225,7 +225,7 @@ export default function ContactPage() {
       <section className="px-5 py-36 md:px-5">
         <div className="grid gap-10 lg:grid-cols-[300px_1fr]">
           <div className="pt-2">
-            <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-[#f55733]">
+            <p className="font-display text-[24px] font-medium leading-[31.2px] tracking-[0.8px] text-artist-gradient">
               {"{FAQs}"}
             </p>
             <p className="mt-5 font-display text-[20px] leading-[26px] tracking-[0.8px]">
@@ -234,16 +234,16 @@ export default function ContactPage() {
           </div>
           <div>
             {faqs.map((faq, i) => (
-              <div key={faq.q} className="border-t border-[#333] last:border-b">
+              <div key={faq.q} className="border-t border-mute last:border-b">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="flex w-full items-center justify-between py-8 text-left"
                 >
-                  <span className="font-display text-[24px] font-medium leading-[31.2px] text-[#d5d7de]">{faq.q}</span>
-                  <span className="ml-4 shrink-0 font-display text-[24px] text-[#d5d7de]">{open === i ? "–" : "+"}</span>
+                  <span className="font-display text-[24px] font-medium leading-[31.2px] text-ink">{faq.q}</span>
+                  <span className="ml-4 shrink-0 font-display text-[24px] text-ink">{open === i ? "–" : "+"}</span>
                 </button>
                 {open === i && (
-                  <p className="max-w-2xl pb-8 font-sans text-[16px] leading-[22px] text-[#9ea1a3]">{faq.a}</p>
+                  <p className="max-w-2xl pb-8 font-sans text-[16px] leading-[22px] text-mute">{faq.a}</p>
                 )}
               </div>
             ))}
@@ -267,13 +267,13 @@ function Field({
 }) {
   return (
     <label className="block min-h-[109px]">
-      <span className="font-display text-[16px] font-medium leading-[19.2px] text-[#fafafa]">{label}</span>
+      <span className="font-display text-[16px] font-medium leading-[19.2px] text-ink">{label}</span>
       <input
         name={name}
         type={type}
         placeholder={placeholder}
         required={label.includes("*")}
-        className="mt-3 min-h-[77px] w-full rounded-[4px] border border-[#333] bg-transparent px-4 py-4 text-snow placeholder:text-[#666] outline-none focus:border-[#555]"
+        className="mt-3 min-h-[77px] w-full rounded-[4px] border border-mute bg-transparent px-4 py-4 text-ink placeholder:text-mute outline-none focus:border-ink"
       />
     </label>
   );
